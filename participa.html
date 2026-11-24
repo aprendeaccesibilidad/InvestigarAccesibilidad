@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#830050"><meta name="description" content="Participa en el estudio «Conocimiento y comprensión de las WCAG». Consulta la información de privacidad y responde al cuestionario sobre competencias en accesibilidad digital."><title>Participación · Investiga Accesibilidad</title><link rel="stylesheet" href="styles.css?v=marca-2"><link rel="stylesheet" href="cuestionario-v15.css?v=11"></head>
+<body><a class="skip" href="#contenido">Saltar al contenido</a><div class="topline"></div>
+<header class="site-header"><div class="container header-row"><a class="brand" href="index.html" aria-label="Ir al inicio de Investiga Accesibilidad"><span class="brand-identity"><span class="brand-copy"><strong>Investiga <span class="brand-accent">Accesibilidad</span></strong><small>Investigación en accesibilidad digital</small></span></span></a><nav class="nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="participa.html" aria-current="page">Participación</a><a href="observatorio.html">Observatorio</a><a href="sobre-el-proyecto.html">Sobre el proyecto</a></nav></div></header>
+<main tabindex="-1" id="contenido">
+<section class="hero page-hero" aria-labelledby="participation-title">
+ <div class="container hero-wide-copy">
+  <div class="hero-copy-block">
+   <p class="section-label">Conocimiento y comprensión de las WCAG</p>
+   <h1 id="participation-title">Participa en el estudio</h1>
+   <p>Cuéntanos tu experiencia y formación en accesibilidad digital y valora seis casos prácticos sobre las WCAG. Puedes responder sin crear una cuenta ni facilitar tu correo electrónico.</p>
+   <div class="button-row"><a class="button" href="#participa">Ir al cuestionario</a></div>
+  </div>
+ </div>
+</section>
+<section id="participa" class="section" aria-labelledby="study-information-title" tabindex="-1"><div class="container">
+<div id="intro" class="card intro-card-wide"><form id="start-form" novalidate>
+<!-- a11y: needs manual verification — lectura del consentimiento y foco al acceder desde la navegación -->
+<section id="participation-confirmation" class="study-information" aria-labelledby="study-information-title">
+ <h2 id="study-information-title">Antes de empezar el cuestionario</h2>
+ <p class="study-essential">Estudiamos cómo las personas comprenden y evalúan la accesibilidad digital. Tu participación es voluntaria y puedes abandonar el cuestionario en cualquier momento.</p>
+ <details class="study-legal">
+  <summary><span class="study-legal-label"><strong>Información del estudio y privacidad</strong><small>Consulta qué datos se utilizan, cómo se protegen y cuáles son tus opciones.</small></span></summary>
+  <div class="study-legal-content">
+   <p>Responderás preguntas sobre tu actividad, experiencia y formación, y analizarás seis casos prácticos WCAG.</p>
+   <p><strong>Participación voluntaria:</strong> puedes dejar de responder en cualquier momento.</p>
+   <p><strong>Privacidad:</strong> las condiciones de recogida y almacenamiento se detallan en la información del estudio.</p>
+   <p><strong>Responsable previsto:</strong> Universitat de Lleida. Consultas sobre protección de datos: <a href="mailto:dpd@udl.cat">dpd@udl.cat</a>.</p>
+   <p><a href="informacion-estudio.html" target="_blank" rel="noopener">Leer la información legal completa (se abre en otra pestaña)</a>. Antes de activar la recogida científica, el texto deberá validarse institucionalmente, incluyendo la base jurídica y la conservación de los datos.</p>
+  </div>
+ </details>
+ <p id="start-feedback" class="notice" role="alert" tabindex="-1"></p>
+ <label class="study-acceptance">
+  <input type="checkbox" id="study-accept" required aria-describedby="study-accept-help start-feedback">
+  <span><strong>Quiero participar voluntariamente.</strong> He leído la información esencial del estudio y puedo consultar los detalles sobre el tratamiento de datos.</span>
+ </label>
+ <p id="study-accept-help" class="field-help">Esta decisión permite iniciar el reto. No autoriza comunicaciones ni la vinculación de futuras evaluaciones.</p>
+ <p id="questionnaire-loading" role="status">Cargando el cuestionario…</p>
+ <div class="button-row">
+  <button type="submit" class="button" id="start-challenge" disabled>Empezar el cuestionario</button>
+ </div>
+</section>
+</form>
+</div>
+<div id="wizard" hidden class="wizard-wrap"><nav id="step-navigation" class="card step-nav" aria-label="Progreso del itinerario"><strong>Tu recorrido</strong><ul id="step-list"></ul><p id="step-locked-hint" class="fineprint">Puedes volver a los pasos que ya has visitado.</p></nav><div class="card"><div class="section-label" id="step-kicker"></div><h2 id="step-heading" tabindex="-1"></h2><p id="step-explainer" class="muted"></p><div class="progress" aria-hidden="true"><div id="progress-bar"></div></div><p id="step-progress" class="small muted" role="status" aria-live="polite"></p><p id="research-status" role="status" tabindex="-1"></p><div id="wizard-content" class="wizard-content"><form id="research-form" class="research-form" method="post" novalidate data-questionnaire="datos/cuestionario_v1.7.json" data-submit-url="https://script.google.com/macros/s/AKfycbwG709jv4GjH6tk9jyo7CRsmhoiDOt1x_qTZoF6kVFgqzCepT2GuBMu3rGxulB_6p2L/exec">
+<div id="questionnaire-panels"></div>
+<section data-step-panel="5" hidden>
+<div id="questionnaire-contact"></div>
+<h3 id="review-title">Revisa tus respuestas</h3>
+<p id="review-instructions">Despliega cada sección para consultar sus respuestas. Puedes volver a los pasos anteriores para corregirlas antes de enviar.</p>
+<div id="research-review"></div>
+</section></form></div><p id="wizard-error" role="alert" tabindex="-1"></p><div id="action-row" class="wizard-action"><button id="back-btn" class="button ghost" type="button">← Anterior</button><button id="next-btn" class="button" type="button">Continuar →</button><button id="send-btn" class="button" type="submit" form="research-form" hidden>Enviar respuestas</button></div></div></div></div></section>
+</main><footer class="footer"><div class="container footer-project-shortcut"><a href="sobre-el-proyecto.html">Sobre el proyecto Investiga Accesibilidad</a></div><div class="container footer-row"><div><strong>Investiga Accesibilidad · UdL</strong><p>Investigación en accesibilidad digital.</p></div><p><a href="observatorio.html">Observatorio</a> · <a href="informacion-estudio.html">Información y privacidad</a> · <a href="https://aprendeaccesibilidad.udl.cat/">Formación UdL</a></p></div><div class="container footer-griho">
+ <a href="https://griho.udl.cat/" target="_blank" rel="noopener noreferrer" class="griho-link" aria-label="Visitar la web oficial del grupo de investigación GRIHO de la Universitat de Lleida (se abre en otra pestaña)">
+  <span class="griho-logo-wrap"><img src="https://griho.udl.cat/export/sites/Griho/en/.galleries/AboutUs_Gallery/logoGriho.png_443620257.png" width="112" height="85" loading="lazy" decoding="async" alt="Logotipo de GRIHO"></span>
+  <span><strong>GRIHO</strong><small>Grup de Recerca en Interacció Persona Ordinador i Integració de Dades · Universitat de Lleida</small></span>
+ </a></div>
+</footer>
+<script src="footer-logo.js"></script>
+
+<script src="mobile-nav.js?v=sin-cuenta-1"></script>
+<nav class="mobile-bottom-nav" aria-label="Navegación móvil principal">
+ <a href="index.html" data-mobile-item="inicio"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><span>Inicio</span></a>
+ <a href="participa.html" data-mobile-item="participacion" aria-current="page"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 4.5v-1h6v1M9 11h6M9 15h4"/></svg></span><span>Participación</span></a>
+ <a href="observatorio.html" data-mobile-item="observatorio"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 17v-6h4v6M10 17V5h4v12M15 17V9h4v8"/><path d="M5 11h4M10 5h4M15 9h4"/></svg></span><span>Observatorio</span></a>
+ <a href="sobre-el-proyecto.html" data-mobile-item="proyecto"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6.5C9.5 5 6.5 5 3 6v13c3.5-1 6.5-1 9 .5 2.5-1.5 5.5-1.5 9-.5V6c-3.5-1-6.5-1-9 .5Z"/><path d="M12 6.5v13"/></svg></span><span>Proyecto</span></a>
+
+ </nav><script src="cuestionario.js?v=8" defer></script></body></html>

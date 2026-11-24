@@ -1,0 +1,1365 @@
+{
+  "schema_version": "1.0",
+  "questionnaire_id": "comprension_wcag",
+  "version": "1.7",
+  "title": "Comprensión WCAG",
+  "language": "es",
+  "duration_target_minutes": 10,
+  "duration_validated": false,
+  "wcag_version": null,
+  "publication_ready": true,
+  "source_document": "PreguntasGoogleForms_V1.7_reducido.docx",
+  "counts": {
+    "research_questions": 33,
+    "consent": 1,
+    "optional_contact": 1,
+    "conditional_country": 1,
+    "defined_questions_total": 36,
+    "main_count_excluding_conditional_country": 35,
+    "cases": 6
+  },
+  "sections": [
+    {
+      "id": "S01",
+      "order": 1,
+      "title": "Presentación del estudio",
+      "questions": [
+        {
+          "id": "CI",
+          "title": "¿Aceptas participar en esta investigación tras leer la información del estudio?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "CI. ¿Aceptas participar en esta investigación tras leer la información del estudio?",
+          "options": [
+            {
+              "id": "CI_O01",
+              "label": "Sí, acepto participar."
+            },
+            {
+              "id": "CI_O02",
+              "label": "No, no deseo participar.",
+              "next_action": "end_without_research"
+            }
+          ]
+        }
+      ],
+      "description": "Esta investigación tiene como objetivo conocer las competencias, los conocimientos y las experiencias de aprendizaje en accesibilidad digital de estudiantes, profesionales y otras personas interesadas en este ámbito.\nA lo largo del cuestionario te preguntaremos sobre tu perfil, experiencia, formación y conocimientos. También te presentaremos diferentes situaciones prácticas para conocer cómo evalúas la accesibilidad digital.\nDuración estimada: 10 minutos.\nLa participación es voluntaria. Puedes dejar de responder antes de enviar el cuestionario. La información sobre discapacidad es opcional. Consulta la información de privacidad del estudio antes de decidir si deseas participar. [Enlace a la información de privacidad pendiente de validación institucional.]"
+    },
+    {
+      "id": "S02",
+      "order": 2,
+      "title": "Perfil y actividad profesional",
+      "questions": [
+        {
+          "id": "P00",
+          "title": "¿Cómo has conocido este estudio?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "P00. ¿Cómo has conocido este estudio?",
+          "options": [
+            {
+              "id": "P00_O01",
+              "label": "Congreso, seminario o jornada profesional"
+            },
+            {
+              "id": "P00_O02",
+              "label": "LinkedIn"
+            },
+            {
+              "id": "P00_O03",
+              "label": "Otras redes sociales"
+            },
+            {
+              "id": "P00_O04",
+              "label": "Comunidades o asociaciones profesionales"
+            },
+            {
+              "id": "P00_O05",
+              "label": "Recomendación de compañeros, docentes o profesionales"
+            },
+            {
+              "id": "P00_O06",
+              "label": "Otros canales (especificar)",
+              "allow_other_text": true
+            }
+          ]
+        },
+        {
+          "id": "P01",
+          "title": "¿Cuál es tu situación actual? (Puedes marcar varias opciones.)",
+          "type": "multi_select",
+          "required": true,
+          "source_heading": "P01. ¿Cuál es tu situación actual? (Puedes marcar varias opciones.)",
+          "options": [
+            {
+              "id": "P01_O01",
+              "label": "Estudiante"
+            },
+            {
+              "id": "P01_O02",
+              "label": "Profesional en activo"
+            },
+            {
+              "id": "P01_O03",
+              "label": "Docente o investigador/a"
+            },
+            {
+              "id": "P01_O04",
+              "label": "Actualmente no trabajo ni estudio"
+            },
+            {
+              "id": "P01_O05",
+              "label": "Otra situación"
+            }
+          ],
+          "help_text": "Selección múltiple. Si marcas «Actualmente no trabajo ni estudio», no marques otras situaciones incompatibles.",
+          "exclusive_option_ids": [
+            "P01_O04"
+          ]
+        },
+        {
+          "id": "P02",
+          "title": "¿En qué ámbitos trabajas o estudias?",
+          "type": "multi_select",
+          "required": true,
+          "source_heading": "P02. ¿En qué ámbitos trabajas o estudias?",
+          "options": [
+            {
+              "id": "P02_O01",
+              "label": "Diseño digital y diseño de experiencia e interfaces de usuario (UX/UI)"
+            },
+            {
+              "id": "P02_O02",
+              "label": "Desarrollo web o software"
+            },
+            {
+              "id": "P02_O03",
+              "label": "Evaluación, auditoría o consultoría de accesibilidad"
+            },
+            {
+              "id": "P02_O04",
+              "label": "Pruebas de calidad de productos digitales (QA)"
+            },
+            {
+              "id": "P02_O05",
+              "label": "Creación y gestión de contenidos digitales"
+            },
+            {
+              "id": "P02_O06",
+              "label": "Gestión de proyectos o productos digitales"
+            },
+            {
+              "id": "P02_O07",
+              "label": "Docencia o investigación"
+            },
+            {
+              "id": "P02_O08",
+              "label": "Otro ámbito"
+            },
+            {
+              "id": "P02_O09",
+              "label": "No trabajo ni estudio en ninguna de estas áreas"
+            }
+          ],
+          "help_text": "Selecciona todas las opciones que correspondan. No combines una opción de ausencia de experiencia o actividad con otras respuestas incompatibles.",
+          "exclusive_option_ids": [
+            "P02_O09"
+          ]
+        },
+        {
+          "id": "P03",
+          "title": "¿Qué actividades de accesibilidad digital realizas?",
+          "type": "multi_select",
+          "required": true,
+          "source_heading": "P03. ¿Qué actividades de accesibilidad digital realizas?",
+          "options": [
+            {
+              "id": "P03_O01",
+              "label": "Diseño accesible"
+            },
+            {
+              "id": "P03_O02",
+              "label": "Desarrollo accesible"
+            },
+            {
+              "id": "P03_O03",
+              "label": "Evaluación y auditoría"
+            },
+            {
+              "id": "P03_O04",
+              "label": "Corrección de problemas de accesibilidad"
+            },
+            {
+              "id": "P03_O05",
+              "label": "Creación de contenidos y documentos accesibles"
+            },
+            {
+              "id": "P03_O06",
+              "label": "Formación, investigación o divulgación"
+            },
+            {
+              "id": "P03_O07",
+              "label": "Gestión de la accesibilidad"
+            },
+            {
+              "id": "P03_O08",
+              "label": "Otras actividades"
+            },
+            {
+              "id": "P03_O09",
+              "label": "Ninguna"
+            }
+          ],
+          "help_text": "Selecciona todas las opciones que correspondan. Si eliges «Ninguna», no marques otras opciones.",
+          "exclusive_option_ids": [
+            "P03_O09"
+          ]
+        },
+        {
+          "id": "P04",
+          "title": "¿Qué importancia tiene la accesibilidad digital en tu trabajo o estudios?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "P04. ¿Qué importancia tiene la accesibilidad digital en tu trabajo o estudios?",
+          "options": [
+            {
+              "id": "P04_O01",
+              "label": "Es mi actividad principal"
+            },
+            {
+              "id": "P04_O02",
+              "label": "Es una parte importante de mi actividad"
+            },
+            {
+              "id": "P04_O03",
+              "label": "Es una parte secundaria de mi actividad"
+            },
+            {
+              "id": "P04_O04",
+              "label": "Solo realizo actividades relacionadas de forma ocasional"
+            },
+            {
+              "id": "P04_O05",
+              "label": "No forma parte de mi actividad actual"
+            }
+          ]
+        },
+        {
+          "id": "P05",
+          "title": "¿Tienes alguna discapacidad o dificultad funcional que afecte a cómo utilizas productos digitales?",
+          "type": "multi_select",
+          "required": false,
+          "source_heading": "P05. ¿Tienes alguna discapacidad o dificultad funcional que afecte a cómo utilizas productos digitales?",
+          "options": [
+            {
+              "id": "P05_O01",
+              "label": "Discapacidad visual total"
+            },
+            {
+              "id": "P05_O02",
+              "label": "Baja visión"
+            },
+            {
+              "id": "P05_O03",
+              "label": "Discapacidad auditiva"
+            },
+            {
+              "id": "P05_O04",
+              "label": "Discapacidad física o motriz"
+            },
+            {
+              "id": "P05_O05",
+              "label": "Discapacidad cognitiva"
+            },
+            {
+              "id": "P05_O06",
+              "label": "Dificultades específicas de aprendizaje"
+            },
+            {
+              "id": "P05_O07",
+              "label": "Otra discapacidad o dificultad funcional"
+            },
+            {
+              "id": "P05_O08",
+              "label": "Ninguna de las anteriores"
+            },
+            {
+              "id": "P05_O09",
+              "label": "Prefiero no responder"
+            }
+          ],
+          "help_text": "«Ninguna de las anteriores» y «Prefiero no responder» son opciones excluyentes.",
+          "exclusive_option_ids": [
+            "P05_O08",
+            "P05_O09"
+          ]
+        },
+        {
+          "id": "P06",
+          "title": "¿En qué país trabajas o estudias principalmente?",
+          "type": "dropdown",
+          "required": true,
+          "source_heading": "P06. ¿En qué país trabajas o estudias principalmente?",
+          "options": [
+            {
+              "id": "P06_O01",
+              "label": "España"
+            },
+            {
+              "id": "P06_O02",
+              "label": "Argentina"
+            },
+            {
+              "id": "P06_O03",
+              "label": "Bolivia"
+            },
+            {
+              "id": "P06_O04",
+              "label": "Brasil"
+            },
+            {
+              "id": "P06_O05",
+              "label": "Chile"
+            },
+            {
+              "id": "P06_O06",
+              "label": "Colombia"
+            },
+            {
+              "id": "P06_O07",
+              "label": "Costa Rica"
+            },
+            {
+              "id": "P06_O08",
+              "label": "Cuba"
+            },
+            {
+              "id": "P06_O09",
+              "label": "Ecuador"
+            },
+            {
+              "id": "P06_O10",
+              "label": "El Salvador"
+            },
+            {
+              "id": "P06_O11",
+              "label": "Guatemala"
+            },
+            {
+              "id": "P06_O12",
+              "label": "Haití"
+            },
+            {
+              "id": "P06_O13",
+              "label": "Honduras"
+            },
+            {
+              "id": "P06_O14",
+              "label": "México"
+            },
+            {
+              "id": "P06_O15",
+              "label": "Nicaragua"
+            },
+            {
+              "id": "P06_O16",
+              "label": "Panamá"
+            },
+            {
+              "id": "P06_O17",
+              "label": "Paraguay"
+            },
+            {
+              "id": "P06_O18",
+              "label": "Perú"
+            },
+            {
+              "id": "P06_O19",
+              "label": "Puerto Rico"
+            },
+            {
+              "id": "P06_O20",
+              "label": "República Dominicana"
+            },
+            {
+              "id": "P06_O21",
+              "label": "Uruguay"
+            },
+            {
+              "id": "P06_O22",
+              "label": "Venezuela"
+            },
+            {
+              "id": "P06_O23",
+              "label": "Otro país (especificar)"
+            }
+          ]
+        },
+        {
+          "id": "P06b",
+          "title": "Indica el país",
+          "type": "short_text",
+          "required": true,
+          "visible_if": {
+            "question_id": "P06",
+            "option_id": "P06_O23"
+          },
+          "source_heading": "P06b. Indica el país (texto obligatorio únicamente si selecciona Otro país)."
+        }
+      ],
+      "description": "Queremos conocer tu perfil y actividad en accesibilidad digital. La información sobre discapacidad es opcional."
+    },
+    {
+      "id": "S03",
+      "order": 3,
+      "title": "Experiencia y práctica en accesibilidad digital",
+      "questions": [
+        {
+          "id": "P07",
+          "title": "¿Cuánto tiempo llevas trabajando, estudiando o aprendiendo sobre accesibilidad digital? Incluye también el aprendizaje por tu cuenta.",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "P07. ¿Cuánto tiempo llevas trabajando, estudiando o aprendiendo sobre accesibilidad digital? Incluye también el aprendizaje por tu cuenta.",
+          "options": [
+            {
+              "id": "P07_O01",
+              "label": "Ninguna experiencia"
+            },
+            {
+              "id": "P07_O02",
+              "label": "Menos de 1 año"
+            },
+            {
+              "id": "P07_O03",
+              "label": "De 1 a menos de 3 años"
+            },
+            {
+              "id": "P07_O04",
+              "label": "De 3 a menos de 6 años"
+            },
+            {
+              "id": "P07_O05",
+              "label": "De 6 a menos de 10 años"
+            },
+            {
+              "id": "P07_O06",
+              "label": "10 años o más"
+            }
+          ]
+        },
+        {
+          "id": "P08",
+          "title": "Cuando evalúas la accesibilidad de un producto digital, ¿con qué frecuencia utilizas las pautas WCAG?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "P08. Cuando evalúas la accesibilidad de un producto digital, ¿con qué frecuencia utilizas las pautas WCAG?",
+          "options": [
+            {
+              "id": "P08_O01",
+              "label": "Nunca"
+            },
+            {
+              "id": "P08_O02",
+              "label": "Casi nunca"
+            },
+            {
+              "id": "P08_O03",
+              "label": "Algunas veces"
+            },
+            {
+              "id": "P08_O04",
+              "label": "Frecuentemente"
+            },
+            {
+              "id": "P08_O05",
+              "label": "Siempre o casi siempre"
+            },
+            {
+              "id": "P08_O06",
+              "label": "No realizo evaluaciones de accesibilidad"
+            }
+          ]
+        },
+        {
+          "id": "P09",
+          "title": "¿Cómo evalúas la accesibilidad digital?",
+          "type": "multi_select",
+          "required": true,
+          "source_heading": "P09. ¿Cómo evalúas la accesibilidad digital?",
+          "options": [
+            {
+              "id": "P09_O01",
+              "label": "Herramientas automáticas"
+            },
+            {
+              "id": "P09_O02",
+              "label": "Revisión manual de interfaces y código"
+            },
+            {
+              "id": "P09_O03",
+              "label": "Listas de verificación WCAG y metodologías de evaluación"
+            },
+            {
+              "id": "P09_O04",
+              "label": "Pruebas con teclado y tecnologías de apoyo"
+            },
+            {
+              "id": "P09_O05",
+              "label": "Pruebas con usuarios con discapacidad"
+            },
+            {
+              "id": "P09_O06",
+              "label": "Herramientas de inteligencia artificial"
+            },
+            {
+              "id": "P09_O07",
+              "label": "Otros métodos"
+            },
+            {
+              "id": "P09_O08",
+              "label": "No realizo evaluaciones"
+            }
+          ],
+          "help_text": "Selecciona todas las opciones que correspondan. No combines una opción de ausencia de experiencia o actividad con otras respuestas incompatibles.",
+          "exclusive_option_ids": [
+            "P09_O08"
+          ]
+        }
+      ],
+      "description": "Nos interesa conocer tu experiencia, el uso de WCAG y los métodos de evaluación que utilizas."
+    },
+    {
+      "id": "S04",
+      "order": 4,
+      "title": "Formación y aprendizaje en accesibilidad digital",
+      "questions": [
+        {
+          "id": "P10",
+          "title": "¿Cómo has aprendido sobre accesibilidad digital?",
+          "type": "multi_select",
+          "required": true,
+          "source_heading": "P10. ¿Cómo has aprendido sobre accesibilidad digital?",
+          "options": [
+            {
+              "id": "P10_O01",
+              "label": "Estudios oficiales (universidad o formación profesional)"
+            },
+            {
+              "id": "P10_O02",
+              "label": "Cursos especializados, talleres, microcredenciales o preparación de certificaciones"
+            },
+            {
+              "id": "P10_O03",
+              "label": "Experiencia en el trabajo y colaboración con compañeros o expertos"
+            },
+            {
+              "id": "P10_O04",
+              "label": "Congresos, jornadas, comunidades, foros o redes sociales"
+            },
+            {
+              "id": "P10_O05",
+              "label": "Aprendizaje por mi cuenta (libros, documentación, tutoriales, vídeos o práctica)"
+            },
+            {
+              "id": "P10_O06",
+              "label": "Aprendizaje con ayuda de inteligencia artificial"
+            },
+            {
+              "id": "P10_O07",
+              "label": "Otras vías de aprendizaje"
+            },
+            {
+              "id": "P10_O08",
+              "label": "Todavía no he aprendido sobre accesibilidad digital"
+            }
+          ],
+          "help_text": "Selecciona todas las opciones que correspondan. No combines una opción de ausencia de experiencia o actividad con otras respuestas incompatibles.",
+          "exclusive_option_ids": [
+            "P10_O08"
+          ]
+        },
+        {
+          "id": "P11",
+          "title": "¿Sobre qué ámbitos de accesibilidad digital has aprendido?",
+          "type": "multi_select",
+          "required": true,
+          "source_heading": "P11. ¿Sobre qué ámbitos de accesibilidad digital has aprendido?",
+          "options": [
+            {
+              "id": "P11_O01",
+              "label": "Fundamentos: discapacidad, barreras y necesidades de los usuarios"
+            },
+            {
+              "id": "P11_O02",
+              "label": "Pautas WCAG y normativa"
+            },
+            {
+              "id": "P11_O03",
+              "label": "Diseño de interfaces accesibles"
+            },
+            {
+              "id": "P11_O04",
+              "label": "Desarrollo web accesible"
+            },
+            {
+              "id": "P11_O05",
+              "label": "Evaluación de accesibilidad"
+            },
+            {
+              "id": "P11_O06",
+              "label": "Documentos digitales accesibles"
+            },
+            {
+              "id": "P11_O07",
+              "label": "Inteligencia artificial aplicada a la accesibilidad"
+            },
+            {
+              "id": "P11_O08",
+              "label": "Otros ámbitos"
+            },
+            {
+              "id": "P11_O09",
+              "label": "Ninguno"
+            }
+          ],
+          "help_text": "Selecciona todas las opciones que correspondan. No combines una opción de ausencia de experiencia o actividad con otras respuestas incompatibles."
+        },
+        {
+          "id": "P12",
+          "title": "¿Qué acreditaciones en accesibilidad digital has obtenido?",
+          "type": "multi_select",
+          "required": true,
+          "source_heading": "P12. ¿Qué acreditaciones en accesibilidad digital has obtenido?",
+          "options": [
+            {
+              "id": "P12_O01",
+              "label": "Certificación profesional (CPACC, WAS, CPWA u otras)"
+            },
+            {
+              "id": "P12_O02",
+              "label": "Titulación universitaria especializada"
+            },
+            {
+              "id": "P12_O03",
+              "label": "Microcredencial universitaria"
+            },
+            {
+              "id": "P12_O04",
+              "label": "Certificado de superación de un curso"
+            },
+            {
+              "id": "P12_O05",
+              "label": "Certificado de asistencia a un curso o jornada"
+            },
+            {
+              "id": "P12_O06",
+              "label": "Otras acreditaciones"
+            },
+            {
+              "id": "P12_O07",
+              "label": "Ninguna"
+            }
+          ],
+          "help_text": "Selecciona todas las opciones que correspondan. No combines una opción de ausencia de experiencia o actividad con otras respuestas incompatibles.",
+          "exclusive_option_ids": [
+            "P12_O07"
+          ]
+        }
+      ],
+      "description": "Queremos conocer cómo has aprendido accesibilidad digital y qué acreditaciones has obtenido."
+    },
+    {
+      "id": "S05",
+      "order": 5,
+      "title": "Conocimientos y confianza",
+      "questions": [
+        {
+          "id": "P13",
+          "title": "¿Cómo valoras tus conocimientos y capacidades en accesibilidad digital?",
+          "type": "grid_single_select",
+          "required": true,
+          "source_heading": "P13. ¿Cómo valoras tus conocimientos y capacidades en accesibilidad digital?",
+          "rows": [
+            {
+              "id": "P13_R01",
+              "label": "Conocimientos generales de accesibilidad digital"
+            },
+            {
+              "id": "P13_R02",
+              "label": "Conocimientos de los criterios WCAG"
+            },
+            {
+              "id": "P13_R03",
+              "label": "Confianza para evaluar el cumplimiento de las WCAG"
+            }
+          ],
+          "options": [
+            {
+              "id": "P13_O01",
+              "label": "1 · Muy bajo",
+              "value": 1
+            },
+            {
+              "id": "P13_O02",
+              "label": "2 · Bajo",
+              "value": 2
+            },
+            {
+              "id": "P13_O03",
+              "label": "3 · Medio",
+              "value": 3
+            },
+            {
+              "id": "P13_O04",
+              "label": "4 · Alto",
+              "value": 4
+            },
+            {
+              "id": "P13_O05",
+              "label": "5 · Muy alto",
+              "value": 5
+            }
+          ],
+          "help_text": "Selecciona un nivel por cada aspecto."
+        }
+      ],
+      "description": "Valora tus conocimientos generales, tus conocimientos de WCAG y tu confianza para evaluar su cumplimiento."
+    },
+    {
+      "id": "S06",
+      "order": 6,
+      "title": "Satisfacción y disfrute",
+      "questions": [
+        {
+          "id": "P14",
+          "title": "¿Cómo valoras los siguientes aspectos de tu actividad en accesibilidad digital?",
+          "type": "grid_single_select",
+          "required": false,
+          "source_heading": "P14. ¿Cómo valoras los siguientes aspectos de tu actividad en accesibilidad digital?",
+          "rows": [
+            {
+              "id": "P14_R01",
+              "label": "Grado de satisfacción"
+            },
+            {
+              "id": "P14_R02",
+              "label": "Grado de disfrute"
+            }
+          ],
+          "options": [
+            {
+              "id": "P14_O01",
+              "label": "1 · Muy bajo",
+              "value": 1
+            },
+            {
+              "id": "P14_O02",
+              "label": "2 · Bajo",
+              "value": 2
+            },
+            {
+              "id": "P14_O03",
+              "label": "3 · Medio",
+              "value": 3
+            },
+            {
+              "id": "P14_O04",
+              "label": "4 · Alto",
+              "value": 4
+            },
+            {
+              "id": "P14_O05",
+              "label": "5 · Muy alto",
+              "value": 5
+            },
+            {
+              "id": "P14_O06",
+              "label": "No aplica"
+            },
+            {
+              "id": "P14_O07",
+              "label": "Prefiero no responder"
+            }
+          ],
+          "help_text": "Selecciona un nivel por cada aspecto. No aplica: no realizo actividades de accesibilidad digital."
+        }
+      ],
+      "description": "Queremos conocer tu grado de satisfacción y cuánto disfrutas realizando actividades relacionadas con la accesibilidad digital."
+    },
+    {
+      "id": "S07",
+      "order": 7,
+      "title": "Evaluación de casos prácticos WCAG",
+      "questions": [],
+      "description": "Lee las seis situaciones y valora únicamente el requisito WCAG relacionado con cada una, no toda la interfaz. Justifica tu respuesta en una frase breve e indica tu confianza. Si conoces el criterio, puedes indicar su número o nombre."
+    },
+    {
+      "id": "S08",
+      "order": 8,
+      "title": "Caso práctico 1. Nueva transferencia",
+      "questions": [
+        {
+          "id": "C1_P1",
+          "title": "¿Se cumple el requisito WCAG relacionado con este caso?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 1 · P1. ¿Se cumple el requisito WCAG relacionado con este caso?",
+          "options": [
+            {
+              "id": "C1_P1_O01",
+              "label": "Falla"
+            },
+            {
+              "id": "C1_P1_O02",
+              "label": "Pasa"
+            },
+            {
+              "id": "C1_P1_O03",
+              "label": "Información insuficiente"
+            },
+            {
+              "id": "C1_P1_O04",
+              "label": "No lo sé"
+            }
+          ]
+        },
+        {
+          "id": "C1_P2",
+          "title": "¿Por qué?",
+          "type": "short_text",
+          "required": true,
+          "source_heading": "Caso 1 · P2. ¿Por qué?",
+          "help_text": "Justifica tu respuesta en una frase breve. Si conoces el criterio WCAG, indícalo. Si no sabes justificarla, escribe «No lo sé»."
+        },
+        {
+          "id": "C1_P3",
+          "title": "¿Qué confianza tienes en tu respuesta?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 1 · P3. ¿Qué confianza tienes en tu respuesta?",
+          "options": [
+            {
+              "id": "C1_P3_O01",
+              "label": "1 · Ninguna",
+              "value": 1
+            },
+            {
+              "id": "C1_P3_O02",
+              "label": "2 · Poca",
+              "value": 2
+            },
+            {
+              "id": "C1_P3_O03",
+              "label": "3 · Confianza moderada",
+              "value": 3
+            },
+            {
+              "id": "C1_P3_O04",
+              "label": "4 · Bastante",
+              "value": 4
+            },
+            {
+              "id": "C1_P3_O05",
+              "label": "5 · Mucha",
+              "value": 5
+            }
+          ]
+        }
+      ],
+      "case_id": "C1",
+      "description": "Analiza la situación que se presenta en una interfaz de banca digital y responde las preguntas relacionadas con su accesibilidad.",
+      "scenario": "Una persona quiere transferir 1.200 € desde la web de su banco. Al pulsar «Enviar transferencia ahora», el dinero se envía definitivamente. La web no comprueba si hay errores en los datos, no permite revisarlos y corregirlos antes del envío mediante un mecanismo de confirmación, y no permite deshacer la transferencia.",
+      "code": {
+        "language": "html",
+        "text": "<h1>Nueva transferencia</h1>\n<form action=\"/transferencias/ejecutar\" method=\"post\">\n  <label for=\"cuenta\">Cuenta de destino (IBAN)</label>\n  <input id=\"cuenta\" name=\"cuenta\" value=\"ES•• •••• 4567\">\n  <label for=\"importe\">Importe (€)</label>\n  <input id=\"importe\" name=\"importe\" value=\"1200,00\">\n  <label for=\"concepto\">Concepto</label>\n  <input id=\"concepto\" name=\"concepto\" value=\"Reserva de alquiler\">\n  <button type=\"submit\">Enviar transferencia ahora</button>\n</form>\n<!-- El servidor ejecuta sin comprobación con corrección,\n     revisión ni reversión. -->"
+      },
+      "image": {
+        "id": "C1_movil",
+        "case_id": "C1",
+        "view": "mobile",
+        "path": "assets/cuestionario-v15/caso-1.png",
+        "drive_folder_url": "https://drive.google.com/drive/folders/1MVBJm_8zuvkJun8X3XZtK01X_VEiUSwa?usp=drive_link",
+        "drive_file_id": null,
+        "drive_file_name": null,
+        "alt_text": "Formulario bancario con cuenta de destino, importe, concepto y botón Enviar transferencia ahora.",
+        "alt_text_review_required": true
+      }
+    },
+    {
+      "id": "S09",
+      "order": 9,
+      "title": "Caso práctico 2. Panel de ventas",
+      "questions": [
+        {
+          "id": "A1_P1",
+          "title": "¿Se cumple el requisito WCAG relacionado con este caso?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 2 · P1. ¿Se cumple el requisito WCAG relacionado con este caso?",
+          "options": [
+            {
+              "id": "A1_P1_O01",
+              "label": "Falla"
+            },
+            {
+              "id": "A1_P1_O02",
+              "label": "Pasa"
+            },
+            {
+              "id": "A1_P1_O03",
+              "label": "Información insuficiente"
+            },
+            {
+              "id": "A1_P1_O04",
+              "label": "No lo sé"
+            }
+          ]
+        },
+        {
+          "id": "A1_P2",
+          "title": "¿Por qué?",
+          "type": "short_text",
+          "required": true,
+          "source_heading": "Caso 2 · P2. ¿Por qué?",
+          "help_text": "Justifica tu respuesta en una frase breve. Si conoces el criterio WCAG, indícalo. Si no sabes justificarla, escribe «No lo sé»."
+        },
+        {
+          "id": "A1_P3",
+          "title": "¿Qué confianza tienes en tu respuesta?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 2 · P3. ¿Qué confianza tienes en tu respuesta?",
+          "options": [
+            {
+              "id": "A1_P3_O01",
+              "label": "1 · Ninguna",
+              "value": 1
+            },
+            {
+              "id": "A1_P3_O02",
+              "label": "2 · Poca",
+              "value": 2
+            },
+            {
+              "id": "A1_P3_O03",
+              "label": "3 · Confianza moderada",
+              "value": 3
+            },
+            {
+              "id": "A1_P3_O04",
+              "label": "4 · Bastante",
+              "value": 4
+            },
+            {
+              "id": "A1_P3_O05",
+              "label": "5 · Mucha",
+              "value": 5
+            }
+          ]
+        }
+      ],
+      "case_id": "A1",
+      "description": "Analiza cómo se presenta la información en un panel de ventas y responde las preguntas relacionadas con su accesibilidad.",
+      "scenario": "Una web muestra un gráfico de ventas de enero a junio de 2026. El gráfico incluye los importes de cada mes y una pequeña bajada en abril. Fuera de la imagen no se ofrecen esos datos ni una descripción de la evolución de las ventas.",
+      "code": {
+        "language": "html",
+        "text": "<section aria-labelledby=\"ventas-titulo\">\n  <h2 id=\"ventas-titulo\">Ventas enero–junio de 2026</h2>\n  <img src=\"ventas-semestrales.png\" alt=\"Gráfico de ventas\">\n</section>"
+      },
+      "image": {
+        "id": "A1_movil",
+        "case_id": "A1",
+        "view": "mobile",
+        "path": "assets/cuestionario-v15/caso-2.png",
+        "drive_folder_url": "https://drive.google.com/drive/folders/1MVBJm_8zuvkJun8X3XZtK01X_VEiUSwa?usp=drive_link",
+        "drive_file_id": null,
+        "drive_file_name": null,
+        "alt_text": "Gráfico de barras, enero a junio: 120, 135, 150, 148, 175 y 190 miles de euros.",
+        "alt_text_review_required": true
+      }
+    },
+    {
+      "id": "S10",
+      "order": 10,
+      "title": "Caso práctico 3. Contrato de alquiler de vehículo",
+      "questions": [
+        {
+          "id": "C2_P1",
+          "title": "¿Se cumple el requisito WCAG relacionado con este caso?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 3 · P1. ¿Se cumple el requisito WCAG relacionado con este caso?",
+          "options": [
+            {
+              "id": "C2_P1_O01",
+              "label": "Falla"
+            },
+            {
+              "id": "C2_P1_O02",
+              "label": "Pasa"
+            },
+            {
+              "id": "C2_P1_O03",
+              "label": "Información insuficiente"
+            },
+            {
+              "id": "C2_P1_O04",
+              "label": "No lo sé"
+            }
+          ]
+        },
+        {
+          "id": "C2_P2",
+          "title": "¿Por qué?",
+          "type": "short_text",
+          "required": true,
+          "source_heading": "Caso 3 · P2. ¿Por qué?",
+          "help_text": "Justifica tu respuesta en una frase breve. Si conoces el criterio WCAG, indícalo. Si no sabes justificarla, escribe «No lo sé»."
+        },
+        {
+          "id": "C2_P3",
+          "title": "¿Qué confianza tienes en tu respuesta?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 3 · P3. ¿Qué confianza tienes en tu respuesta?",
+          "options": [
+            {
+              "id": "C2_P3_O01",
+              "label": "1 · Ninguna",
+              "value": 1
+            },
+            {
+              "id": "C2_P3_O02",
+              "label": "2 · Poca",
+              "value": 2
+            },
+            {
+              "id": "C2_P3_O03",
+              "label": "3 · Confianza moderada",
+              "value": 3
+            },
+            {
+              "id": "C2_P3_O04",
+              "label": "4 · Bastante",
+              "value": 4
+            },
+            {
+              "id": "C2_P3_O05",
+              "label": "5 · Mucha",
+              "value": 5
+            }
+          ]
+        }
+      ],
+      "case_id": "C2",
+      "description": "Analiza la situación que se presenta durante el proceso de contratación de un vehículo de alquiler y responde las preguntas relacionadas con su accesibilidad.",
+      "scenario": "Una persona elige un coche y las fechas de alquiler en una web. Antes de contratarlo, aparece un resumen con el vehículo, las fechas y el precio total. Puede revisar los datos, cambiarlos con «Modificar datos» o aceptar el contrato con «Confirmar alquiler». El contrato solo se formaliza al confirmar.",
+      "code": null,
+      "image": {
+        "id": "C2_movil",
+        "case_id": "C2",
+        "view": "mobile",
+        "path": "assets/cuestionario-v15/caso-3.png",
+        "drive_folder_url": "https://drive.google.com/drive/folders/1MVBJm_8zuvkJun8X3XZtK01X_VEiUSwa?usp=drive_link",
+        "drive_file_id": null,
+        "drive_file_name": null,
+        "alt_text": "Resumen del vehículo, las fechas y el precio, con acciones para modificar datos o confirmar el alquiler.",
+        "alt_text_review_required": true
+      }
+    },
+    {
+      "id": "S11",
+      "order": 11,
+      "title": "Caso práctico 4. Eliminar del carrito",
+      "questions": [
+        {
+          "id": "B2_P1",
+          "title": "¿Se cumple el requisito WCAG relacionado con este caso?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 4 · P1. ¿Se cumple el requisito WCAG relacionado con este caso?",
+          "options": [
+            {
+              "id": "B2_P1_O01",
+              "label": "Falla"
+            },
+            {
+              "id": "B2_P1_O02",
+              "label": "Pasa"
+            },
+            {
+              "id": "B2_P1_O03",
+              "label": "Información insuficiente"
+            },
+            {
+              "id": "B2_P1_O04",
+              "label": "No lo sé"
+            }
+          ]
+        },
+        {
+          "id": "B2_P2",
+          "title": "¿Por qué?",
+          "type": "short_text",
+          "required": true,
+          "source_heading": "Caso 4 · P2. ¿Por qué?",
+          "help_text": "Justifica tu respuesta en una frase breve. Si conoces el criterio WCAG, indícalo. Si no sabes justificarla, escribe «No lo sé»."
+        },
+        {
+          "id": "B2_P3",
+          "title": "¿Qué confianza tienes en tu respuesta?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 4 · P3. ¿Qué confianza tienes en tu respuesta?",
+          "options": [
+            {
+              "id": "B2_P3_O01",
+              "label": "1 · Ninguna",
+              "value": 1
+            },
+            {
+              "id": "B2_P3_O02",
+              "label": "2 · Poca",
+              "value": 2
+            },
+            {
+              "id": "B2_P3_O03",
+              "label": "3 · Confianza moderada",
+              "value": 3
+            },
+            {
+              "id": "B2_P3_O04",
+              "label": "4 · Bastante",
+              "value": 4
+            },
+            {
+              "id": "B2_P3_O05",
+              "label": "5 · Mucha",
+              "value": 5
+            }
+          ]
+        }
+      ],
+      "case_id": "B2",
+      "description": "Analiza el comportamiento de una interfaz de comercio electrónico al eliminar un producto del carrito de compra.",
+      "scenario": "Una persona presiona con el ratón el botón «Eliminar del carrito». Sin soltar el botón del ratón, mueve el puntero fuera del botón de la web y después lo suelta. El producto sigue en el carrito. Solo se elimina si completa el clic sobre el botón.",
+      "code": {
+        "language": "html",
+        "text": "<article id=\"articulo-17\">\n  <h2>Cuaderno de notas A5</h2>\n  <p>Precio: 12,90 €</p>\n  <button id=\"eliminar-17\" type=\"button\">Eliminar del carrito</button>\n</article>\n<p id=\"estado\" role=\"status\"></p>\n<script>\nconst boton = document.querySelector('#eliminar-17');\nboton.addEventListener('click', () => {\n  document.querySelector('#articulo-17').remove();\n  document.querySelector('#estado').textContent = 'Producto eliminado del carrito.';\n});\n</script>"
+      },
+      "image": {
+        "id": "B2_movil",
+        "case_id": "B2",
+        "view": "mobile",
+        "path": "assets/cuestionario-v15/caso-4.png",
+        "drive_folder_url": "https://drive.google.com/drive/folders/1MVBJm_8zuvkJun8X3XZtK01X_VEiUSwa?usp=drive_link",
+        "drive_file_id": null,
+        "drive_file_name": null,
+        "alt_text": "Cuaderno de notas A5, precio 12,90 €, con botón Eliminar del carrito.",
+        "alt_text_review_required": true
+      }
+    },
+    {
+      "id": "S12",
+      "order": 12,
+      "title": "Caso práctico 5. Información sobre compostaje doméstico",
+      "questions": [
+        {
+          "id": "A2_P1",
+          "title": "¿Se cumple el requisito WCAG relacionado con este caso?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 5 · P1. ¿Se cumple el requisito WCAG relacionado con este caso?",
+          "options": [
+            {
+              "id": "A2_P1_O01",
+              "label": "Falla"
+            },
+            {
+              "id": "A2_P1_O02",
+              "label": "Pasa"
+            },
+            {
+              "id": "A2_P1_O03",
+              "label": "Información insuficiente"
+            },
+            {
+              "id": "A2_P1_O04",
+              "label": "No lo sé"
+            }
+          ]
+        },
+        {
+          "id": "A2_P2",
+          "title": "¿Por qué?",
+          "type": "short_text",
+          "required": true,
+          "source_heading": "Caso 5 · P2. ¿Por qué?",
+          "help_text": "Justifica tu respuesta en una frase breve. Si conoces el criterio WCAG, indícalo. Si no sabes justificarla, escribe «No lo sé»."
+        },
+        {
+          "id": "A2_P3",
+          "title": "¿Qué confianza tienes en tu respuesta?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 5 · P3. ¿Qué confianza tienes en tu respuesta?",
+          "options": [
+            {
+              "id": "A2_P3_O01",
+              "label": "1 · Ninguna",
+              "value": 1
+            },
+            {
+              "id": "A2_P3_O02",
+              "label": "2 · Poca",
+              "value": 2
+            },
+            {
+              "id": "A2_P3_O03",
+              "label": "3 · Confianza moderada",
+              "value": 3
+            },
+            {
+              "id": "A2_P3_O04",
+              "label": "4 · Bastante",
+              "value": 4
+            },
+            {
+              "id": "A2_P3_O05",
+              "label": "5 · Mucha",
+              "value": 5
+            }
+          ]
+        }
+      ],
+      "case_id": "A2",
+      "description": "Analiza cómo se presenta la información sobre compostaje doméstico en una web municipal.",
+      "scenario": "Una web municipal muestra una infografía con cuatro pasos para hacer compost en casa. Junto a la imagen aparece una lista de texto con los mismos pasos y toda la información necesaria para seguirlos.",
+      "code": {
+        "language": "html",
+        "text": "<section aria-labelledby=\"compost-titulo\">\n  <h2 id=\"compost-titulo\">Compostaje doméstico</h2>\n  <img src=\"compostaje.png\"\n       alt=\"Proceso de compostaje; pasos descritos a continuación\">\n  <ol>\n    <li>Separar los restos vegetales de cocina.</li>\n    <li>Mezclar con hojas y cartón seco.</li>\n    <li>Airear la mezcla periódicamente.</li>\n    <li>Utilizar el compost cuando haya madurado.</li>\n  </ol>\n</section>"
+      },
+      "image": {
+        "id": "A2_movil",
+        "case_id": "A2",
+        "view": "mobile",
+        "path": "assets/cuestionario-v15/caso-5.png",
+        "drive_folder_url": "https://drive.google.com/drive/folders/1MVBJm_8zuvkJun8X3XZtK01X_VEiUSwa?usp=drive_link",
+        "drive_file_id": null,
+        "drive_file_name": null,
+        "alt_text": "Cuatro pasos de compostaje: separar restos vegetales, mezclar con hojas y cartón, airear y usar el compost maduro.",
+        "alt_text_review_required": true
+      }
+    },
+    {
+      "id": "S13",
+      "order": 13,
+      "title": "Caso práctico 6. Enviar una incidencia de alumbrado público",
+      "questions": [
+        {
+          "id": "B1_P1",
+          "title": "¿Se cumple el requisito WCAG relacionado con este caso?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 6 · P1. ¿Se cumple el requisito WCAG relacionado con este caso?",
+          "options": [
+            {
+              "id": "B1_P1_O01",
+              "label": "Falla"
+            },
+            {
+              "id": "B1_P1_O02",
+              "label": "Pasa"
+            },
+            {
+              "id": "B1_P1_O03",
+              "label": "Información insuficiente"
+            },
+            {
+              "id": "B1_P1_O04",
+              "label": "No lo sé"
+            }
+          ]
+        },
+        {
+          "id": "B1_P2",
+          "title": "¿Por qué?",
+          "type": "short_text",
+          "required": true,
+          "source_heading": "Caso 6 · P2. ¿Por qué?",
+          "help_text": "Justifica tu respuesta en una frase breve. Si conoces el criterio WCAG, indícalo. Si no sabes justificarla, escribe «No lo sé»."
+        },
+        {
+          "id": "B1_P3",
+          "title": "¿Qué confianza tienes en tu respuesta?",
+          "type": "single_select",
+          "required": true,
+          "source_heading": "Caso 6 · P3. ¿Qué confianza tienes en tu respuesta?",
+          "options": [
+            {
+              "id": "B1_P3_O01",
+              "label": "1 · Ninguna",
+              "value": 1
+            },
+            {
+              "id": "B1_P3_O02",
+              "label": "2 · Poca",
+              "value": 2
+            },
+            {
+              "id": "B1_P3_O03",
+              "label": "3 · Confianza moderada",
+              "value": 3
+            },
+            {
+              "id": "B1_P3_O04",
+              "label": "4 · Bastante",
+              "value": 4
+            },
+            {
+              "id": "B1_P3_O05",
+              "label": "5 · Mucha",
+              "value": 5
+            }
+          ]
+        }
+      ],
+      "case_id": "B1",
+      "description": "Analiza el comportamiento de un formulario de comunicación de incidencias en una web municipal.",
+      "scenario": "Una persona quiere avisar al ayuntamiento de una farola averiada. En cuanto presiona «Enviar incidencia» con el ratón o toca el botón con el dedo, la solicitud se envía, antes de soltar. Si aparta el puntero o el dedo, el envío no se cancela. Soltar tampoco revierte el envío y no hay opción de deshacerlo. No es necesario que el envío se realice al presionar.",
+      "code": null,
+      "image": {
+        "id": "B1_movil",
+        "case_id": "B1",
+        "view": "mobile",
+        "path": "assets/cuestionario-v15/caso-6.png",
+        "drive_folder_url": "https://drive.google.com/drive/folders/1MVBJm_8zuvkJun8X3XZtK01X_VEiUSwa?usp=drive_link",
+        "drive_file_id": null,
+        "drive_file_name": null,
+        "alt_text": "Formulario municipal con un botón Enviar incidencia.",
+        "alt_text_review_required": true
+      }
+    },
+    {
+      "id": "S14",
+      "order": 14,
+      "title": "Futuras investigaciones",
+      "questions": [
+        {
+          "id": "P15",
+          "title": "Correo electrónico (opcional)",
+          "type": "short_text",
+          "required": false,
+          "source_heading": "P15. Correo electrónico (opcional)",
+          "validation": {
+            "format": "email"
+          },
+          "purpose": "future_research_contact",
+          "help_text": "Al facilitarlo, aceptas recibir las comunicaciones descritas.",
+          "recommended_separate_storage": false
+        }
+      ],
+      "description": "¿Quieres colaborar en futuras investigaciones sobre accesibilidad digital? Si deseas recibir información o invitaciones a participar en nuevos estudios, puedes facilitarnos tu correo electrónico. Es voluntario y no condiciona tu participación. No recibirás publicidad ni comunicaciones comerciales. Puedes retirar tu consentimiento para futuras comunicaciones."
+    }
+  ],
+  "completion_message": "¡Gracias por participar!\nTu participación contribuye a mejorar el conocimiento sobre las competencias en accesibilidad digital, identificar las dificultades de aprendizaje y orientar futuras propuestas formativas.\nGracias por colaborar en esta investigación."
+}
