@@ -371,7 +371,8 @@
    item.error.textContent=message;
    invalid.setAttribute('aria-invalid','true');
    invalid.setAttribute('aria-describedby',item.help+' '+item.error.id);
-   invalid.focus();
+   item.field.scrollIntoView({block:'center',inline:'nearest'});
+   invalid.focus({preventScroll:true});
    return false;
   }
   return true;
