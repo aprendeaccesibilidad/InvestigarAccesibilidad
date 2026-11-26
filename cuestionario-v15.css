@@ -334,6 +334,27 @@
   border-color: var(--udl);
   box-shadow: inset 0 0 0 1px var(--udl);
 }
+.questionnaire-mobile-scale-help { display: none; }
+@media (max-width: 600px) {
+  .questionnaire-field.has-compact-scale > .questionnaire-help { display: none; }
+  .questionnaire-field.has-compact-scale > .questionnaire-mobile-scale-help {
+    display: block;
+    margin: .25rem 0 .75rem;
+    font-weight: 650;
+    color: #33202c;
+  }
+  .study-scale-caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
 @media (max-width: 480px) {
   .study-scale { gap: .2rem; }
   .study-scale .study-scale-option { min-height: 3.75rem; padding-inline: .1rem; }
