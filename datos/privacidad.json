@@ -10,7 +10,6 @@
   "contactLabel": "aprendeaccesibilidad@gmail.com",
   "consentDisplay": {
     "statement": "He leído la información del estudio y acepto participar voluntariamente.",
-    "explanation": "Esta decisión permite iniciar el cuestionario. No autoriza comunicaciones ni la vinculación de futuras evaluaciones.",
     "help": "Marca la casilla para comenzar el cuestionario."
   }
 }

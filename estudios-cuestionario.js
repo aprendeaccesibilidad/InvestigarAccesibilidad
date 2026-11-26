@@ -11,6 +11,7 @@
  let studySent = false;
  const stepLabel = index => 'Paso '+(index+(id==='E2'?0:1))+' de '+(groups.length-(id==='E2'?1:0));
  const mobileLayout = matchMedia('(max-width: 760px)');
+ const mobileNavigation = matchMedia('(max-width: 1024px)');
  const view = name => {
   for (const panel of ['study-introduction','study-wizard','study-invitation','study-completion']) $(panel).hidden = panel !== name;
   document.body.classList.toggle('study-in-progress', name === 'study-wizard');
@@ -158,7 +159,7 @@
  }
 
  function persist() {
-  if (!started) return;
+  if (!started || id==='E2') return;
   if (!write(draftKey, {layout:2, step, furthest, answers, reused, timing, submissionId, contactDraft, studySent})) {
    text('study-status','El navegador no permite guardar el borrador. Mantén esta página abierta para conservar tus respuestas.');
   }
@@ -249,8 +250,8 @@
    q.options.slice(5).every(option=>option.score === undefined);
   const help = compact ? [q.options.length === 5
    ? 'Selecciona un valor de 1 a 5.'
-   : 'Selecciona un valor de 1 a 5 o una de las opciones de abajo.'] : [...(q.instructions || [])];
-  if (compact) help.push('Usa las flechas ← y → para cambiar de opción.');
+   : 'Selecciona un valor de 1 a 5 o una de las opciones de abajo.',
+   'Usa las flechas para cambiar de opción. Pulsa la barra espaciadora para seleccionar.'] : [...(q.instructions || [])];
   const instructions = el('p', help.join(' '), {id:key+'-help', class:'questionnaire-help'});
   field.append(title,error,instructions);
   const item = {q, field, panel, error, numberLabel, displayNumber:id === 'E2' ? '' : q.id,
@@ -310,18 +311,26 @@
     (scaleOption ? optionsRoot : field).append(label);
    }
   }
-  if (q.type === 'multiple') {
-   field.addEventListener('keydown', event => {
-    if (!['ArrowUp','ArrowDown'].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
-    const visible = item.choices.filter(choice => !choice.control.disabled && !choice.label.hidden);
-    const current = visible.findIndex(choice => choice.control === event.target);
-    if (current < 0) return;
+  field.addEventListener('keydown', event => {
+   const radio = event.target instanceof HTMLInputElement && event.target.type === 'radio';
+   if (radio && (event.key === ' ' || event.key === 'Spacebar')) {
     event.preventDefault();
-    const direction = event.key === 'ArrowUp' ? -1 : 1;
-    const next = Math.max(0,Math.min(visible.length-1,current+direction));
-    visible[next].control.focus();
-   });
-  }
+    if (!event.target.checked) {
+     event.target.checked = true;
+     event.target.dispatchEvent(new Event('change', {bubbles:true}));
+    }
+    return;
+   }
+   if (q.type !== 'multiple' || !['ArrowUp','ArrowDown'].includes(event.key) ||
+       event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+   const visible = item.choices.filter(choice => !choice.control.disabled && !choice.label.hidden);
+   const current = visible.findIndex(choice => choice.control === event.target);
+   if (current < 0) return;
+   event.preventDefault();
+   const direction = event.key === 'ArrowUp' ? -1 : 1;
+   const next = Math.max(0,Math.min(visible.length-1,current+direction));
+   visible[next].control.focus();
+  });
   for (const option of optionsFor(q).filter(o => o.allowOtherText)) {
    const other=otherKey(q,option);
    const label=el('label','',{class:'questionnaire-other'});
@@ -400,7 +409,7 @@
   updateCaseMedia(groups[index]);
   heading('current-step',groups[index].dataset.title);
   text('step-announcement',stepLabel(index));
-  text('study-next',index===groups.length-1?'Enviar respuestas':'Continuar →');
+  text('study-next',index===groups.length-1 ? (id==='E2' ? 'Finalizar cuestionario' : 'Enviar respuestas') : 'Continuar →');
   $('study-back').hidden=index===0 || studySent;
   $('study-next').hidden=groups[index].contains($('study-contact'));
   $('study-steps').replaceChildren(...groups.map((panel,i)=>{
@@ -412,7 +421,18 @@
    li.append(button);return li;
   }));
   if (index===groups.length-1) renderReview();
-  $('current-step').focus();
+  const title = $('current-step');
+  if (id==='E1' && mobileNavigation.matches) {
+   title.focus({preventScroll:true});
+   requestAnimationFrame(()=>{
+    if (step===index && document.activeElement===title) {
+     const top = window.scrollY + title.getBoundingClientRect().top - 16;
+     window.scrollTo({top,behavior:'instant'});
+    }
+   });
+  } else {
+   title.focus();
+  }
   persist();
  }
 
@@ -503,15 +523,17 @@
    panel.append(evidence);
    for (const q of item.questions) panel.append(question(q,panel));
   }
-  const contactPanel = buildPanel(final.contact.title,'Correo opcional');
-  const contact = $('study-contact');
-  contactPanel.append(contact);
-  contact.hidden = false;
-  configureContact();
+  if (id==='E1') {
+   const contactPanel = buildPanel(final.contact.title,'Correo opcional');
+   const contact = $('study-contact');
+   contactPanel.append(contact);
+   contact.hidden = false;
+   configureContact();
+  }
   if (study.controlQuestions?.length) {
    const panel=buildPanel('Antes de enviar','Revisión final');
    for (const q of study.controlQuestions) panel.append(question(q,panel));
-   panel.append(el('p','Usa «Anterior» o el menú de pasos si quieres revisar tus respuestas antes de enviarlas.'));
+   panel.append(el('p','Usa «Anterior» o el menú de pasos para revisar tus respuestas antes de finalizar.'));
   } else {
    const panel=buildPanel('Revisa tus respuestas','Envío');
    panel.append(el('p','Usa «Anterior» o el menú de pasos para revisar tus respuestas. Pulsa «Enviar respuestas» cuando hayas terminado.'));
@@ -542,7 +564,7 @@
   const root=$('study-review');
   const openCategories = new Set([...root.querySelectorAll('details[open]')].map(category=>category.dataset.title));
   root.replaceChildren();
-  root.append(el('p', contactDraft
+  if (id==='E1') root.append(el('p', contactDraft
    ? 'El correo opcional se guardará al enviar las respuestas.'
    : 'Has elegido enviar las respuestas sin facilitar un correo electrónico.'));
   for (const panel of groups) {
@@ -604,8 +626,7 @@
  }
 
  function configureContact() {
-  const savedEmail = id === 'E2' ? read(contactKey,'') : '';
-  $('contact-email').value = contactDraft?.email || savedEmail;
+  $('contact-email').value = contactDraft?.email || '';
   $('contact-consent').checked = Boolean(contactDraft);
   text('email-copy',final.contact.description);
   text('email-label',final.contact.emailLabel);
@@ -615,8 +636,12 @@
  }
 
  function completion() {
+  const practice = study?.id === 'E2';
   text('completion-title',final.title);
-  text('completion-copy',final.description);
+  text('completion-copy',practice ? 'Has finalizado el Estudio 2. Las respuestas de los casos no se han guardado.' : final.description);
+  const email = practice ? read(contactKey,'') : '';
+  text('completion-email-value',email);
+  $('completion-email').hidden = !email;
   text('results-title',final.results.title);
   text('results-copy',final.results.description);
   text('results-link',final.results.label);
@@ -637,6 +662,12 @@
  function completed(alreadyRecorded = false) {
   remove(draftKey);
   started=false;
+  if (id==='E2') {
+   remove(commonKey('E2'));
+   write('investigar:estudios:completado:E2:'+study.version,true);
+   completion();
+   return;
+  }
   if (!endpoint) {
    text('study-status','Vista previa completada. Las respuestas no se enviaron.');
   } else if (!alreadyRecorded) {
@@ -650,11 +681,18 @@
    saved.P03 = answers.P03;
    write(commonKey(study.id),saved);
   }
-  if (id==='E2' || completedOther()) { completion(); return; }
+  if (completedOther()) { completion(); return; }
   text('invitation-title',study.completion.title);
   text('invitation-description',endpoint?study.completion.description:'Has terminado la vista previa del Estudio 1.');
   text('invitation-question',study.completion.invitationTitle);
-  text('invitation-text',study.completion.invitationText);
+  const {invitationText,invitationEmphasis} = study.completion;
+  const emphasisStart = invitationEmphasis ? invitationText.indexOf(invitationEmphasis) : -1;
+  if (emphasisStart < 0) text('invitation-text',invitationText);
+  else $('invitation-text').replaceChildren(
+   invitationText.slice(0,emphasisStart),
+   el('strong',invitationEmphasis),
+   invitationText.slice(emphasisStart+invitationEmphasis.length)
+  );
   text('invite-e2',study.completion.actions.find(action=>action.target==='E2').label);
   text('invite-finish',study.completion.actions.find(action=>action.target==='completion').label);
   $('repeat-profile').hidden = !endpoint;
@@ -736,7 +774,7 @@
    if (!validate(panel)) { showStep(i);validate(panel);return; }
    panel.hidden = true;
   }
-  if (!endpoint) { completed();return; }
+  if (id==='E2' || !endpoint) { completed();return; }
   const metadata = participationMetadata();
   pauseActivity();
   sending=true; $('study-next').disabled=true; $('study-answers').setAttribute('aria-busy','true'); text('submission-error','');
@@ -782,7 +820,13 @@
   commonPairs=study2.sections.flatMap(section=>section.questions)
    .filter(q=>q.reuseFrom).map(q=>[q.reuseFrom.questionId,q.id]);
   draftKey='investigar:estudios:borrador:'+id+':'+study.version;
-  const draft=read(draftKey,null);
+  const draft=id==='E1' ? read(draftKey,null) : null;
+  if (id==='E2') {
+   remove(draftKey);
+   if (read(contactKey,'')) {
+    text('study-status','Se ha recuperado el correo electrónico introducido en el Estudio 1.');
+   }
+  }
   const committed=read('investigar:estudios:completado:'+id+':'+study.version,false);
   if (endpoint && committed && !draft && !repeating && location.hash!=='#privacidad') {
    heading('study-title',study.title);text('study-description',study.description);completed(true);return;
@@ -791,14 +835,14 @@
    restoringDraft = true;
    answers=draft.answers; reused=draft.reused;
    submissionId = draft.submissionId || submissionId;
-   contactDraft = draft.contactDraft || null;
-   studySent = draft.studySent === true;
+   contactDraft = id==='E1' ? draft.contactDraft || null : null;
+   studySent = id==='E1' && draft.studySent === true;
    const offset = id==='E2' && draft.layout!==2 ? 1 : 0;
    step = Math.max(0,(draft.step || 0)-offset);
    if (draft.timing) timing = draft.timing;
    furthest=Math.min(99,Math.max(0,(draft.furthest || draft.step || 0)-offset));
-  } else if (!repeating) {
-   const saved=read(commonKey(id==='E1'?'E2':'E1'),{});
+  } else if (!repeating && id==='E1') {
+   const saved=read(commonKey('E2'),{});
    for(const [left,right] of commonPairs) {
     const from=id==='E1'?right:left, to=id==='E1'?left:right;
     if (!saved[from]) continue;
@@ -814,13 +858,15 @@
   text('study-meta',(endpoint?'Estudio activo':'Vista previa')+' · '+study.durationMinutes+' minutos estimados');
   text('study-notice',study.introNotice || 'La participación es voluntaria. Puedes retomar un borrador desde este navegador.');
   for(const paragraph of info.paragraphs) $('privacy-copy').append(el('p',paragraph));
-  $('privacy-copy').append(el('p','El borrador se guarda en este navegador para que puedas retomarlo. Tras el envío, el navegador conserva el código de participación y las respuestas de selección comunes a ambos estudios. Si facilitas tu correo, se guarda con ese mismo código en la pestaña de contactos y en este navegador para que puedas reutilizarlo en el Estudio 2.'));
+  $('privacy-copy').append(el('p',id==='E2'
+   ? 'Las respuestas del Estudio 2 se mantienen abiertas durante esta sesión. Si recargas la página, tendrás que empezar de nuevo. Si ya facilitaste tu correo en el Estudio 1 desde este navegador, se mostrará en la pantalla final.'
+   : 'El borrador se guarda en este navegador para que puedas retomarlo. Tras el envío, el navegador conserva el código de participación y las respuestas de selección comunes a ambos estudios. Si facilitas tu correo, se guarda con ese mismo código en la pestaña de contactos y en este navegador.'));
   const timingNotice = 'Para analizar la participación registramos la fecha y hora de inicio y fin, las duraciones, el tipo de dispositivo, la familia del navegador y el idioma del cuestionario.';
-  $('privacy-copy').append(el('p',timingNotice));
+  if (id==='E1') $('privacy-copy').append(el('p',timingNotice));
   const contact=el('p',info.contactText);
   contact.append(el('a',info.contactLabel,{href:'mailto:'+info.contactEmail}),'.');
   $('privacy-copy').append(contact);
-  text('agreement-label',info.consentDisplay.statement+' '+info.consentDisplay.explanation);
+  text('agreement-label',info.consentDisplay.statement);
   buildStudyIntroduction();
   build();
   step = Math.min(groups.length-1,step);

@@ -1230,6 +1230,7 @@
     "description": "Tus respuestas se han registrado correctamente. Tu participación contribuye a conocer la trayectoria, la formación, la práctica profesional y los conocimientos percibidos en accesibilidad digital.",
     "invitationTitle": "¿Quieres poner a prueba tus conocimientos sobre las WCAG?",
     "invitationText": "Participa en el estudio 2 evaluando casos prácticos de accesibilidad digital y contribuye a conocer cómo se comprenden y aplican las WCAG. La participación es voluntaria. Duración estimada: 15 minutos.",
+    "invitationEmphasis": "estudio 2 evaluando casos prácticos de accesibilidad digital y contribuye a conocer cómo se comprenden y aplican las WCAG",
     "actions": [
       {
         "label": "Continuar al estudio 2",

@@ -8,12 +8,12 @@
   "title": "Estudio 2. Comprensión y aplicación de las WCAG",
   "description": "Investigamos los conocimientos y las competencias de evaluación de la accesibilidad digital mediante casos prácticos.",
   "durationMinutes": 15,
-  "introNotice": "La participación es voluntaria. Puedes retomar el cuestionario en el mismo navegador.",
+  "introNotice": "La participación es voluntaria. Mantén la página abierta mientras respondes.",
   "sections": [
     {
       "id": "S2",
       "title": "Sección 2. Perfil mínimo y conocimientos percibidos",
-      "description": "Si ya has participado en el estudio 1, no tendrás que volver a responder las preguntas comunes. Responde las preguntas restantes antes de los casos prácticos.",
+      "description": "Responde las preguntas restantes antes de los casos prácticos.",
       "questions": [
         {
           "id": "P01",

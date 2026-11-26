@@ -36,3 +36,7 @@ GitHub Pages sirve las páginas estáticas. Apps Script utiliza la hoja privada 
 ## Estudios actuales
 
 La navegación pública abre `participa-estudios.html` y `observatorio-estudios.html`. Las preguntas, las demostraciones de los casos y la pantalla final se cargan desde `datos/`. Los borradores se guardan por estudio en el navegador. Para activar Google Sheets y publicar los resultados, consulta [la guía de integración](integracion-google/README.md#estudios-1-y-2).
+
+## Demostración local del Observatorio
+
+Ejecuta `node integracion-google/generar-demo.mjs` desde la raíz y abre [la demostración](http://localhost:8000/observatorio-estudios.html?demo=1). El comando genera 20 respuestas ficticias por estudio y 20 contactos compartidos, con direcciones de ejemplo. Los resultados se calculan con las mismas reglas de agregación del Observatorio. Los archivos quedan en `datos/demo/`, fuera de Git y de Google Sheets.

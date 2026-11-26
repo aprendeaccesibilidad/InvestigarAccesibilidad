@@ -196,6 +196,7 @@ function metadataCells_(study, metadata) {
 }
 
 function saveStudy_(data) {
+  if (data.studyId === 'E2') fail_('El Estudio 2 se completa sin guardar respuestas.');
   const study = Object.prototype.hasOwnProperty.call(STUDIES, data.studyId) && STUDIES[data.studyId];
   if (!study) fail_('El servicio de guardado no reconoce este estudio.');
   if (study.version !== data.version) {
@@ -272,6 +273,7 @@ function contactSheet_(book) {
 }
 
 function saveContact_(data) {
+  if (data.studyId === 'E2') fail_('El Estudio 2 no recoge correos electrónicos.');
   const email = typeof data.email === 'string' ? data.email.trim() : '';
   const study = Object.prototype.hasOwnProperty.call(STUDIES, data.studyId) && STUDIES[data.studyId];
   if (!study || !ID_PATTERN.test(data.participant) || !ID_PATTERN.test(data.submissionId) ||

@@ -6,9 +6,10 @@
 <meta name="theme-color" content="#830051">
 <meta name="description" content="Investigar Accesibilidad Digital: observatorio de competencias en accesibilidad digital.">
 <title>Resultados del Estudio 1 - Investigar Accesibilidad Digital</title>
-<link rel="stylesheet" href="styles.css?v=portal-36">
-<link rel="stylesheet" href="observatorio.css?v=publico-6">
-<link rel="stylesheet" href="observatorio-cuestionario.css?v=5">
+<link rel="stylesheet" href="styles.css?v=portal-38">
+<link rel="stylesheet" href="observatorio.css?v=publico-7">
+<link rel="stylesheet" href="observatorio-cuestionario.css?v=7">
+<link rel="stylesheet" href="observatorio-aciertos.css?v=21">
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a><div class="topline"></div>
@@ -27,28 +28,33 @@
   <h1 id="study-result-title">Perfil y experiencia en accesibilidad digital</h1>
   <p>Resultados sobre el perfil, la experiencia, la formación y los conocimientos percibidos de quienes respondieron.</p>
  </div></section>
- <div class="container obs">
+ <div class="container obs obs-dashboard">
+  <aside class="obs-sidebar"><details class="oa-mobile-menu" open><summary>Explorar resultados</summary><nav class="obs-sidebar-nav" aria-label="Secciones de resultados del Estudio 1">
+   <h2>Explorar resultados</h2><a href="#resumen">Vista general</a><a href="#resultados-perfil">Resultados por pregunta</a>
+   <ul id="profile-results-links"></ul><a href="#metodologia">Cómo interpretar los datos</a>
+  </nav></details></aside><div class="obs-main">
+    <!--
   <nav class="obs-nav" aria-label="Otras vistas del Observatorio">
    <a href="observatorio-estudio-2.html">Resultados del Estudio 2</a>
    <a href="observatorio-destacados.html">Hallazgos destacados</a>
    <a href="observatorio-estudios.html#analisis-combinado">Análisis combinado</a>
   </nav>
-  <p id="results-status" role="status">Cargando los resultados…</p>
-  <div id="results-kpis" class="grid-3"></div>
-  <section class="obs-section" aria-labelledby="visual-summary-title">
-   <h2 id="visual-summary-title" class="obs-infographic-heading">Perfil, práctica y formación</h2>
-   <div id="profile-infographic" class="obs-infographic-grid"></div>
+  -->
+  <section id="resumen" class="obs-section obs-summary" aria-label="Resumen de resultados">
+   <p id="results-status" role="status">Cargando los resultados…</p>
+   <div id="results-kpis" class="grid-3"></div>
+   <div id="oa-top-kpis" class="oa-top-kpis" hidden></div>
   </section>
   <section id="resultados-perfil" class="obs-section" tabindex="-1">
    <h2 class="obs-infographic-heading">Resultados por pregunta</h2>
    <div id="profile-questions"></div>
   </section>
-  <details class="obs-panel obs-method">
+  <details id="metodologia" class="obs-panel obs-method">
    <summary>Cómo interpretar los resultados</summary>
    <p>Los porcentajes se calculan sobre quienes respondieron a cada pregunta. En preguntas de selección múltiple pueden sumar más del 100 %. Los datos se publican de forma agregada a partir de cinco respuestas y se reservan los grupos pequeños.</p>
   </details>
   <noscript><p>Activa JavaScript para consultar las preguntas y los resultados agregados.</p></noscript>
- </div>
+  </div></div>
 </main>
 <footer class="footer">
  <div class="container footer-row">
@@ -70,7 +76,8 @@
  </div>
 </footer>
 <script src="texto-portal.js" defer></script>
-<script src="observatorio-estudios.js?v=6" defer></script>
+<script src="observatorio-aciertos.js?v=21" defer></script>
+<script src="observatorio-estudios.js?v=21" defer></script>
 <script src="mobile-nav.js?v=secciones-5"></script><nav class="mobile-bottom-nav" aria-label="Navegación móvil principal">
  <a href="index.html" data-mobile-item="inicio"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><span>Inicio</span></a>
  <a href="index.html#estudios" data-mobile-item="estudios"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 4.5v-1h6v1M9 11h6M9 15h4"/></svg></span><span>Estudios</span></a>
