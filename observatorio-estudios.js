@@ -989,7 +989,7 @@ function question(parent,q,data){const card=e('article',undefined,'oa-panel');ca
  if(rows.length)table(card,rows);else card.append(e('p','No hay categorías publicables.'));
  if(data.partial)card.append(e('p','Algunas categorías están reservadas por privacidad.','oa-note'));if(q.type==='multiple')card.append(e('p','Selección múltiple: los porcentajes pueden superar el 100 %.','oa-note'));parent.append(card);
 }
-function render(snapshot,id){const study=snapshot.studies[id],qs=study.questions||{}, profile=id==='E1', k=$('results-kpis'),root=$(profile?'profile-questions':'wcag-questions'),links=$(profile?'profile-results-links':'wcag-results-links'),info=$(profile?'profile-infographic':'wcag-infographic');
+function render(snapshot,id){const study=snapshot.studies[id];if(!study||!finite(study.total)||study.total<=0){$('results-status').textContent='No hay datos.';return;}const qs=study.questions||{}, profile=id==='E1', k=$('results-kpis'),root=$(profile?'profile-questions':'wcag-questions'),links=$(profile?'profile-results-links':'wcag-results-links'),info=$(profile?'profile-infographic':'wcag-infographic');
  for(const n of [k,root,links,info])if(n)n.replaceChildren();
  const card=e('div',undefined,'oa-top-card');const value=e('p',show(study.total),'oa-participant-number');value.style.fontSize='2rem';value.style.fontWeight='700';value.style.margin='.4rem 0';card.append(e('strong','Participantes'),value);const situation=qs.P02;
  const breakdown=e('dl',undefined,'oa-participant-breakdown');
@@ -1042,7 +1042,7 @@ function render(snapshot,id){const study=snapshot.studies[id],qs=study.questions
 }
 async function load(){const status=$('results-status');if(!status)return;const id=$('profile-questions')?'E1':'E2';status.textContent='Cargando los resultados…';let timer;
  try{if(APPS_SCRIPT_URL==='PEGA_AQUI_LA_URL_EXEC')throw new Error('Configura APPS_SCRIPT_URL en observatorio-estudios.js con la URL de la aplicación web de Apps Script (/exec).');const url=new URL(APPS_SCRIPT_URL);if(url.protocol!=='https:'||url.hostname!=='script.google.com'||!url.pathname.endsWith('/exec'))throw new Error('La URL debe ser la de la implementación web de Apps Script, terminada en /exec.');url.searchParams.set('action','observatorio');url.searchParams.set('_',Date.now().toString());const ctrl=new AbortController();timer=setTimeout(()=>ctrl.abort(),20000);const response=await fetch(url,{signal:ctrl.signal,cache:'no-store',credentials:'omit'});if(!response.ok)throw new Error('El servidor respondió con HTTP '+response.status);const snapshot=await response.json();if(snapshot.ok!==true)throw new Error('El servicio no publica resultados. Comprueba PUBLICAR_OBSERVATORIO y ejecuta publicarObservatorio.');if(!snapshot.studies?.[id])throw new Error('El JSON no contiene el estudio solicitado.');if(snapshot.versions?.[id]!=='1.5')throw new Error('La versión de los datos no coincide con la versión 1.5.');render(snapshot,id);}
- catch(err){console.error('Observatorio:',err);status.replaceChildren(e('span',err.name==='AbortError'?'La consulta ha superado el tiempo de espera.':'No se han podido cargar los resultados. '+err.message));const retry=e('button','Reintentar');retry.type='button';retry.addEventListener('click',load,{once:true});status.append(document.createTextNode(' '),retry);}finally{clearTimeout(timer);}}
+ catch(err){console.error('Observatorio:',err);status.textContent='No hay datos.';}finally{clearTimeout(timer);}}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',load,{once:true});else load();
 })();
 
