@@ -1,0 +1,1869 @@
+{
+  "schemaVersion": "1.0",
+  "language": "es",
+  "privacyNotice": null,
+  "requireConsentBeforeStart": true,
+  "id": "E2",
+  "version": "1.5",
+  "title": "Estudio 2. Comprensión y aplicación de las WCAG",
+  "description": "Investigamos los conocimientos y las competencias de evaluación de la accesibilidad digital mediante casos prácticos.",
+  "durationMinutes": 15,
+  "introNotice": "La participación es voluntaria. Puedes retomar el cuestionario en el mismo navegador.",
+  "sections": [
+    {
+      "id": "S2",
+      "title": "Sección 2. Perfil mínimo y conocimientos percibidos",
+      "description": "Si ya has participado en el estudio 1, no tendrás que volver a responder las preguntas comunes. Responde las preguntas restantes antes de los casos prácticos.",
+      "questions": [
+        {
+          "id": "P01",
+          "text": "¿Cómo has conocido este estudio?",
+          "required": false,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Congreso, seminario o jornada profesional"
+            },
+            {
+              "id": "o02",
+              "label": "LinkedIn"
+            },
+            {
+              "id": "o03",
+              "label": "Otras redes sociales"
+            },
+            {
+              "id": "o04",
+              "label": "Comunidades o asociaciones profesionales"
+            },
+            {
+              "id": "o05",
+              "label": "Recomendación de compañeros, docentes o profesionales"
+            },
+            {
+              "id": "o06",
+              "label": "Otros canales (especificar)",
+              "allowOtherText": true
+            }
+          ],
+          "instructions": [
+            "Selecciona una opción."
+          ],
+          "reuseFrom": {
+            "studyId": "E1",
+            "questionId": "P01",
+            "askIfMissing": true
+          },
+          "emphasis": [
+            "conocido"
+          ]
+        },
+        {
+          "id": "P02",
+          "text": "¿Cuál es tu situación actual?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Estudiante"
+            },
+            {
+              "id": "o02",
+              "label": "Profesional en activo"
+            },
+            {
+              "id": "o03",
+              "label": "Docente o investigador/a"
+            },
+            {
+              "id": "o04",
+              "label": "Actualmente no trabajo ni estudio",
+              "exclusive": true
+            },
+            {
+              "id": "o05",
+              "label": "Otra situación"
+            }
+          ],
+          "instructions": [
+            "Selecciona una opción."
+          ],
+          "reuseFrom": {
+            "studyId": "E1",
+            "questionId": "P02",
+            "askIfMissing": true
+          },
+          "emphasis": [
+            "situación actual"
+          ]
+        },
+        {
+          "id": "P03",
+          "text": "¿En qué áreas trabajas, estudias o investigas?",
+          "required": true,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Diseño digital y UX/UI."
+            },
+            {
+              "id": "o02",
+              "label": "Desarrollo web o software."
+            },
+            {
+              "id": "o03",
+              "label": "Evaluación, auditoría, consultoría de accesibilidad y calidad digital (QA)."
+            },
+            {
+              "id": "o05",
+              "label": "Creación y gestión de contenidos digitales."
+            },
+            {
+              "id": "o06",
+              "label": "Gestión de proyectos o productos digitales."
+            },
+            {
+              "id": "o07",
+              "label": "Docencia e investigación."
+            },
+            {
+              "id": "o08",
+              "label": "Otros ámbitos (especificar).",
+              "allowOtherText": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan."
+          ],
+          "emphasis": [
+            "trabajas, estudias o investigas"
+          ]
+        },
+        {
+          "id": "P04",
+          "text": "¿Cuánto tiempo llevas realizando actividades profesionales relacionadas con la accesibilidad digital?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Ninguna experiencia profesional en accesibilidad digital."
+            },
+            {
+              "id": "o02",
+              "label": "Menos de 1 año."
+            },
+            {
+              "id": "o03",
+              "label": "De 1 a 3 años."
+            },
+            {
+              "id": "o04",
+              "label": "De 3 a 6 años."
+            },
+            {
+              "id": "o05",
+              "label": "De 6 a 10 años."
+            },
+            {
+              "id": "o06",
+              "label": "10 años o más."
+            }
+          ],
+          "instructions": [
+            "Selección única."
+          ],
+          "reuseFrom": {
+            "studyId": "E1",
+            "questionId": "P09",
+            "askIfMissing": true
+          },
+          "emphasis": [
+            "Cuánto tiempo",
+            "actividades profesionales"
+          ]
+        },
+        {
+          "id": "P05",
+          "text": "¿Cuánto tiempo hace que empezaste a aprender sobre accesibilidad digital? Incluye tanto la formación organizada como el aprendizaje por tu cuenta.",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Todavía no he aprendido sobre accesibilidad digital."
+            },
+            {
+              "id": "o02",
+              "label": "Menos de 1 año."
+            },
+            {
+              "id": "o03",
+              "label": "De 1 a 3 años."
+            },
+            {
+              "id": "o04",
+              "label": "De 3 a 6 años."
+            },
+            {
+              "id": "o05",
+              "label": "De 6 a 10 años."
+            },
+            {
+              "id": "o06",
+              "label": "10 años o más."
+            }
+          ],
+          "instructions": [
+            "Selección única."
+          ],
+          "reuseFrom": {
+            "studyId": "E1",
+            "questionId": "P10",
+            "askIfMissing": true
+          },
+          "emphasis": [
+            "Cuánto tiempo",
+            "aprender sobre accesibilidad digital"
+          ]
+        },
+        {
+          "id": "P06",
+          "text": "¿Cuánto tiempo llevas realizando evaluaciones de accesibilidad digital con los criterios WCAG? Incluye evaluaciones profesionales, académicas y por tu cuenta.",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Nunca he realizado evaluaciones mediante las WCAG."
+            },
+            {
+              "id": "o02",
+              "label": "Menos de 1 año."
+            },
+            {
+              "id": "o03",
+              "label": "De 1 a 3 años."
+            },
+            {
+              "id": "o04",
+              "label": "De 3 a 6 años."
+            },
+            {
+              "id": "o05",
+              "label": "De 6 a 10 años."
+            },
+            {
+              "id": "o06",
+              "label": "10 años o más."
+            }
+          ],
+          "instructions": [
+            "Selección única."
+          ],
+          "emphasis": [
+            "Cuánto tiempo",
+            "evaluaciones de accesibilidad digital"
+          ]
+        },
+        {
+          "id": "P07",
+          "text": "En los últimos 12 meses, ¿con qué frecuencia has utilizado los criterios WCAG cuando has evaluado la accesibilidad digital?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Nunca."
+            },
+            {
+              "id": "o02",
+              "label": "Casi nunca."
+            },
+            {
+              "id": "o03",
+              "label": "Algunas veces."
+            },
+            {
+              "id": "o04",
+              "label": "Frecuentemente."
+            },
+            {
+              "id": "o05",
+              "label": "Siempre o casi siempre que realizo una evaluación."
+            },
+            {
+              "id": "o06",
+              "label": "No he realizado evaluaciones de accesibilidad en los últimos 12 meses."
+            }
+          ],
+          "instructions": [
+            "Selección única."
+          ],
+          "emphasis": [
+            "con qué frecuencia",
+            "criterios WCAG"
+          ]
+        },
+        {
+          "id": "P08",
+          "text": "¿Por qué vías has aprendido específicamente a interpretar y evaluar los criterios de conformidad de las WCAG?",
+          "required": true,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Asignaturas de estudios oficiales."
+            },
+            {
+              "id": "o02",
+              "label": "Cursos o formación especializada."
+            },
+            {
+              "id": "o03",
+              "label": "Formación interna en una empresa u organización."
+            },
+            {
+              "id": "o04",
+              "label": "Formación para obtener certificaciones profesionales."
+            },
+            {
+              "id": "o05",
+              "label": "Aprendizaje por mi cuenta."
+            },
+            {
+              "id": "o06",
+              "label": "Aprendizaje mediante la práctica profesional."
+            },
+            {
+              "id": "o07",
+              "label": "Otras vías de aprendizaje (especificar).",
+              "allowOtherText": true
+            },
+            {
+              "id": "o08",
+              "label": "No he aprendido específicamente sobre la evaluación de las WCAG.",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple. Marca todas las opciones que correspondan. La última opción es excluyente."
+          ],
+          "emphasis": [
+            "vías",
+            "interpretar y evaluar"
+          ]
+        },
+        {
+          "id": "P09",
+          "text": "¿Cómo valoras tus conocimientos de los criterios de conformidad de las WCAG?",
+          "required": true,
+          "type": "ordinal",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Muy limitados",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Limitados",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Intermedios",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Avanzados",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Muy avanzados",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selecciona un nivel del 1 al 5."
+          ],
+          "emphasis": [
+            "conocimientos de los criterios de conformidad"
+          ]
+        },
+        {
+          "id": "P10",
+          "text": "¿Qué confianza tienes en tu capacidad para decidir si una interfaz cumple o no un criterio WCAG?",
+          "required": true,
+          "type": "ordinal",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna confianza",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca confianza",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Confianza moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante confianza",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha confianza",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Escala ordinal de 1 a 5"
+          ],
+          "emphasis": [
+            "confianza",
+            "cumple o no"
+          ]
+        }
+      ],
+      "shortTitle": "Perfil"
+    }
+  ],
+  "caseInstructions": {
+    "title": "Cómo responder los casos",
+    "intro": "Vas a revisar seis casos de accesibilidad digital. Queremos conocer qué sabes ahora.",
+    "instructions": "",
+    "conditions": [
+      "Lee la descripción. Puedes ver el vídeo y consultar el código del caso si está disponible.",
+      "Valora solo el requisito de accesibilidad indicado en cada caso.",
+      "Usa tus conocimientos y la información del caso. Durante los seis casos, no consultes las pautas WCAG, buscadores, otras páginas web, apuntes ni herramientas de inteligencia artificial. Responde sin pedir ayuda.",
+      "Elige «No lo sé» si aparece entre las opciones. Si la pregunta es abierta, puedes escribirlo."
+    ],
+    "confirmation": {
+      "id": "conditionsAccepted",
+      "label": "He leído y comprendido estas instrucciones.",
+      "required": true
+    },
+    "ruleLabels": [
+      "Revisa el caso",
+      "Responde las preguntas",
+      "Trabaja por tu cuenta",
+      "Si tienes dudas"
+    ]
+  },
+  "cases": [
+    {
+      "id": "C1",
+      "title": "Sección 4. Caso práctico 1. Nueva transferencia",
+      "instruction": "Analiza la situación que se presenta en una interfaz de banca digital y responde las preguntas relacionadas con su accesibilidad.",
+      "description": "Una persona quiere enviar 1.200 € desde la web de su banco. Al pulsar «Enviar transferencia ahora», el dinero se transfiere de inmediato. La web no comprueba errores en los datos ni ofrece un paso para revisarlos, corregirlos y confirmar el envío. Después del envío, no se puede deshacer la operación.",
+      "images": [
+        {
+          "src": "assets/C1_desktop.png",
+          "view": "desktop",
+          "alt": "Formulario de transferencia con cuenta de destino, importe, concepto y un botón para enviar la transferencia.",
+          "video": "assets/C1-PC.mp4"
+        },
+        {
+          "src": "assets/C1_mobile.png",
+          "view": "mobile",
+          "alt": "Formulario de transferencia con cuenta de destino, importe, concepto y un botón para enviar la transferencia.",
+          "video": "assets/C1-MOVIL.mp4"
+        }
+      ],
+      "code": [
+        {
+          "language": "html",
+          "text": "<h1>Nueva transferencia</h1>\n<form action=\"/transferencias/ejecutar\" method=\"post\">\n  <label for=\"cuenta\">Cuenta de destino (IBAN)</label>\n  <input id=\"cuenta\" name=\"cuenta\" value=\"ES•• •••• 4567\">\n  <label for=\"importe\">Importe (€)</label>\n  <input id=\"importe\" name=\"importe\" value=\"1200,00\">\n  <label for=\"concepto\">Concepto</label>\n  <input id=\"concepto\" name=\"concepto\" value=\"Reserva de alquiler\">\n  <button type=\"submit\">Enviar transferencia ahora</button>\n</form>\n<!-- El servidor ejecuta sin comprobación con corrección,\n     revisión ni reversión. -->"
+        }
+      ],
+      "questions": [
+        {
+          "id": "P11",
+          "text": "Según la información del caso, ¿se cumple el requisito de accesibilidad WCAG relacionado con la situación descrita?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Falla. No se cumple el requisito.",
+              "icon": "fail"
+            },
+            {
+              "id": "o02",
+              "label": "Pasa. Se cumple el requisito.",
+              "icon": "pass"
+            },
+            {
+              "id": "o03",
+              "label": "Información insuficiente. Faltan datos para decidir si se cumple.",
+              "icon": "insufficient"
+            },
+            {
+              "id": "o04",
+              "label": "No lo sé. No sé cómo evaluar la situación.",
+              "icon": "unknown"
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "cumple el requisito de accesibilidad WCAG"
+          ]
+        },
+        {
+          "id": "P12",
+          "text": "¿Por qué has elegido esa respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Explica brevemente qué información del caso te ha llevado a esa conclusión. Si no sabes justificarla, indica «No lo sé».",
+            "Respuesta abierta"
+          ],
+          "emphasis": [
+            "Por qué"
+          ]
+        },
+        {
+          "id": "P13",
+          "text": "¿Con qué criterio o criterios WCAG relacionas este caso?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Si lo sabes, indica el número o el nombre del criterio.",
+            "Respuesta abierta · Máximo 150 caracteres."
+          ],
+          "maxLength": 150,
+          "emphasis": [
+            "criterio o criterios WCAG"
+          ]
+        },
+        {
+          "id": "P14",
+          "text": "¿Qué confianza tienes en tu respuesta sobre el cumplimiento del criterio?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna confianza",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca confianza",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Confianza moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante confianza",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha confianza",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "confianza"
+          ]
+        },
+        {
+          "id": "P15",
+          "text": "¿Qué dificultad has tenido para evaluar este caso?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna dificultad",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca dificultad",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Dificultad moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante dificultad",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha dificultad",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "dificultad"
+          ]
+        },
+        {
+          "id": "P16",
+          "text": "¿Qué más comprobarías para confirmar tu respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Indica qué información o comportamiento comprobarías. Si no necesitas comprobar nada más, indícalo.",
+            "Respuesta abierta · Máximo 600 caracteres."
+          ],
+          "maxLength": 600,
+          "emphasis": [
+            "más comprobarías"
+          ]
+        },
+        {
+          "id": "P17",
+          "text": "Si no se cumpliera el requisito relacionado con este caso, ¿a qué personas podría afectar?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Personas con discapacidad visual total"
+            },
+            {
+              "id": "o02",
+              "label": "Personas con baja visión"
+            },
+            {
+              "id": "o03",
+              "label": "Personas con discapacidad auditiva"
+            },
+            {
+              "id": "o04",
+              "label": "Personas con discapacidad motriz"
+            },
+            {
+              "id": "o05",
+              "label": "Personas con discapacidad cognitiva o dificultades de aprendizaje"
+            },
+            {
+              "id": "o06",
+              "label": "Ninguno de los perfiles anteriores",
+              "exclusive": true
+            },
+            {
+              "id": "o07",
+              "label": "No lo sé",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Marca todos los perfiles que consideres afectados. «Ninguno» y «No lo sé» son opciones excluyentes.",
+            "Selección múltiple. Puedes elegir «No lo sé»."
+          ],
+          "emphasis": [
+            "a qué personas podría afectar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1",
+      "title": "Sección 5. Caso práctico 2. Panel de ventas",
+      "instruction": "Analiza cómo se presenta la información en un panel de ventas y responde las preguntas relacionadas con su accesibilidad.",
+      "description": "Una web muestra un gráfico con las ventas de enero a junio de 2026. En la imagen aparecen los importes de cada mes y se observa una pequeña bajada en abril. La web no ofrece esos importes ni explica la evolución de las ventas fuera de la imagen. El código muestra el texto alternativo de la imagen.",
+      "images": [
+        {
+          "src": "assets/A1_desktop.png",
+          "view": "desktop",
+          "alt": "Gráfico de barras de ventas mensuales de enero a junio. La barra de abril es ligeramente menor que la de marzo.",
+          "video": "assets/A1-PC.mp4"
+        },
+        {
+          "src": "assets/A1_mobile.png",
+          "view": "mobile",
+          "alt": "Gráfico de barras de ventas mensuales de enero a junio. La barra de abril es ligeramente menor que la de marzo.",
+          "video": "assets/A1-MOVIL.mp4"
+        }
+      ],
+      "code": [
+        {
+          "language": "html",
+          "text": "<section aria-labelledby=\"ventas-titulo\">\n  <h2 id=\"ventas-titulo\">Ventas enero–junio de 2026</h2>\n  <img src=\"ventas-semestrales.png\" alt=\"Gráfico de ventas\">\n</section>"
+        }
+      ],
+      "questions": [
+        {
+          "id": "P18",
+          "text": "Según la información del caso, ¿se cumple el requisito de accesibilidad WCAG relacionado con la situación descrita?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Falla. No se cumple el requisito.",
+              "icon": "fail"
+            },
+            {
+              "id": "o02",
+              "label": "Pasa. Se cumple el requisito.",
+              "icon": "pass"
+            },
+            {
+              "id": "o03",
+              "label": "Información insuficiente. Faltan datos para decidir si se cumple.",
+              "icon": "insufficient"
+            },
+            {
+              "id": "o04",
+              "label": "No lo sé. No sé cómo evaluar la situación.",
+              "icon": "unknown"
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "cumple el requisito de accesibilidad WCAG"
+          ]
+        },
+        {
+          "id": "P19",
+          "text": "¿Por qué has elegido esa respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Explica brevemente qué información del caso te ha llevado a esa conclusión. Si no sabes justificarla, indica «No lo sé».",
+            "Respuesta abierta"
+          ],
+          "emphasis": [
+            "Por qué"
+          ]
+        },
+        {
+          "id": "P20",
+          "text": "¿Con qué criterio o criterios WCAG relacionas este caso?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Si lo sabes, indica el número o el nombre del criterio.",
+            "Respuesta abierta · Máximo 150 caracteres."
+          ],
+          "maxLength": 150,
+          "emphasis": [
+            "criterio o criterios WCAG"
+          ]
+        },
+        {
+          "id": "P21",
+          "text": "¿Qué confianza tienes en tu respuesta sobre el cumplimiento del criterio?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna confianza",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca confianza",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Confianza moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante confianza",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha confianza",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "confianza"
+          ]
+        },
+        {
+          "id": "P22",
+          "text": "¿Qué dificultad has tenido para evaluar este caso?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna dificultad",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca dificultad",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Dificultad moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante dificultad",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha dificultad",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "dificultad"
+          ]
+        },
+        {
+          "id": "P23",
+          "text": "¿Qué más comprobarías para confirmar tu respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Indica qué información o comportamiento comprobarías. Si no necesitas comprobar nada más, indícalo.",
+            "Respuesta abierta · Máximo 600 caracteres."
+          ],
+          "maxLength": 600,
+          "emphasis": [
+            "más comprobarías"
+          ]
+        },
+        {
+          "id": "P24",
+          "text": "Si no se cumpliera el requisito relacionado con este caso, ¿a qué personas podría afectar?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Personas con discapacidad visual total"
+            },
+            {
+              "id": "o02",
+              "label": "Personas con baja visión"
+            },
+            {
+              "id": "o03",
+              "label": "Personas con discapacidad auditiva"
+            },
+            {
+              "id": "o04",
+              "label": "Personas con discapacidad motriz"
+            },
+            {
+              "id": "o05",
+              "label": "Personas con discapacidad cognitiva o dificultades de aprendizaje"
+            },
+            {
+              "id": "o06",
+              "label": "Ninguno de los perfiles anteriores",
+              "exclusive": true
+            },
+            {
+              "id": "o07",
+              "label": "No lo sé",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Marca todos los perfiles que consideres afectados. «Ninguno» y «No lo sé» son opciones excluyentes.",
+            "Selección múltiple. Puedes elegir «No lo sé»."
+          ],
+          "emphasis": [
+            "a qué personas podría afectar"
+          ]
+        }
+      ],
+      "captions": "assets/A1-subtitulos.vtt",
+      "transcriptSrc": "assets/A1-transcripcion.txt"
+    },
+    {
+      "id": "C2",
+      "title": "Sección 6. Caso práctico 3. Contrato de alquiler de vehículo",
+      "instruction": "Analiza la situación que se presenta durante el proceso de contratación de un vehículo de alquiler y responde las preguntas relacionadas con su accesibilidad.",
+      "description": "Una persona elige un coche y las fechas de alquiler en una web. Antes de aceptar el contrato, ve un resumen con el coche, las fechas y el precio total. Puede cambiar los datos con «Modificar datos» o pulsar «Confirmar alquiler». El contrato solo se hace efectivo al confirmar.",
+      "images": [
+        {
+          "src": "assets/C2_desktop.png",
+          "view": "desktop",
+          "alt": "Resumen de la reserva con el vehículo, las fechas, el precio y opciones para modificar o confirmar el alquiler.",
+          "video": "assets/C2-PC.mp4"
+        },
+        {
+          "src": "assets/C2_mobile.png",
+          "view": "mobile",
+          "alt": "Resumen de la reserva con el vehículo, las fechas, el precio y opciones para modificar o confirmar el alquiler.",
+          "video": "assets/C2-MOVIL.mp4"
+        }
+      ],
+      "code": [],
+      "questions": [
+        {
+          "id": "P25",
+          "text": "Según la información del caso, ¿se cumple el requisito de accesibilidad WCAG relacionado con la situación descrita?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Falla. No se cumple el requisito.",
+              "icon": "fail"
+            },
+            {
+              "id": "o02",
+              "label": "Pasa. Se cumple el requisito.",
+              "icon": "pass"
+            },
+            {
+              "id": "o03",
+              "label": "Información insuficiente. Faltan datos para decidir si se cumple.",
+              "icon": "insufficient"
+            },
+            {
+              "id": "o04",
+              "label": "No lo sé. No sé cómo evaluar la situación.",
+              "icon": "unknown"
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "cumple el requisito de accesibilidad WCAG"
+          ]
+        },
+        {
+          "id": "P26",
+          "text": "¿Por qué has elegido esa respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Explica brevemente qué información del caso te ha llevado a esa conclusión. Si no sabes justificarla, indica «No lo sé».",
+            "Respuesta abierta"
+          ],
+          "emphasis": [
+            "Por qué"
+          ]
+        },
+        {
+          "id": "P27",
+          "text": "¿Con qué criterio o criterios WCAG relacionas este caso?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Si lo sabes, indica el número o el nombre del criterio.",
+            "Respuesta abierta · Máximo 150 caracteres."
+          ],
+          "maxLength": 150,
+          "emphasis": [
+            "criterio o criterios WCAG"
+          ]
+        },
+        {
+          "id": "P28",
+          "text": "¿Qué confianza tienes en tu respuesta sobre el cumplimiento del criterio?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna confianza",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca confianza",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Confianza moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante confianza",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha confianza",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "confianza"
+          ]
+        },
+        {
+          "id": "P29",
+          "text": "¿Qué dificultad has tenido para evaluar este caso?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna dificultad",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca dificultad",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Dificultad moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante dificultad",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha dificultad",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "dificultad"
+          ]
+        },
+        {
+          "id": "P30",
+          "text": "¿Qué más comprobarías para confirmar tu respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Indica qué información o comportamiento comprobarías. Si no necesitas comprobar nada más, indícalo.",
+            "Respuesta abierta · Máximo 600 caracteres."
+          ],
+          "maxLength": 600,
+          "emphasis": [
+            "más comprobarías"
+          ]
+        },
+        {
+          "id": "P31",
+          "text": "Si no se cumpliera el requisito relacionado con este caso, ¿a qué personas podría afectar?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Personas con discapacidad visual total"
+            },
+            {
+              "id": "o02",
+              "label": "Personas con baja visión"
+            },
+            {
+              "id": "o03",
+              "label": "Personas con discapacidad auditiva"
+            },
+            {
+              "id": "o04",
+              "label": "Personas con discapacidad motriz"
+            },
+            {
+              "id": "o05",
+              "label": "Personas con discapacidad cognitiva o dificultades de aprendizaje"
+            },
+            {
+              "id": "o06",
+              "label": "Ninguno de los perfiles anteriores",
+              "exclusive": true
+            },
+            {
+              "id": "o07",
+              "label": "No lo sé",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Marca todos los perfiles que consideres afectados. «Ninguno» y «No lo sé» son opciones excluyentes.",
+            "Selección múltiple. Puedes elegir «No lo sé»."
+          ],
+          "emphasis": [
+            "a qué personas podría afectar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "title": "Sección 7. Caso práctico 4. Eliminar del carrito",
+      "instruction": "Analiza el comportamiento de una interfaz de comercio electrónico al eliminar un producto del carrito de compra.",
+      "description": "Una persona coloca el puntero sobre «Eliminar del carrito» y presiona el botón del ratón. Sin soltarlo, mueve el puntero fuera de «Eliminar del carrito» y entonces lo suelta. El producto permanece en el carrito. Solo se elimina al completar el clic sobre el botón de la web.",
+      "images": [
+        {
+          "src": "assets/B2_desktop.png",
+          "view": "desktop",
+          "alt": "Carrito con un producto y un botón para eliminarlo.",
+          "video": "assets/B2-PC.mp4"
+        },
+        {
+          "src": "assets/B2_mobile.png",
+          "view": "mobile",
+          "alt": "Carrito con un producto y un botón para eliminarlo.",
+          "video": "assets/B2-MOVIL.mp4"
+        }
+      ],
+      "code": [
+        {
+          "language": "html",
+          "text": "<article id=\"articulo-17\">\n  <h2>Cuaderno de notas A5</h2>\n  <p>Precio: 12,90 €</p>\n  <button id=\"eliminar-17\" type=\"button\">Eliminar del carrito</button>\n</article>\n<p id=\"estado\" role=\"status\"></p>\n<script>\nconst boton = document.querySelector('#eliminar-17');\nboton.addEventListener('click', () => {\n  document.querySelector('#articulo-17').remove();\n  document.querySelector('#estado').textContent = 'Producto eliminado del carrito.';\n});\n</script>"
+        }
+      ],
+      "questions": [
+        {
+          "id": "P32",
+          "text": "Según la información del caso, ¿se cumple el requisito de accesibilidad WCAG relacionado con la situación descrita?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Falla. No se cumple el requisito.",
+              "icon": "fail"
+            },
+            {
+              "id": "o02",
+              "label": "Pasa. Se cumple el requisito.",
+              "icon": "pass"
+            },
+            {
+              "id": "o03",
+              "label": "Información insuficiente. Faltan datos para decidir si se cumple.",
+              "icon": "insufficient"
+            },
+            {
+              "id": "o04",
+              "label": "No lo sé. No sé cómo evaluar la situación.",
+              "icon": "unknown"
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "cumple el requisito de accesibilidad WCAG"
+          ]
+        },
+        {
+          "id": "P33",
+          "text": "¿Por qué has elegido esa respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Explica brevemente qué información del caso te ha llevado a esa conclusión. Si no sabes justificarla, indica «No lo sé».",
+            "Respuesta abierta"
+          ],
+          "emphasis": [
+            "Por qué"
+          ]
+        },
+        {
+          "id": "P34",
+          "text": "¿Con qué criterio o criterios WCAG relacionas este caso?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Si lo sabes, indica el número o el nombre del criterio.",
+            "Respuesta abierta · Máximo 150 caracteres."
+          ],
+          "maxLength": 150,
+          "emphasis": [
+            "criterio o criterios WCAG"
+          ]
+        },
+        {
+          "id": "P35",
+          "text": "¿Qué confianza tienes en tu respuesta sobre el cumplimiento del criterio?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna confianza",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca confianza",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Confianza moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante confianza",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha confianza",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "confianza"
+          ]
+        },
+        {
+          "id": "P36",
+          "text": "¿Qué dificultad has tenido para evaluar este caso?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna dificultad",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca dificultad",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Dificultad moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante dificultad",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha dificultad",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "dificultad"
+          ]
+        },
+        {
+          "id": "P37",
+          "text": "¿Qué más comprobarías para confirmar tu respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Indica qué información o comportamiento comprobarías. Si no necesitas comprobar nada más, indícalo.",
+            "Respuesta abierta · Máximo 600 caracteres."
+          ],
+          "maxLength": 600,
+          "emphasis": [
+            "más comprobarías"
+          ]
+        },
+        {
+          "id": "P38",
+          "text": "Si no se cumpliera el requisito relacionado con este caso, ¿a qué personas podría afectar?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Personas con discapacidad visual total"
+            },
+            {
+              "id": "o02",
+              "label": "Personas con baja visión"
+            },
+            {
+              "id": "o03",
+              "label": "Personas con discapacidad auditiva"
+            },
+            {
+              "id": "o04",
+              "label": "Personas con discapacidad motriz"
+            },
+            {
+              "id": "o05",
+              "label": "Personas con discapacidad cognitiva o dificultades de aprendizaje"
+            },
+            {
+              "id": "o06",
+              "label": "Ninguno de los perfiles anteriores",
+              "exclusive": true
+            },
+            {
+              "id": "o07",
+              "label": "No lo sé",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Marca todos los perfiles que consideres afectados. «Ninguno» y «No lo sé» son opciones excluyentes.",
+            "Selección múltiple. Puedes elegir «No lo sé»."
+          ],
+          "emphasis": [
+            "a qué personas podría afectar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "title": "Sección 8. Caso práctico 5. Información sobre compostaje doméstico",
+      "instruction": "Analiza cómo se presenta la información sobre compostaje doméstico en una web municipal.",
+      "description": "La web de un ayuntamiento muestra una imagen con cuatro pasos para hacer compost en casa. Junto a la imagen hay una lista de texto que explica los mismos cuatro pasos e incluye toda la información necesaria para realizarlos.",
+      "images": [
+        {
+          "src": "assets/A2_desktop.png",
+          "view": "desktop",
+          "alt": "Ilustración con los pasos del compostaje doméstico y una lista de pasos junto a ella.",
+          "video": "assets/A2-PC.mp4"
+        },
+        {
+          "src": "assets/A2_mobile.png",
+          "view": "mobile",
+          "alt": "Ilustración con los pasos del compostaje doméstico y una lista de pasos junto a ella.",
+          "video": "assets/A2-MOVIL.mp4"
+        }
+      ],
+      "code": [
+        {
+          "language": "html",
+          "text": "<section aria-labelledby=\"compost-titulo\">\n  <h2 id=\"compost-titulo\">Compostaje doméstico</h2>\n  <img src=\"compostaje.png\"\n       alt=\"Proceso de compostaje; pasos descritos a continuación\">\n  <ol>\n    <li>Separar los restos vegetales de cocina.</li>\n    <li>Mezclar con hojas y cartón seco.</li>\n    <li>Airear la mezcla periódicamente.</li>\n    <li>Utilizar el compost cuando haya madurado.</li>\n  </ol>\n</section>"
+        }
+      ],
+      "questions": [
+        {
+          "id": "P39",
+          "text": "Según la información del caso, ¿se cumple el requisito de accesibilidad WCAG relacionado con la situación descrita?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Falla. No se cumple el requisito.",
+              "icon": "fail"
+            },
+            {
+              "id": "o02",
+              "label": "Pasa. Se cumple el requisito.",
+              "icon": "pass"
+            },
+            {
+              "id": "o03",
+              "label": "Información insuficiente. Faltan datos para decidir si se cumple.",
+              "icon": "insufficient"
+            },
+            {
+              "id": "o04",
+              "label": "No lo sé. No sé cómo evaluar la situación.",
+              "icon": "unknown"
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "cumple el requisito de accesibilidad WCAG"
+          ]
+        },
+        {
+          "id": "P40",
+          "text": "¿Por qué has elegido esa respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Explica brevemente qué información del caso te ha llevado a esa conclusión. Si no sabes justificarla, indica «No lo sé».",
+            "Respuesta abierta"
+          ],
+          "emphasis": [
+            "Por qué"
+          ]
+        },
+        {
+          "id": "P41",
+          "text": "¿Con qué criterio o criterios WCAG relacionas este caso?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Si lo sabes, indica el número o el nombre del criterio.",
+            "Respuesta abierta · Máximo 150 caracteres."
+          ],
+          "maxLength": 150,
+          "emphasis": [
+            "criterio o criterios WCAG"
+          ]
+        },
+        {
+          "id": "P42",
+          "text": "¿Qué confianza tienes en tu respuesta sobre el cumplimiento del criterio?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna confianza",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca confianza",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Confianza moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante confianza",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha confianza",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "confianza"
+          ]
+        },
+        {
+          "id": "P43",
+          "text": "¿Qué dificultad has tenido para evaluar este caso?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna dificultad",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca dificultad",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Dificultad moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante dificultad",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha dificultad",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "dificultad"
+          ]
+        },
+        {
+          "id": "P44",
+          "text": "¿Qué más comprobarías para confirmar tu respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Indica qué información o comportamiento comprobarías. Si no necesitas comprobar nada más, indícalo.",
+            "Respuesta abierta · Máximo 600 caracteres."
+          ],
+          "maxLength": 600,
+          "emphasis": [
+            "más comprobarías"
+          ]
+        },
+        {
+          "id": "P45",
+          "text": "Si no se cumpliera el requisito relacionado con este caso, ¿a qué personas podría afectar?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Personas con discapacidad visual total"
+            },
+            {
+              "id": "o02",
+              "label": "Personas con baja visión"
+            },
+            {
+              "id": "o03",
+              "label": "Personas con discapacidad auditiva"
+            },
+            {
+              "id": "o04",
+              "label": "Personas con discapacidad motriz"
+            },
+            {
+              "id": "o05",
+              "label": "Personas con discapacidad cognitiva o dificultades de aprendizaje"
+            },
+            {
+              "id": "o06",
+              "label": "Ninguno de los perfiles anteriores",
+              "exclusive": true
+            },
+            {
+              "id": "o07",
+              "label": "No lo sé",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Marca todos los perfiles que consideres afectados. «Ninguno» y «No lo sé» son opciones excluyentes.",
+            "Selección múltiple. Puedes elegir «No lo sé»."
+          ],
+          "emphasis": [
+            "a qué personas podría afectar"
+          ]
+        }
+      ],
+      "captions": "assets/A2-subtitulos.vtt",
+      "transcriptSrc": "assets/A2-transcripcion.txt"
+    },
+    {
+      "id": "B1",
+      "title": "Sección 9. Caso práctico 6. Enviar una incidencia de alumbrado público",
+      "instruction": "Analiza el comportamiento de un formulario de comunicación de incidencias en una web municipal.",
+      "description": "Una persona quiere avisar al ayuntamiento de que una farola no funciona. Al presionar «Enviar incidencia» con el ratón o al tocarlo con el dedo, el aviso se envía de inmediato, antes de soltar. Apartar el puntero o el dedo no cancela el envío. Soltarlo tampoco deshace la acción y no hay opción para deshacerla después. El envío no necesita realizarse al presionar.",
+      "images": [
+        {
+          "src": "assets/B1_desktop.png",
+          "view": "desktop",
+          "alt": "Formulario municipal para avisar de una incidencia de alumbrado con un botón de envío.",
+          "video": "assets/B1-PC.mp4"
+        },
+        {
+          "src": "assets/B1_mobile.png",
+          "view": "mobile",
+          "alt": "Formulario municipal para avisar de una incidencia de alumbrado con un botón de envío.",
+          "video": "assets/B1-MOVIL.mp4"
+        }
+      ],
+      "code": [],
+      "questions": [
+        {
+          "id": "P46",
+          "text": "Según la información del caso, ¿se cumple el requisito de accesibilidad WCAG relacionado con la situación descrita?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Falla. No se cumple el requisito.",
+              "icon": "fail"
+            },
+            {
+              "id": "o02",
+              "label": "Pasa. Se cumple el requisito.",
+              "icon": "pass"
+            },
+            {
+              "id": "o03",
+              "label": "Información insuficiente. Faltan datos para decidir si se cumple.",
+              "icon": "insufficient"
+            },
+            {
+              "id": "o04",
+              "label": "No lo sé. No sé cómo evaluar la situación.",
+              "icon": "unknown"
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "cumple el requisito de accesibilidad WCAG"
+          ]
+        },
+        {
+          "id": "P47",
+          "text": "¿Por qué has elegido esa respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Explica brevemente qué información del caso te ha llevado a esa conclusión. Si no sabes justificarla, indica «No lo sé».",
+            "Respuesta abierta"
+          ],
+          "emphasis": [
+            "Por qué"
+          ]
+        },
+        {
+          "id": "P48",
+          "text": "¿Con qué criterio o criterios WCAG relacionas este caso?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Si lo sabes, indica el número o el nombre del criterio.",
+            "Respuesta abierta · Máximo 150 caracteres."
+          ],
+          "maxLength": 150,
+          "emphasis": [
+            "criterio o criterios WCAG"
+          ]
+        },
+        {
+          "id": "P49",
+          "text": "¿Qué confianza tienes en tu respuesta sobre el cumplimiento del criterio?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna confianza",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca confianza",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Confianza moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante confianza",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha confianza",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "confianza"
+          ]
+        },
+        {
+          "id": "P50",
+          "text": "¿Qué dificultad has tenido para evaluar este caso?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Ninguna dificultad",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poca dificultad",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Dificultad moderada",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante dificultad",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucha dificultad",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "dificultad"
+          ]
+        },
+        {
+          "id": "P51",
+          "text": "¿Qué más comprobarías para confirmar tu respuesta?",
+          "required": false,
+          "type": "text",
+          "options": [],
+          "instructions": [
+            "Indica qué información o comportamiento comprobarías. Si no necesitas comprobar nada más, indícalo.",
+            "Respuesta abierta · Máximo 600 caracteres."
+          ],
+          "maxLength": 600,
+          "emphasis": [
+            "más comprobarías"
+          ]
+        },
+        {
+          "id": "P52",
+          "text": "Si no se cumpliera el requisito relacionado con este caso, ¿a qué personas podría afectar?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Personas con discapacidad visual total"
+            },
+            {
+              "id": "o02",
+              "label": "Personas con baja visión"
+            },
+            {
+              "id": "o03",
+              "label": "Personas con discapacidad auditiva"
+            },
+            {
+              "id": "o04",
+              "label": "Personas con discapacidad motriz"
+            },
+            {
+              "id": "o05",
+              "label": "Personas con discapacidad cognitiva o dificultades de aprendizaje"
+            },
+            {
+              "id": "o06",
+              "label": "Ninguno de los perfiles anteriores",
+              "exclusive": true
+            },
+            {
+              "id": "o07",
+              "label": "No lo sé",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Marca todos los perfiles que consideres afectados. «Ninguno» y «No lo sé» son opciones excluyentes.",
+            "Selección múltiple. Puedes elegir «No lo sé»."
+          ],
+          "emphasis": [
+            "a qué personas podría afectar"
+          ]
+        }
+      ]
+    }
+  ],
+  "controlQuestions": [
+    {
+      "id": "P53",
+      "text": "Durante la resolución de los casos, ¿has consultado recursos externos o recibido ayuda para responder?",
+      "required": true,
+      "type": "single",
+      "options": [
+        {
+          "id": "o01",
+          "label": "No, he respondido sin consultar recursos externos ni recibir ayuda."
+        },
+        {
+          "id": "o02",
+          "label": "Sí, he consultado recursos externos o recibido ayuda."
+        },
+        {
+          "id": "o03",
+          "label": "Prefiero no responder."
+        }
+      ],
+      "instructions": [
+        "Selección única. Responde con sinceridad; tu respuesta no impide finalizar el estudio."
+      ],
+      "emphasis": [
+        "recursos externos o recibido ayuda"
+      ]
+    }
+  ],
+  "completion": {
+    "message": "¡Gracias por participar!\nTus respuestas se han registrado correctamente. Tu participación contribuye a conocer cómo se comprenden y aplican las WCAG.",
+    "target": "completion",
+    "requireSaveConfirmation": true
+  }
+}

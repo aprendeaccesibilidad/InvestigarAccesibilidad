@@ -1,65 +1,15 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#830050">
-<meta name="description" content="Investiga Accesibilidad: observatorio de competencias en accesibilidad digital.">
-<title>Observatorio de profesionales de la accesibilidad digital · Investiga Accesibilidad</title>
-<link rel="stylesheet" href="styles.css?v=marca-2">
-<link rel="stylesheet" href="observatorio.css?v=publico-2">
-<link rel="stylesheet" href="observatorio-cuestionario.css?v=2">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Acceso al Observatorio - Investigar Accesibilidad Digital</title>
+ <script>location.replace('observatorio-estudios.html');</script>
 </head>
 <body>
-<a class="skip" href="#contenido">Saltar al contenido</a><div class="topline"></div>
-<header class="site-header"><div class="container header-row">
-<a href="index.html" class="brand" aria-label="Ir al cuestionario de Investiga Accesibilidad"><span class="brand-identity"><span class="brand-copy"><strong>Investiga <span class="brand-accent">Accesibilidad</span></strong><small>Investigación en accesibilidad digital</small></span></span></a>
-<nav class="nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="participa.html">Participación</a><a href="observatorio.html" aria-current="page">Observatorio</a><a href="sobre-el-proyecto.html">Sobre el proyecto</a></nav>
-</div></header>
-<main tabindex="-1" id="contenido">
-<div class="hero obs-hero"><div class="container">
-<p class="section-label">Observatorio</p>
-<h1>Observatorio de profesionales de la accesibilidad digital</h1>
-<p>Explora los perfiles, las vías de aprendizaje y la comprensión de WCAG mediante estadísticas agrupadas.</p>
-</div></div>
-<div class="container obs" id="resultados-publicos"
- data-questionnaire="datos/cuestionario_v1.7.json"
- data-aggregates-url="https://script.google.com/macros/s/AKfycbwG709jv4GjH6tk9jyo7CRsmhoiDOt1x_qTZoF6kVFgqzCepT2GuBMu3rGxulB_6p2L/exec">
- <nav class="obs-nav" aria-label="Secciones del Observatorio">
-  <a href="#resumen">Resumen</a>
-  <a href="#perfiles">01 · Perfil</a>
-  <a href="#experiencia">02 · Experiencia</a>
-  <a href="#formacion">03 · Aprendizaje</a>
-  <a href="#conocimientos">04 · Conocimientos</a>
-  <a href="#comprension">05 · Casos WCAG</a>
- </nav>
- <section id="resumen" tabindex="-1" class="obs-section">
-  <h2>Participación y resultados</h2>
-  <p>Estudio <strong>Conocimiento y comprensión de las WCAG</strong>.</p>
-  <p id="results-status" role="status">Cargando las preguntas del estudio…</p>
-  <div id="results-kpis" class="grid-3"></div>
- </section>
- <div id="question-results"></div>
- <details class="obs-panel obs-method"><summary>Alcance y metodología</summary>
-  <p>Cada porcentaje se calcula sobre las personas que respondieron a esa pregunta o fila. En las preguntas de selección múltiple, los porcentajes pueden sumar más del 100 %. En las preguntas condicionales, la base incluye a las personas a quienes se mostró la pregunta.</p>
-  <p>Los resultados se publican de forma agregada y se reservan los grupos pequeños. Los correos, las justificaciones, los textos libres y el desglose de discapacidad no se publican. Estas preguntas se muestran con su cobertura cuando puede publicarse.</p>
- </details>
- <noscript><p class="notice">Activa JavaScript para consultar las preguntas y los resultados agregados del Observatorio.</p></noscript>
-</div>
-<section class="section closing-cta"><div class="container cta-grid"><div><p class="section-label">Siguiente paso</p><h2>¿Quieres aportar tu perspectiva?</h2><p>Completa el recorrido Investiga Accesibilidad y descubre recursos para seguir aprendiendo.</p></div><div class="button-row"><a href="participa.html" class="button">Participar</a></div></div></section>
-</main>
-<footer class="footer"><div class="container footer-project-shortcut"><a href="sobre-el-proyecto.html">Sobre el proyecto Investiga Accesibilidad</a></div><div class="container footer-row"><div><strong>Investiga Accesibilidad · Universitat de Lleida</strong><p>Observatorio de profesionales de la accesibilidad digital · Universitat de Lleida</p></div><div><a href="index.html">Volver al cuestionario</a><br><a href="informacion-estudio.html">Información y privacidad</a><br><a href="#contenido">Volver arriba</a></div></div><div class="container footer-griho">
- <a href="https://griho.udl.cat/" target="_blank" rel="noopener noreferrer" class="griho-link" aria-label="Visitar la web oficial del grupo de investigación GRIHO de la Universitat de Lleida (se abre en otra pestaña)">
-  <span class="griho-logo-wrap"><img src="https://griho.udl.cat/export/sites/Griho/en/.galleries/AboutUs_Gallery/logoGriho.png_443620257.png" width="112" height="85" loading="lazy" decoding="async" alt="Logotipo de GRIHO"></span>
-  <span><strong>GRIHO</strong><small>Grup de Recerca en Interacció Persona Ordinador i Integració de Dades · Universitat de Lleida</small></span>
- </a></div>
-</footer>
-<script src="footer-logo.js"></script>
-<script src="observatorio-cuestionario.js?v=2" defer></script>
-<script src="mobile-nav.js?v=sin-cuenta-1"></script><nav class="mobile-bottom-nav" aria-label="Navegación móvil principal">
- <a href="index.html" data-mobile-item="inicio"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><span>Inicio</span></a>
- <a href="participa.html" data-mobile-item="participacion"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 4.5v-1h6v1M9 11h6M9 15h4"/></svg></span><span>Participación</span></a>
- <a href="observatorio.html" data-mobile-item="observatorio"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 17v-6h4v6M10 17V5h4v12M15 17V9h4v8"/><path d="M5 11h4M10 5h4M15 9h4"/></svg></span><span>Observatorio</span></a>
- <a href="sobre-el-proyecto.html" data-mobile-item="proyecto"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6.5C9.5 5 6.5 5 3 6v13c3.5-1 6.5-1 9 .5 2.5-1.5 5.5-1.5 9-.5V6c-3.5-1-6.5-1-9 .5Z"/><path d="M12 6.5v13"/></svg></span><span>Proyecto</span></a>
-
- </nav></body></html>
+ <main>
+  <h1>Acceso al Observatorio</h1>
+  <p><a href="observatorio-estudios.html">Consultar los resultados de los estudios</a></p>
+ </main>
+</body>
+</html>

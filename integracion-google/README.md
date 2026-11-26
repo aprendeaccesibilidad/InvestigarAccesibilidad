@@ -1,31 +1,32 @@
-# Envío directo a Google Sheets desde el cuestionario v1.7
+# Integración con Google Sheets
 
-El formulario de la web carga `datos/cuestionario_v1.7.json`. Apps Script utiliza `Esquema.gs`, generado a partir de ese archivo, para comprobar las respuestas y crear dos pestañas en la hoja que elijas:
+## Estudios 1 y 2
 
-- **Respuestas_v1_7** guarda una fila por envío. Las columnas incluyen la fecha, el identificador de envío, el cuestionario, su versión y los campos del JSON. El correo opcional queda en la columna **P15 de esa misma fila**, en blanco si se omite.
-- **Diccionario_v1_7** identifica cada pregunta, fila de escala y opción. Las respuestas de selección se guardan por identificador, y las selecciones múltiples se guardan como listas JSON.
+1. Abre el proyecto de Apps Script de la hoja nueva. Pega el archivo completo [AppsScript-Estudios.gs](AppsScript-Estudios.gs) en `Código.gs` y guarda. El código ya contiene el identificador de la hoja. Las funciones de esta implementación corresponden al proyecto nuevo.
+2. Selecciona `prepararHoja` y pulsa **Ejecutar**. Autoriza el acceso a Sheets. Comprueba que aparecen `Estudio_1`, `Estudio_2`, `Contactos` y `Agregados_Estudios`. Mantén la hoja con acceso restringido.
+3. En **Implementar → Nueva implementación → Aplicación web**, selecciona **Ejecutar como Yo** y acceso para **Cualquier persona**. Copia la URL de la aplicación web que termina en `/exec` y colócala en `submitUrl` de [config.json](../datos/config.json). Si ya hay una implementación, crea una versión nueva en **Gestionar implementaciones** para que se ejecute el código actualizado.
+4. Abre el portal en un navegador sin sesión de Google y envía una respuesta de prueba en ambos estudios en el mismo navegador. Comprueba que se crean dos filas con el mismo código y elimina esas filas de prueba antes de publicar. La fecha y la hora se registran en el servidor. Los contactos voluntarios se guardan en la pestaña Contactos con el mismo ID de participación que las respuestas. Los contactos registrados con el esquema anterior conservan sus códigos originales.
+5. Cuando quieras actualizar el Observatorio, ejecuta `publicarObservatorio`. En **Configuración del proyecto → Propiedades de secuencia de comandos**, establece `PUBLICAR_OBSERVATORIO` con valor `true` para que el Observatorio pueda leer la instantánea. Repite la ejecución para actualizar los resultados. Cada estudio y los desgloses tienen un mínimo de cinco respuestas.
 
-El script conserva las pestañas y las respuestas anteriores.
+La configuración vacía habilita una vista previa local sin envíos. Las respuestas antiguas de la versión 1.7 siguen en su hoja anterior y no se incorporan a los nuevos agregados.
 
-## Preparar la hoja
+Si cambian las preguntas o sus opciones, vuelve a generar el archivo de Apps Script desde la raíz con `node integracion-google/generar-estudios.mjs`. Para cambios de estructura con datos ya recogidos, prepara pestañas versionadas antes de desplegar.
 
-1. Abre una hoja privada de Google Sheets. Puedes reutilizar el archivo anterior o crear uno nuevo si prefieres guardar solo la versión 1.7. Copia el identificador que aparece en la URL entre `/d/` y `/edit`.
-2. En tu proyecto existente de Apps Script, reemplaza `Code.gs` por el archivo de este directorio. Añade un archivo de script llamado **Esquema** y pega allí el contenido de `Esquema.gs`. Guarda ambos.
-3. En **Configuración del proyecto → Propiedades del script**, define `SHEET_ID` con el identificador copiado. Para la hoja que ya compartiste, el valor es `1qPciPayzOi0Nnt9P98DCVxTu0fMO6bmSx3duiWd8hus`. El `gid` de la pestaña anterior ya no se usa.
-4. En el selector de funciones, elige **prepararHoja** y pulsa **Ejecutar**. Autoriza el acceso a Google Sheets si se solicita. Comprueba que aparezcan las dos pestañas nuevas. Puedes ejecutar **comprobarConfiguracion** para verificar las columnas sin escribir respuestas.
+### Actualizar las columnas de tiempo y contexto
 
-## Activar la recogida
+1. Copia el archivo completo `AppsScript-Estudios.gs` en `Código.gs` del proyecto de la hoja actual y guarda.
+2. Ejecuta `prepararHoja`. Añade columnas a la derecha de las respuestas conservadas. Las filas históricas quedan vacías en las columnas nuevas. La función puede ejecutarse de nuevo sin duplicarlas.
+3. Edita la implementación actual en **Implementar → Gestionar implementaciones**, elige **Nueva versión** y vuelve a implementar. Comprueba que se ejecuta como tú y permite el acceso a cualquier persona. Conserva la URL `/exec` para mantener la conexión configurada en el portal.
+4. Publica la versión actual del portal y envía una participación de prueba en cada estudio. Verifica la fecha y hora de inicio y fin, el tipo de dispositivo, la familia del navegador, el idioma de respuesta y las duraciones numéricas en segundos. El Estudio 2 agrega seis columnas de tiempo activo, una por caso.
 
-1. Cuando la versión esté lista para publicar, despliega Apps Script desde **Implementar → Gestionar implementaciones → Editar → Nueva versión**. Debe ejecutarse con la cuenta autorizada a editar la hoja. Selecciona **Cualquier persona** si el cuestionario se ofrece sin iniciar sesión.
-2. En `datos/cuestionario_v1.7.json`, cambia `publication_ready` a `true` solo al activar la recogida. Si editaste la implementación existente, la URL `/exec` se conserva y ya está configurada en `participa.html`. Si creaste otra implementación, actualiza allí `data-submit-url`.
-3. Desde la web, prueba un envío ficticio y comprueba que se crea una única fila. Prueba también un envío sin correo y comprueba que **P15** queda vacía.
+El inicio se registra al dar el consentimiento y pulsar **Comenzar cuestionario**. El fin se toma al enviar un cuestionario que ha superado la validación. La duración total incluye las pausas y los días entre sesiones. La interacción activa es una estimación que suma los intervalos en primer plano hasta 60 segundos después de la última interacción. Los borradores anteriores a esta actualización empiezan a medir cuando se retoman. Las fechas son valores de fecha y hora que se muestran en la zona horaria de la hoja.
 
-Si cambias el JSON, regenera el archivo de Apps Script con `node integracion-google/generar-esquema.mjs` y actualiza `Esquema.gs` en Google. Si cambian los campos del cuestionario, incrementa su versión antes de preparar la nueva pestaña.
+### Guardar varias participaciones de la misma persona
 
-## Publicar resultados en el Observatorio
+Vuelve a copiar el archivo generado, ejecuta `prepararHoja` y despliega una nueva versión de la aplicación web antes de publicar el portal actualizado. La función añade `ID de envío` al final de las dos pestañas de resultados. Se conservan las filas anteriores. Un segundo cuestionario del mismo estudio genera una fila con el mismo `ID de participación`, un nuevo `ID de envío` y sus propias fechas. Reintentar el mismo envío conserva el `ID de envío` y evita duplicar la fila.
 
-1. Despliega la versión de Apps Script que incluye `publicarObservatorio` y `doGet`. La web consulta la misma URL `/exec` con `?action=observatorio`.
-2. Ejecuta **publicarObservatorio** en el editor. Se leerá **Respuestas_v1_7** y se creará la instantánea **Agregados_v1_7** en el mismo archivo. Puedes revisar esa pestaña antes de publicarla.
-3. En **Propiedades del script**, fija **PUBLICAR_OBSERVATORIO** en **true** para mostrar la instantánea. Para actualizar los resultados, vuelve a ejecutar **publicarObservatorio**. Puedes pausar la publicación poniendo la propiedad en **false**.
+El Observatorio agrega la primera respuesta válida de la versión actual por participante y por estudio, ordenada por fecha de recepción. Las demás participaciones siguen disponibles en Google Sheets para el análisis de repeticiones.
 
-Los agregados requieren al menos cinco participaciones y reservan los recuentos pequeños. La consulta pública no incluye correos, justificaciones, textos libres ni el desglose de discapacidad.
+### Versiones 1.4 del Estudio 1 y 1.3 del Estudio 2
+
+Los JSON actuales están en `datos/` y sus recursos multimedia en `datos/assets/`. Copia el último `AppsScript-Estudios.gs`, ejecuta `prepararHoja` y publica una nueva versión de la implementación web actual. En `Estudio_2`, la columna nueva `P03__o08` se añade a la derecha de las columnas existentes. Después ejecuta `publicarObservatorio` para publicar una instantánea de las versiones actuales. Las respuestas anteriores se conservan en la hoja con su versión.

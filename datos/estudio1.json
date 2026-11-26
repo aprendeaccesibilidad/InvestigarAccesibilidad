@@ -1,0 +1,1247 @@
+{
+  "schemaVersion": "1.0",
+  "language": "es",
+  "privacyNotice": null,
+  "requireConsentBeforeStart": true,
+  "id": "E1",
+  "version": "1.5",
+  "title": "Estudio 1. Perfil y experiencia en accesibilidad digital",
+  "description": "Investigamos la trayectoria, la formación, la práctica profesional y los conocimientos percibidos de profesionales y estudiantes.",
+  "durationMinutes": 5,
+  "startInstructions": {
+    "title": "Cómo responder",
+    "intro": "Te preguntaremos por tu perfil, tu experiencia y cómo has aprendido sobre accesibilidad digital.",
+    "ruleLabels": ["Elige tus respuestas", "Preguntas opcionales", "Revisa y envía"],
+    "conditions": [
+      "Marca una opción o varias cuando la pregunta lo permita.",
+      "Puedes dejar en blanco las preguntas que indiquen «opcional».",
+      "Al final podrás revisar tus respuestas antes de enviarlas."
+    ]
+  },
+  "sections": [
+    {
+      "id": "S2",
+      "title": "Sección 2. Perfil y actividad profesional",
+      "description": "En esta sección queremos conocer cómo has conocido el estudio, tu situación actual, los ámbitos en los que trabajas o estudias, las actividades que realizas, la importancia que tiene la accesibilidad digital en tu actividad y el país en el que trabajas o estudias. También podrás indicar, de forma opcional, si tienes alguna discapacidad o dificultad funcional.",
+      "questions": [
+        {
+          "id": "P01",
+          "text": "¿Cómo has conocido este estudio?",
+          "required": false,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Congreso, seminario o jornada profesional"
+            },
+            {
+              "id": "o02",
+              "label": "LinkedIn"
+            },
+            {
+              "id": "o03",
+              "label": "Otras redes sociales"
+            },
+            {
+              "id": "o04",
+              "label": "Comunidades o asociaciones profesionales"
+            },
+            {
+              "id": "o05",
+              "label": "Recomendación de compañeros, docentes o profesionales"
+            },
+            {
+              "id": "o06",
+              "label": "Otros canales (especificar)",
+              "allowOtherText": true
+            }
+          ],
+          "instructions": [
+            "Selecciona una opción."
+          ],
+          "emphasis": [
+            "conocido"
+          ]
+        },
+        {
+          "id": "P02",
+          "text": "¿Cuál es tu situación actual?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Estudiante"
+            },
+            {
+              "id": "o02",
+              "label": "Profesional en activo"
+            },
+            {
+              "id": "o03",
+              "label": "Docente o investigador/a"
+            },
+            {
+              "id": "o04",
+              "label": "Actualmente no trabajo ni estudio",
+              "exclusive": true
+            },
+            {
+              "id": "o05",
+              "label": "Otra situación"
+            }
+          ],
+          "instructions": [
+            "Selecciona una opción."
+          ],
+          "emphasis": [
+            "situación actual"
+          ]
+        },
+        {
+          "id": "P03",
+          "text": "¿En qué áreas trabajas, estudias o investigas?",
+          "required": true,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Diseño digital y diseño de experiencia e interfaces de usuario (UX/UI)"
+            },
+            {
+              "id": "o02",
+              "label": "Desarrollo web o software"
+            },
+            {
+              "id": "o03",
+              "label": "Evaluación, auditoría o consultoría de accesibilidad"
+            },
+            {
+              "id": "o04",
+              "label": "Pruebas de calidad de productos digitales (QA)"
+            },
+            {
+              "id": "o05",
+              "label": "Creación y gestión de contenidos digitales"
+            },
+            {
+              "id": "o06",
+              "label": "Gestión de proyectos o productos digitales"
+            },
+            {
+              "id": "o07",
+              "label": "Docencia o investigación"
+            },
+            {
+              "id": "o08",
+              "label": "Otro ámbito"
+            },
+            {
+              "id": "o09",
+              "label": "No trabajo ni estudio en ninguna de estas áreas",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan. Si eliges una opción de ausencia de actividad, experiencia o conocimiento, no la combines con otras incompatibles."
+          ],
+          "emphasis": [
+            "trabajas, estudias o investigas"
+          ]
+        },
+        {
+          "id": "P04",
+          "text": "¿En qué sector trabajas o estudias principalmente?",
+          "required": false,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Tecnologías de la información y comunicación"
+            },
+            {
+              "id": "o02",
+              "label": "Educación e investigación"
+            },
+            {
+              "id": "o03",
+              "label": "Administración pública"
+            },
+            {
+              "id": "o04",
+              "label": "Servicios y consultoría profesional"
+            },
+            {
+              "id": "o05",
+              "label": "Entidades sin ánimo de lucro (asociaciones, fundaciones, ONG)"
+            },
+            {
+              "id": "o06",
+              "label": "Otros sectores"
+            },
+            {
+              "id": "o07",
+              "label": "No aplica"
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "sector"
+          ]
+        },
+        {
+          "id": "P05",
+          "text": "¿Qué tareas de accesibilidad digital realizas habitualmente en tu trabajo o estudios?",
+          "required": true,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Diseño de interfaces accesibles."
+            },
+            {
+              "id": "o02",
+              "label": "Desarrollo y corrección de productos digitales accesibles."
+            },
+            {
+              "id": "o03",
+              "label": "Evaluación del cumplimiento de las WCAG."
+            },
+            {
+              "id": "o04",
+              "label": "Pruebas con tecnologías de apoyo o usuarios con discapacidad."
+            },
+            {
+              "id": "o07",
+              "label": "Creación de documentos digitales accesibles."
+            },
+            {
+              "id": "o08",
+              "label": "Formación, investigación o divulgación."
+            },
+            {
+              "id": "o09",
+              "label": "Gestión de la accesibilidad digital."
+            },
+            {
+              "id": "o10",
+              "label": "Otras actividades."
+            },
+            {
+              "id": "o11",
+              "label": "Actualmente ninguna.",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan.",
+            "La última opción es excluyente."
+          ],
+          "emphasis": [
+            "tareas de accesibilidad digital"
+          ]
+        },
+        {
+          "id": "P06",
+          "text": "¿Qué papel tiene la accesibilidad digital en tu trabajo o estudios?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Es el eje principal de mi actividad."
+            },
+            {
+              "id": "o02",
+              "label": "Es un componente importante de mi actividad."
+            },
+            {
+              "id": "o03",
+              "label": "Es un componente secundario de mi actividad."
+            },
+            {
+              "id": "o04",
+              "label": "Tiene un papel marginal en mi actividad."
+            },
+            {
+              "id": "o05",
+              "label": "No forma parte de mi actividad actual."
+            }
+          ],
+          "instructions": [
+            "Selección única"
+          ],
+          "emphasis": [
+            "papel"
+          ]
+        },
+        {
+          "id": "P07",
+          "text": "¿Tienes alguna discapacidad o dificultad funcional que afecte a cómo utilizas productos digitales?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Discapacidad visual total."
+            },
+            {
+              "id": "o02",
+              "label": "Discapacidad visual baja visión."
+            },
+            {
+              "id": "o03",
+              "label": "Discapacidad auditiva."
+            },
+            {
+              "id": "o04",
+              "label": "Discapacidad motriz."
+            },
+            {
+              "id": "o05",
+              "label": "Discapacidad cognitiva o dificultades de aprendizaje."
+            },
+            {
+              "id": "o07",
+              "label": "Otra discapacidad o dificultad funcional."
+            },
+            {
+              "id": "o08",
+              "label": "Ninguna de las anteriores.",
+              "exclusive": true
+            },
+            {
+              "id": "o09",
+              "label": "Prefiero no responder.",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan.",
+            "Las dos últimas opciones son excluyentes."
+          ],
+          "emphasis": [
+            "discapacidad o dificultad funcional"
+          ]
+        },
+        {
+          "id": "P08",
+          "text": "¿En qué país trabajas o estudias principalmente?",
+          "required": false,
+          "type": "country",
+          "options": [
+            {
+              "id": "other",
+              "label": "Otro",
+              "allowOtherText": true
+            }
+          ],
+          "instructions": [
+            "Selección única mediante desplegable",
+            "Selecciona un país de la lista."
+          ],
+          "optionsSource": "country_catalog",
+          "emphasis": [
+            "país"
+          ]
+        }
+      ],
+      "shortTitle": "Perfil"
+    },
+    {
+      "id": "S3",
+      "title": "Sección 3. Experiencia y práctica en accesibilidad digital",
+      "description": "Nos interesa conocer tu experiencia en accesibilidad digital, el tiempo que dedicas a estas actividades y los métodos y herramientas que utilizas para evaluar la accesibilidad.",
+      "questions": [
+        {
+          "id": "P09",
+          "text": "¿Cuánto tiempo llevas realizando actividades profesionales relacionadas con la accesibilidad digital?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Ninguna experiencia profesional en accesibilidad digital."
+            },
+            {
+              "id": "o02",
+              "label": "Menos de 1 año."
+            },
+            {
+              "id": "o03",
+              "label": "De 1 a 3 años."
+            },
+            {
+              "id": "o04",
+              "label": "De 3 a 6 años."
+            },
+            {
+              "id": "o05",
+              "label": "De 6 a 10 años."
+            },
+            {
+              "id": "o06",
+              "label": "10 años o más."
+            }
+          ],
+          "instructions": [
+            "Selección única · Obligatoria."
+          ],
+          "emphasis": [
+            "Cuánto tiempo",
+            "actividades profesionales"
+          ]
+        },
+        {
+          "id": "P10",
+          "text": "¿Cuánto tiempo hace que empezaste a aprender sobre accesibilidad digital? Incluye tanto la formación organizada como el aprendizaje por tu cuenta.",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Todavía no he aprendido sobre accesibilidad digital."
+            },
+            {
+              "id": "o02",
+              "label": "Menos de 1 año."
+            },
+            {
+              "id": "o03",
+              "label": "De 1 a 3 años."
+            },
+            {
+              "id": "o04",
+              "label": "De 3 a 6 años."
+            },
+            {
+              "id": "o05",
+              "label": "De 6 a 10 años."
+            },
+            {
+              "id": "o06",
+              "label": "10 años o más."
+            }
+          ],
+          "instructions": [
+            "Selección única · Obligatoria."
+          ],
+          "emphasis": [
+            "Cuánto tiempo",
+            "aprender sobre accesibilidad digital"
+          ]
+        },
+        {
+          "id": "P11",
+          "text": "En una semana habitual, ¿cuántas horas dedicas a actividades de accesibilidad digital?",
+          "required": false,
+          "type": "single",
+          "options": [
+            {
+              "id": "o06",
+              "label": "No realizo estas actividades habitualmente"
+            },
+            {
+              "id": "o01",
+              "label": "Menos de 5 horas"
+            },
+            {
+              "id": "o02",
+              "label": "De 5 a 15 horas"
+            },
+            {
+              "id": "o03",
+              "label": "De 15 a 30 horas"
+            },
+            {
+              "id": "o05",
+              "label": "30 horas o más"
+            }
+          ],
+          "instructions": [
+            "Selección única",
+            "Usa las flechas ↑ y ↓ para cambiar de opción."
+          ],
+          "emphasis": [
+            "cuántas horas"
+          ]
+        },
+        {
+          "id": "P12",
+          "text": "¿Qué métodos o herramientas utilizas habitualmente cuando evalúas la accesibilidad digital?",
+          "required": true,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Herramientas automáticas de evaluación."
+            },
+            {
+              "id": "o02",
+              "label": "Revisión manual del código y de la interfaz (incluidas las pruebas con teclado)."
+            },
+            {
+              "id": "o03",
+              "label": "Listas de verificación WCAG y metodologías de evaluación (WCAG-EM)."
+            },
+            {
+              "id": "o06",
+              "label": "Pruebas con tecnologías de apoyo (lectores de pantalla, magnificadores, etc.)."
+            },
+            {
+              "id": "o08",
+              "label": "Pruebas con usuarios con discapacidad."
+            },
+            {
+              "id": "o09",
+              "label": "Asistentes de inteligencia artificial."
+            },
+            {
+              "id": "o10",
+              "label": "Otros métodos o herramientas."
+            },
+            {
+              "id": "o11",
+              "label": "No realizo evaluaciones de accesibilidad actualmente.",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan.",
+            "La última opción es excluyente."
+          ],
+          "emphasis": [
+            "métodos o herramientas"
+          ]
+        }
+      ],
+      "shortTitle": "Experiencia"
+    },
+    {
+      "id": "S4",
+      "title": "Sección 4. Formación y aprendizaje en accesibilidad digital",
+      "description": "Queremos conocer cómo has aprendido sobre accesibilidad digital, qué formación has recibido, qué actividades prácticas has realizado y qué certificaciones o acreditaciones has obtenido.",
+      "questions": [
+        {
+          "id": "P13",
+          "text": "¿Cómo has aprendido sobre accesibilidad digital?",
+          "required": true,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Estudios de grado universitario o formación profesional.",
+              "group": "1. Formación reglada y académica"
+            },
+            {
+              "id": "o03",
+              "label": "Másteres, posgrados o doctorado.",
+              "group": "1. Formación reglada y académica"
+            },
+            {
+              "id": "o05",
+              "label": "Cursos especializados, microcredenciales, talleres o seminarios.",
+              "group": "2. Formación especializada"
+            },
+            {
+              "id": "o08",
+              "label": "Formación interna en empresas u organizaciones.",
+              "group": "2. Formación especializada"
+            },
+            {
+              "id": "o09",
+              "label": "Preparación de certificaciones profesionales.",
+              "group": "2. Formación especializada"
+            },
+            {
+              "id": "o10",
+              "label": "Experiencia práctica en proyectos profesionales.",
+              "group": "3. Aprendizaje en el ámbito profesional"
+            },
+            {
+              "id": "o11",
+              "label": "Colaboración con compañeros, expertos o personas con discapacidad.",
+              "group": "3. Aprendizaje en el ámbito profesional"
+            },
+            {
+              "id": "o14",
+              "label": "Congresos, conferencias y jornadas.",
+              "group": "4. Aprendizaje mediante comunidades y eventos"
+            },
+            {
+              "id": "o15",
+              "label": "Comunidades profesionales, asociaciones, foros y redes sociales.",
+              "group": "4. Aprendizaje mediante comunidades y eventos"
+            },
+            {
+              "id": "o18",
+              "label": "Consulta de documentación oficial, normativa, libros y recursos especializados.",
+              "group": "5. Aprendizaje autónomo"
+            },
+            {
+              "id": "o22",
+              "label": "Tutoriales, vídeos y práctica por cuenta propia.",
+              "group": "5. Aprendizaje autónomo"
+            },
+            {
+              "id": "o24",
+              "label": "Uso de asistentes de inteligencia artificial.",
+              "group": "5. Aprendizaje autónomo"
+            },
+            {
+              "id": "o25",
+              "label": "Otras vías de aprendizaje (especificar).",
+              "group": "6. Otras situaciones",
+              "allowOtherText": true
+            },
+            {
+              "id": "o26",
+              "label": "Todavía no he aprendido sobre accesibilidad digital.",
+              "group": "6. Otras situaciones",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple · Obligatoria",
+            "Marca todas las opciones que correspondan a tu experiencia de aprendizaje.",
+            "La última opción es excluyente."
+          ],
+          "emphasis": [
+            "Cómo has aprendido"
+          ]
+        },
+        {
+          "id": "P14",
+          "text": "¿Cuál ha sido tu principal vía de aprendizaje en accesibilidad digital?",
+          "required": true,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Formación reglada y académica."
+            },
+            {
+              "id": "o02",
+              "label": "Formación especializada."
+            },
+            {
+              "id": "o03",
+              "label": "Aprendizaje en el ámbito profesional."
+            },
+            {
+              "id": "o04",
+              "label": "Aprendizaje mediante comunidades y eventos."
+            },
+            {
+              "id": "o05",
+              "label": "Aprendizaje autónomo."
+            },
+            {
+              "id": "o06",
+              "label": "Otras vías de aprendizaje."
+            },
+            {
+              "id": "o07",
+              "label": "Todavía no he aprendido sobre accesibilidad digital."
+            }
+          ],
+          "instructions": [
+            "Selección única · Obligatoria. Elige la categoría que más ha contribuido a tu aprendizaje entre las que has seleccionado en P13."
+          ],
+          "dynamicOptions": {
+            "sourceQuestion": "P13",
+            "map": {
+              "o01": "o01",
+              "o03": "o01",
+              "o05": "o02",
+              "o08": "o02",
+              "o09": "o02",
+              "o10": "o03",
+              "o11": "o03",
+              "o14": "o04",
+              "o15": "o04",
+              "o18": "o05",
+              "o22": "o05",
+              "o24": "o05",
+              "o25": "o06",
+              "o26": "o07"
+            },
+            "autoSelectSingle": true,
+            "recalculateOnChange": true
+          },
+          "emphasis": [
+            "principal vía de aprendizaje"
+          ]
+        },
+        {
+          "id": "P15",
+          "text": "¿Sobre qué temas de accesibilidad digital has aprendido?",
+          "required": true,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Fundamentos de accesibilidad digital (discapacidad, necesidades y barreras)."
+            },
+            {
+              "id": "o02",
+              "label": "Pautas WCAG, legislación y normativa de accesibilidad."
+            },
+            {
+              "id": "o04",
+              "label": "Diseño accesible de interfaces."
+            },
+            {
+              "id": "o05",
+              "label": "Desarrollo web accesible (HTML, CSS, JavaScript y WAI-ARIA)."
+            },
+            {
+              "id": "o06",
+              "label": "Creación de documentos digitales accesibles."
+            },
+            {
+              "id": "o07",
+              "label": "Evaluación y corrección de problemas de accesibilidad (evaluación manual, automática y WCAG-EM)."
+            },
+            {
+              "id": "o11",
+              "label": "Tecnologías de apoyo y evaluación con usuarios con discapacidad."
+            },
+            {
+              "id": "o13",
+              "label": "Inteligencia artificial aplicada a la accesibilidad."
+            },
+            {
+              "id": "o14",
+              "label": "Otros temas (especificar).",
+              "allowOtherText": true
+            },
+            {
+              "id": "o15",
+              "label": "Ninguno de los anteriores.",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan.",
+            "La última opción es excluyente."
+          ],
+          "emphasis": [
+            "temas de accesibilidad digital"
+          ]
+        },
+        {
+          "id": "P16",
+          "text": "¿En qué formatos has realizado cursos o formación organizada sobre accesibilidad digital?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Formación presencial"
+            },
+            {
+              "id": "o02",
+              "label": "En línea, con clases en directo"
+            },
+            {
+              "id": "o03",
+              "label": "En línea, a mi propio ritmo"
+            },
+            {
+              "id": "o04",
+              "label": "Combinada (presencial y en línea)"
+            },
+            {
+              "id": "o05",
+              "label": "No he realizado cursos ni formación organizada",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan. Si eliges una opción de ausencia de actividad, experiencia o conocimiento, no la combines con otras incompatibles."
+          ],
+          "emphasis": [
+            "formatos",
+            "formación organizada"
+          ]
+        },
+        {
+          "id": "P17",
+          "text": "¿Qué actividades prácticas has realizado para aprender o mejorar tus competencias en accesibilidad digital?",
+          "required": true,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Análisis de ejemplos y resolución de casos prácticos WCAG."
+            },
+            {
+              "id": "o03",
+              "label": "Evaluación de accesibilidad de productos digitales reales."
+            },
+            {
+              "id": "o04",
+              "label": "Análisis de código y corrección de problemas de accesibilidad."
+            },
+            {
+              "id": "o06",
+              "label": "Diseño o desarrollo de productos digitales accesibles."
+            },
+            {
+              "id": "o08",
+              "label": "Uso práctico de tecnologías de apoyo."
+            },
+            {
+              "id": "o09",
+              "label": "Pruebas con usuarios con discapacidad."
+            },
+            {
+              "id": "o10",
+              "label": "Simulación o experimentación de barreras de accesibilidad."
+            },
+            {
+              "id": "o11",
+              "label": "Otras actividades prácticas."
+            },
+            {
+              "id": "o12",
+              "label": "No he realizado ninguna actividad práctica.",
+              "exclusive": true
+            },
+            {
+              "id": "o14",
+              "label": "Prefiero no responder.",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan.",
+            "Las dos últimas opciones son excluyentes."
+          ],
+          "emphasis": [
+            "actividades prácticas"
+          ]
+        },
+        {
+          "id": "P18",
+          "text": "¿Cómo se han evaluado tus conocimientos y habilidades durante la formación en accesibilidad digital?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Pruebas de conocimientos teóricos y normativa."
+            },
+            {
+              "id": "o03",
+              "label": "Resolución de casos prácticos WCAG."
+            },
+            {
+              "id": "o04",
+              "label": "Evaluación y corrección de problemas de accesibilidad en productos digitales."
+            },
+            {
+              "id": "o06",
+              "label": "Diseño, desarrollo o realización de proyectos accesibles."
+            },
+            {
+              "id": "o09",
+              "label": "Demostración del uso de tecnologías de apoyo."
+            },
+            {
+              "id": "o10",
+              "label": "Otras actividades de evaluación.",
+              "allowOtherText": true
+            },
+            {
+              "id": "o11",
+              "label": "En alguna formación no se evaluó mi aprendizaje."
+            },
+            {
+              "id": "o12",
+              "label": "No he realizado formación organizada.",
+              "exclusive": true
+            },
+            {
+              "id": "o13",
+              "label": "No lo recuerdo.",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple · Opcional.",
+            "Marca todas las opciones que correspondan, considerando todos los cursos realizados.",
+            "Las dos últimas opciones son excluyentes."
+          ],
+          "visibility": {
+            "question": "P16",
+            "operator": "notContains",
+            "optionIds": [
+              "o05"
+            ],
+            "showIfUnanswered": true,
+            "whenHidden": "not_applicable"
+          },
+          "emphasis": [
+            "evaluado tus conocimientos y habilidades"
+          ]
+        },
+        {
+          "id": "P19",
+          "text": "¿Qué certificaciones profesionales, titulaciones o certificados de formación en accesibilidad digital has obtenido?",
+          "required": true,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "CPACC (IAAP).",
+              "group": "Certificaciones profesionales"
+            },
+            {
+              "id": "o02",
+              "label": "WAS (IAAP).",
+              "group": "Certificaciones profesionales"
+            },
+            {
+              "id": "o03",
+              "label": "CPWA (IAAP).",
+              "group": "Certificaciones profesionales"
+            },
+            {
+              "id": "o04",
+              "label": "ADS (IAAP).",
+              "group": "Certificaciones profesionales"
+            },
+            {
+              "id": "o05",
+              "label": "Otras certificaciones profesionales.",
+              "group": "Certificaciones profesionales",
+              "allowOtherText": true
+            },
+            {
+              "id": "o06",
+              "label": "Máster, posgrado o título universitario de especialización en accesibilidad.",
+              "group": "Titulaciones y acreditaciones académicas"
+            },
+            {
+              "id": "o08",
+              "label": "Microcredencial universitaria.",
+              "group": "Titulaciones y acreditaciones académicas"
+            },
+            {
+              "id": "o09",
+              "label": "Otras acreditaciones académicas.",
+              "group": "Titulaciones y acreditaciones académicas",
+              "allowOtherText": true
+            },
+            {
+              "id": "o10",
+              "label": "Certificado de superación de un curso con evaluación del aprendizaje.",
+              "group": "Certificados de formación"
+            },
+            {
+              "id": "o12",
+              "label": "Certificado de asistencia o participación sin evaluación del aprendizaje.",
+              "group": "Certificados de formación"
+            },
+            {
+              "id": "o13",
+              "label": "Otros certificados de formación.",
+              "group": "Certificados de formación",
+              "allowOtherText": true
+            },
+            {
+              "id": "o14",
+              "label": "Ninguna certificación, titulación o certificado.",
+              "group": "Otras situaciones",
+              "exclusive": true
+            },
+            {
+              "id": "o15",
+              "label": "No sé qué tipo de acreditación he obtenido.",
+              "group": "Otras situaciones",
+              "exclusive": true
+            },
+            {
+              "id": "o16",
+              "label": "Prefiero no responder.",
+              "group": "Otras situaciones",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan.",
+            "Las tres últimas opciones son excluyentes."
+          ],
+          "emphasis": [
+            "certificaciones profesionales, titulaciones o certificados de formación"
+          ]
+        },
+        {
+          "id": "P20",
+          "text": "¿Tienes actualmente alguna certificación profesional en accesibilidad digital vigente?",
+          "required": false,
+          "type": "single",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Sí."
+            },
+            {
+              "id": "o02",
+              "label": "No, actualmente no tengo ninguna certificación profesional vigente."
+            },
+            {
+              "id": "o03",
+              "label": "No lo sé."
+            }
+          ],
+          "instructions": [
+            "Selección única · Opcional. Mostrar únicamente a quienes hayan indicado alguna certificación profesional."
+          ],
+          "visibility": {
+            "question": "P19",
+            "operator": "containsAny",
+            "optionIds": [
+              "o01",
+              "o02",
+              "o03",
+              "o04",
+              "o05"
+            ],
+            "whenHidden": "not_applicable"
+          },
+          "emphasis": [
+            "certificación profesional en accesibilidad digital vigente"
+          ]
+        }
+      ],
+      "shortTitle": "Formación"
+    },
+    {
+      "id": "S5",
+      "title": "Sección 5. Recursos y conocimientos percibidos",
+      "description": "En esta sección te preguntaremos qué recursos consultas cuando tienes dudas sobre accesibilidad digital y cómo valoras tus conocimientos.",
+      "questions": [
+        {
+          "id": "P21",
+          "text": "¿Qué recursos consultas habitualmente cuando tienes dudas al evaluar la accesibilidad digital?",
+          "required": false,
+          "type": "multiple",
+          "options": [
+            {
+              "id": "o01",
+              "label": "Documentación oficial y normativa (W3C/WAI, WCAG, EN 301 549)."
+            },
+            {
+              "id": "o03",
+              "label": "Recursos especializados (webs, libros, publicaciones, ejemplos prácticos y repositorios de código)."
+            },
+            {
+              "id": "o06",
+              "label": "Compañeros, expertos y comunidades profesionales."
+            },
+            {
+              "id": "o07",
+              "label": "Asistentes de inteligencia artificial."
+            },
+            {
+              "id": "o08",
+              "label": "Otros recursos."
+            },
+            {
+              "id": "o09",
+              "label": "No consulto recursos habitualmente.",
+              "exclusive": true
+            },
+            {
+              "id": "o10",
+              "label": "No realizo evaluaciones de accesibilidad.",
+              "exclusive": true
+            }
+          ],
+          "instructions": [
+            "Selección múltiple",
+            "Marca todas las opciones que correspondan.",
+            "Las dos últimas opciones son excluyentes."
+          ],
+          "emphasis": [
+            "recursos consultas"
+          ]
+        },
+        {
+          "id": "P22",
+          "text": "¿Cómo valoras tus conocimientos sobre accesibilidad digital?",
+          "required": true,
+          "type": "ordinal",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Muy limitados",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Limitados",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Intermedios",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Avanzados",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Muy avanzados",
+              "score": 5
+            }
+          ],
+          "instructions": [
+            "Escala ordinal de 1 a 5"
+          ],
+          "emphasis": [
+            "conocimientos sobre accesibilidad digital"
+          ]
+        }
+      ],
+      "shortTitle": "Recursos, conocimientos"
+    },
+    {
+      "id": "S6",
+      "title": "Sección 6. Satisfacción y motivación",
+      "description": "Queremos conocer tu grado de satisfacción y cuánto disfrutas realizando actividades relacionadas con la accesibilidad digital.",
+      "questions": [
+        {
+          "id": "P23",
+          "text": "¿Qué grado de satisfacción tienes con las tareas de accesibilidad digital que realizas?",
+          "required": false,
+          "type": "ordinal",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Muy insatisfecho/a",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Algo insatisfecho/a",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Ni satisfecho/a ni insatisfecho/a",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Algo satisfecho/a",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Muy satisfecho/a",
+              "score": 5
+            },
+            {
+              "id": "o06",
+              "label": "No realizo actualmente actividades de accesibilidad digital"
+            },
+            {
+              "id": "o07",
+              "label": "Prefiero no responder"
+            }
+          ],
+          "instructions": [
+            "Escala ordinal de 1 a 5"
+          ],
+          "emphasis": [
+            "grado de satisfacción"
+          ]
+        },
+        {
+          "id": "P24",
+          "text": "¿Cuánto disfrutas realizando tareas de accesibilidad digital?",
+          "required": false,
+          "type": "ordinal",
+          "options": [
+            {
+              "id": "o01",
+              "label": "1 · Nada",
+              "score": 1
+            },
+            {
+              "id": "o02",
+              "label": "2 · Poco",
+              "score": 2
+            },
+            {
+              "id": "o03",
+              "label": "3 · Moderadamente",
+              "score": 3
+            },
+            {
+              "id": "o04",
+              "label": "4 · Bastante",
+              "score": 4
+            },
+            {
+              "id": "o05",
+              "label": "5 · Mucho",
+              "score": 5
+            },
+            {
+              "id": "o06",
+              "label": "No realizo actualmente actividades de accesibilidad digital"
+            },
+            {
+              "id": "o07",
+              "label": "Prefiero no responder"
+            }
+          ],
+          "instructions": [
+            "Escala ordinal de 1 a 5"
+          ],
+          "emphasis": [
+            "disfrutas"
+          ]
+        }
+      ],
+      "shortTitle": "Satisfacción, motivación"
+    }
+  ],
+  "completion": {
+    "title": "¡Gracias por participar!",
+    "description": "Tus respuestas se han registrado correctamente. Tu participación contribuye a conocer la trayectoria, la formación, la práctica profesional y los conocimientos percibidos en accesibilidad digital.",
+    "invitationTitle": "¿Quieres poner a prueba tus conocimientos sobre las WCAG?",
+    "invitationText": "Participa en el estudio 2 evaluando casos prácticos de accesibilidad digital y contribuye a conocer cómo se comprenden y aplican las WCAG. La participación es voluntaria. Duración estimada: 15 minutos.",
+    "actions": [
+      {
+        "label": "Continuar al estudio 2",
+        "target": "E2",
+        "preserveParticipantId": true
+      },
+      {
+        "label": "Finalizar mi participación",
+        "target": "completion"
+      }
+    ],
+    "ifE2Completed": "completion",
+    "requireSaveConfirmation": true
+  }
+}

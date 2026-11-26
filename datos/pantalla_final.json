@@ -1,0 +1,23 @@
+{
+  "id": "completion",
+  "title": "¡Gracias por contribuir a la investigación!",
+  "description": "Tu colaboración nos ayuda a comprender mejor la realidad de la accesibilidad digital, identificar necesidades formativas y orientar futuras investigaciones.",
+  "contact": {
+    "title": "Participa en futuras investigaciones",
+    "description": "Si deseas recibir información sobre los resultados y futuras investigaciones en accesibilidad digital, puedes facilitarnos tu correo electrónico. Es completamente voluntario. Se guardará con el mismo código de participación que tus respuestas y se utilizará exclusivamente para estas comunicaciones, sin fines comerciales.",
+    "emailLabel": "Correo electrónico (opcional)",
+    "required": false,
+    "consentLabel": "Acepto recibir información sobre los resultados y futuras investigaciones en accesibilidad digital.",
+    "consentRequiredIfEmail": true,
+    "consentDefault": false,
+    "submitLabel": "Guardar correo electrónico",
+    "skipLabel": "Continuar sin facilitar mi correo",
+    "storage": "separate"
+  },
+  "results": {
+    "title": "Conoce los resultados",
+    "description": "Descubre los datos y las tendencias de nuestra investigación en accesibilidad digital.",
+    "label": "Consultar el observatorio"
+  },
+  "homeLabel": "Volver a la página de inicio"
+}

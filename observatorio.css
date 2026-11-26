@@ -1,21 +1,6 @@
-.obs-hero {
-  padding: clamp(2rem, 6vw, 5rem) 0;
-  background: linear-gradient(115deg, #fff 15%, #f8eaf2);
-  border-bottom: 1px solid #e3d4dd;
-}
-.obs-hero h1 {
-  max-width: 18ch;
-  margin: .25em 0;
-  color: var(--ink);
-  font-size: clamp(2.15rem, 5.5vw, 4.65rem);
-  line-height: 1.04;
-  letter-spacing: -.045em;
-  overflow-wrap: anywhere;
-}
-.obs-hero p:last-child { max-width: 60ch; font-size: 1.12rem; }
 .obs { padding-bottom: 3rem; }
 .obs-nav { display: flex; flex-wrap: wrap; gap: .25rem 1.3rem; padding: 1rem 0; }
-.obs-nav a { padding: .4rem .15rem; font-weight: 725; }
+.obs-nav a { padding: .4rem .15rem; font-weight: 725; min-height: 2rem; }
 .obs-panel { border: 1px solid #e3d4dd; border-radius: 1rem; padding: clamp(1rem, 3vw, 1.75rem); background: #fff; }
 .obs-controls { background: #fcf6fa; }
 .obs-controls h2, .obs .kpi p { margin: 0; }
@@ -24,7 +9,7 @@
 .obs-grid, .obs-kpis { display: grid; gap: 1rem; }
 .obs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
 .obs-kpis { grid-template-columns: repeat(auto-fit, minmax(min(100%, 205px), 1fr)); margin: 1rem 0; }
-.obs .kpi { border-top: 4px solid #830050; }
+.obs .kpi { border-top: 4px solid #830051; }
 .obs .kpi strong { margin: .35rem 0; }
 .obs label { font-weight: 700; }
 .obs label { display: block; }
@@ -48,11 +33,11 @@
 .obs-segments {
   display: flex;
   height: 1.4rem;
-  border: 1px solid #830050;
+  border: 1px solid #830051;
   border-radius: .35rem;
   overflow: hidden;
 }
-.obs-fill { background: #830050; }
+.obs-fill { background: #830051; }
 .obs-fill-striped {
   background: repeating-linear-gradient(135deg, #f3db82 0 8px, #826514 8px 10px);
 }
@@ -61,7 +46,7 @@
   display: inline-block;
   flex: 0 0 1.1rem;
   height: .9rem;
-  border: 1px solid #830050;
+  border: 1px solid #830051;
   border-radius: .15rem;
   align-self: center;
 }
@@ -69,7 +54,7 @@
   .obs-fill { forced-color-adjust: none; background: CanvasText; }
   .obs-fill-striped { background: repeating-linear-gradient(135deg, Canvas 0 8px, CanvasText 8px 10px); }
 }
-.obs-findings { border-inline-start: 4px solid #830050; margin-top: 1rem; background: #f8eaf2; }
+.obs-findings { border-inline-start: 4px solid #830051; margin-top: 1rem; background: #f8eaf2; }
 .obs summary { cursor: pointer; padding-block: .35rem; }
 .obs table { overflow-wrap: anywhere; }
 .obs td, .obs th { padding-inline: .25rem; }
@@ -78,7 +63,7 @@
 .obs-group { margin: 1rem 0; }
 .obs-group > summary { font-weight: 700; color: #67003e; }
 .obs-group[open] > summary { margin-bottom: .75rem; }
-#case-dialog { width: min(780px, calc(100% - 1.5rem)); max-height: 86dvh; border: 2px solid #830050; border-radius: 1rem; padding: clamp(.8rem, 3vw, 1.75rem); color: #251621; }
+#case-dialog { width: min(780px, calc(100% - 1.5rem)); max-height: 86dvh; border: 2px solid #830051; border-radius: 1rem; padding: clamp(.8rem, 3vw, 1.75rem); color: #251621; }
 #case-dialog::backdrop { background: #251621aa; }
 #case-dialog form { margin: 0; }
 .obs-compare { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
@@ -104,8 +89,8 @@
 .obs-advanced button { margin-top: 1rem; }
 .obs-editorial { margin-block: 1rem; padding: clamp(1rem, 3vw, 2rem); background: #f8eaf2; border-radius: 1rem; }
 .obs-findings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 215px), 1fr)); gap: 1.25rem; }
-.obs-findings-grid article { border-top: 3px solid #830050; padding-top: .6rem; }
-.obs-finding-value { color: #830050; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin: 0; }
+.obs-findings-grid article { border-top: 3px solid #830051; padding-top: .6rem; }
+.obs-finding-value { color: #830051; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin: 0; }
 .obs-findings-grid h3 { margin: .3rem 0; }
 .obs-panorama { background: #fff; padding: clamp(.8rem, 2.5vw, 1.4rem); border: 1px solid #e3d4dd; border-radius: 1rem; margin-top: .8rem; min-width: 0; }
 .obs-panorama > h3 { margin: 0 0 .7rem; }
@@ -116,12 +101,10 @@
 .obs-public-filters legend { font-weight: 750; }
 .obs-public-filters p { margin: 0; }
 .obs-public-filters button { margin-top: .8rem; }
-.obs-nav a { min-height: 2rem; }
 .obs-panorama-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr)); gap: 1rem; }
 .obs-panorama-grid h4 { margin-top: 0; }
 .obs-findings-grid h4 { margin: .3rem 0; }
 
-.obs-hero h1 span { color: #830050; }
 .obs-nav a:focus-visible, .obs summary:focus-visible, .obs button:focus-visible {
   outline: 3px solid #1763ac;
   outline-offset: 3px;

@@ -1,0 +1,16 @@
+{
+  "paragraphs": [
+    "Este cuestionario forma parte de una investigación de la Universitat de Lleida sobre los conocimientos y competencias en accesibilidad digital.",
+    "La participación es voluntaria. Las respuestas serán tratadas de forma confidencial y se utilizarán con fines de investigación científica y análisis estadístico.",
+    "Los resultados podrán difundirse mediante publicaciones científicas, congresos y plataformas de investigación en accesibilidad digital, sin identificar a las personas participantes.",
+    "No se solicita información identificativa obligatoria."
+  ],
+  "contactText": "Para consultar la información sobre protección de datos del estudio o ejercer tus derechos, escribe a ",
+  "contactEmail": "aprendeaccesibilidad@gmail.com",
+  "contactLabel": "aprendeaccesibilidad@gmail.com",
+  "consentDisplay": {
+    "statement": "He leído la información del estudio y acepto participar voluntariamente.",
+    "explanation": "Esta decisión permite iniciar el cuestionario. No autoriza comunicaciones ni la vinculación de futuras evaluaciones.",
+    "help": "Marca la casilla para comenzar el cuestionario."
+  }
+}
