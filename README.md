@@ -23,7 +23,7 @@ Abre [Inicio](http://127.0.0.1:8000/). La página **Participación** carga el cu
 - `observatorios.html` reúne los observatorios del portal.
 - `participa-estudios.html`, `estudios-cuestionario.js` y `cuestionario-v15.css` muestran el consentimiento, los cuestionarios y el flujo de envío.
 - `datos/estudio1.json` y `datos/estudio2.json` definen las preguntas y sus opciones. Los recursos de los casos están en `datos/assets/`.
-- `observatorio-estudios.html` reúne los informes de cada estudio. `observatorio-estudios.js` carga los resultados agregados publicados.
+- Los resultados activos se consultan en `observatorio-estudio-1.html` y `observatorio-estudio-2.html`. La antigua página conjunta está archivada en `xborrar/observatorio-estudios.html`.
 - `sobre-el-proyecto.html` describe el proyecto. La información del estudio y privacidad está en `participa-estudios.html#privacidad`.
 - `integracion-google/` contiene el código y las instrucciones para configurar Google Sheets y publicar los agregados. [Configuración de la integración](integracion-google/README.md)
 
@@ -35,8 +35,8 @@ GitHub Pages sirve las páginas estáticas. Apps Script utiliza la hoja privada 
 
 ## Estudios actuales
 
-La navegación pública abre `participa-estudios.html` y `observatorio-estudios.html`. Las preguntas, las demostraciones de los casos y la pantalla final se cargan desde `datos/`. Los borradores se guardan por estudio en el navegador. Para activar Google Sheets y publicar los resultados, consulta [la guía de integración](integracion-google/README.md#estudios-1-y-2).
+La navegación pública abre `participa-estudios.html` y los observatorios individuales de cada estudio. Las preguntas, las demostraciones de los casos y la pantalla final se cargan desde `datos/`. Los borradores se guardan por estudio en el navegador. Para activar Google Sheets y publicar los resultados, consulta [la guía de integración](integracion-google/README.md#estudios-1-y-2).
 
 ## Demostración local del Observatorio
 
-Ejecuta `node integracion-google/generar-demo.mjs` desde la raíz y abre [la demostración](http://localhost:8000/observatorio-estudios.html?demo=1). El comando genera 20 respuestas ficticias por estudio y 20 contactos compartidos, con direcciones de ejemplo. Los resultados se calculan con las mismas reglas de agregación del Observatorio. Los archivos quedan en `datos/demo/`, fuera de Git y de Google Sheets.
+Ejecuta `node integracion-google/generar-demo.mjs` desde la raíz para generar datos ficticios de demostración. Las páginas activas de resultados son `observatorio-estudio-1.html` y `observatorio-estudio-2.html`; los archivos generados quedan en `datos/demo/`, fuera de Git y de Google Sheets.

@@ -183,7 +183,7 @@
 
  function persist() {
   if (!started) return;
-  if (!write(draftKey, {layout:2, step, furthest, answers, reused, timing, submissionId, contactDraft, studySent, caseFeedback})) {
+  if (!write(draftKey, {layout:3, step, furthest, answers, reused, timing, submissionId, contactDraft, studySent, caseFeedback})) {
    text('study-status','El navegador no permite guardar el borrador. Mantén esta página abierta para conservar tus respuestas.');
   }
  }
@@ -287,7 +287,7 @@
    mobileScaleHint.forEach((option,index) => {
     if (index) scaleHelp.append(document.createElement('br'));
     const score = option.score;
-    scaleHelp.append(el('strong',String(score)), ' ', el('strong','('+labelForScale(option)+')'));
+    scaleHelp.append(el('strong',String(score)), ' ', '('+labelForScale(option)+')');
    });
    field.append(scaleHelp);
   }
@@ -455,7 +455,7 @@
   const action=$('study-back').parentElement;
   action.classList.toggle('is-review',isReview);
   if (isReview) {
-   action.insertBefore($('study-next'),$('study-back'));
+   action.insertBefore($('study-back'),$('study-next'));
    $('study-panels').before(action);
   } else {
    action.insertBefore($('study-back'),$('study-next'));
@@ -572,15 +572,15 @@
    panel.append(evidence);
    for (const q of item.questions) panel.append(question(q,panel));
   }
+  if (study.controlQuestions?.length) {
+   const panel=buildPanel('Antes de enviar','Revisión final');
+   for (const q of study.controlQuestions) panel.append(question(q,panel));
+  }
   const contactPanel = buildPanel(final.contact.title,'Correo opcional');
   const contact = $('study-contact');
   contactPanel.append(contact);
   contact.hidden = false;
   configureContact();
-  if (study.controlQuestions?.length) {
-   const panel=buildPanel('Antes de enviar','Revisión final');
-   for (const q of study.controlQuestions) panel.append(question(q,panel));
-  }
   const reviewPanel=buildPanel('Revisa tus respuestas','Envío');
   reviewPanel.dataset.review='true';
   reviewPanel.append(el('p','Revisa tus respuestas antes de finalizar el cuestionario.'));
@@ -694,14 +694,45 @@
   if (!available) return;
   text('case-score',caseFeedback.score.toLocaleString('es-ES')+' / 10');
   text('case-score-count',caseFeedback.correctCount+' de '+caseFeedback.total+' respuestas correctas');
-  $('case-results-list').replaceChildren(...cases.map(item=>{
-   const row=el('li','',{class:'case-feedback-item '+(item.isCorrect?'is-correct':'is-incorrect')});
-   row.append(el('h4',item.title));
-   row.append(el('p',item.isCorrect?'Respuesta correcta':'Respuesta incorrecta',{class:'case-feedback-outcome'}));
-   row.append(el('p','Tu respuesta: '+item.selectedLabel));
-   if (!item.isCorrect) row.append(el('p','Respuesta esperada: '+item.correctLabel));
-   row.append(el('p','Criterio WCAG: '+item.wcag));
-   row.append(el('p','Explicación: '+item.explanation));
+  const caseById=new Map((study.cases||[]).map(caseItem=>[caseItem.id,caseItem]));
+  $('case-results-list').replaceChildren(...cases.map((item,index)=>{
+   const caseItem=caseById.get(item.id);
+   const row=el('li','',{class:'case-feedback-list-item'});
+   const card=el('article','',{class:'case-feedback-item '+(item.isCorrect?'is-correct':'is-incorrect')});
+   const layout=el('div','',{class:'case-feedback-layout'});
+   const copy=el('div','',{class:'case-feedback-copy'});
+   const title=el('h4');
+   title.append(el('span',String(index+1),{class:'case-feedback-number','aria-hidden':'true'}),el('span','Caso '+(index+1)+': ',{class:'sr-only'}),item.title);
+   copy.append(title);
+   const outcome=el('p','',{class:'case-feedback-outcome'});
+   const iconType=item.isCorrect?'pass':'fail';
+   outcome.append(el('span',optionIcons[iconType],{
+    class:'study-option-icon study-option-icon--'+iconType,'aria-hidden':'true'
+   }),item.isCorrect?'Tu respuesta fue correcta':'Tu respuesta fue incorrecta');
+   copy.append(el('p','Tu respuesta fue: '+item.selectedLabel),outcome);
+   if (!item.isCorrect) copy.append(el('p','Respuesta esperada: '+item.correctLabel));
+   const wcagTitles={
+    '1.1.1':'Contenido no textual',
+    '2.5.2':'Cancelación del puntero',
+    '3.3.4':'Prevención de errores (legales, financieros, de datos)'
+   };
+   const criterion=wcagTitles[item.wcag];
+   copy.append(el('p','Criterio WCAG relacionado: '+item.wcag+(criterion?' · '+criterion:'')),el('p','Explicación del caso: '+item.explanation));
+   const desktop=caseItem?.images?.find(image=>image.view==='desktop');
+   const mobile=caseItem?.images?.find(image=>image.view==='mobile');
+   const fallback=desktop||mobile;
+   if (fallback) {
+    const figure=el('figure','',{class:'case-feedback-figure'});
+    const picture=el('picture');
+    if (mobile) picture.append(el('source','',{media:'(max-width: 760px)',srcset:base+mobile.src}));
+    picture.append(el('img','',{
+     src:base+fallback.src,alt:fallback.alt||'',loading:'lazy',decoding:'async'
+    }));
+    figure.append(picture,el('figcaption','Vista del caso'));
+    layout.append(copy,figure);
+   } else layout.append(copy);
+   card.append(layout);
+   row.append(card);
    return row;
   }));
  }
@@ -713,7 +744,7 @@
   text('completion-copy',practice
    ? endpoint ? 'Has finalizado el Estudio 2. Tus respuestas se han guardado correctamente.' : 'Has finalizado la vista previa del Estudio 2. Las respuestas no se enviaron.'
    : final.description);
-  const email = practice ? confirmedContactEmail() : '';
+  const email = practice ? '' : confirmedContactEmail();
   text('completion-email-value',email);
   $('completion-email').hidden = !email;
   renderCaseFeedback();
@@ -854,7 +885,10 @@
   if (!endpoint) { completed();return; }
   pauseActivity();
   const metadata = participationMetadata();
-  sending=true; $('study-next').disabled=true; $('study-answers').setAttribute('aria-busy','true'); text('submission-error','');
+  const submitButton=$('study-next');
+  const submitLabel=submitButton.textContent;
+  sending=true; submitButton.disabled=true; submitButton.textContent='Enviando…';
+  $('study-answers').setAttribute('aria-busy','true'); $('submission-progress').hidden=false; text('submission-error','');
   text('step-announcement','Guardando tus respuestas…');
   try {
    if (!studySent) {
@@ -885,7 +919,11 @@
    } else text('submission-error',error.message+' Tus respuestas siguen en el borrador.');
    $('submission-error').focus();
   }
-  finally { sending=false; interact(); $('study-next').disabled=false; $('study-answers').removeAttribute('aria-busy'); if (!$('study-wizard').hidden) text('step-announcement',stepLabel(step)); }
+  finally {
+   sending=false; interact(); submitButton.disabled=false; submitButton.textContent=submitLabel;
+   $('study-answers').removeAttribute('aria-busy'); $('submission-progress').hidden=true;
+   if (!$('study-wizard').hidden) text('step-announcement',stepLabel(step));
+  }
  });
 
  async function start() {
@@ -917,7 +955,7 @@
    contactDraft = draft.contactDraft || null;
    studySent = draft.studySent === true;
    caseFeedback = id==='E2' ? draft.caseFeedback || read(caseFeedbackKey(),null) : null;
-   const offset = id==='E2' && draft.layout!==2 ? 1 : 0;
+   const offset = id==='E2' && draft.layout!==2 && draft.layout!==3 ? 1 : 0;
    step = Math.max(0,(draft.step || 0)-offset);
    if (draft.timing) timing = draft.timing;
    furthest=Math.min(99,Math.max(0,(draft.furthest || draft.step || 0)-offset));
@@ -950,6 +988,15 @@
   text('agreement-label',info.consentDisplay.statement);
   buildStudyIntroduction();
   build();
+  if (draft && id==='E2' && draft.layout===2) {
+   const contactStep=groups.findIndex(panel=>panel.contains($('study-contact')));
+   const controlStep=groups.findIndex(panel=>[...controls.values()].some(item=>item.panel===panel && item.q.id==='P53'));
+   const translatePreviousStep=index=>index===contactStep?controlStep:index===controlStep?contactStep:index;
+   if (contactStep>=0 && controlStep>=0) {
+    step=translatePreviousStep(step);
+    furthest=translatePreviousStep(furthest);
+   }
+  }
   step = Math.min(groups.length-1,step);
   furthest = Math.min(groups.length-1,furthest);
   const confirmed = !study.caseInstructions || answers[study.caseInstructions.confirmation.id]===true;

@@ -12,7 +12,6 @@
    'participa-estudios.html': 'estudios',
    'observatorios.html': 'observatorios',
    'observatorio.html': 'observatorios',
-   'observatorio-estudios.html': 'observatorios',
    'observatorio-estudio-1.html': 'observatorios',
    'observatorio-estudio-2.html': 'observatorios',
    'observatorio-destacados.html': 'observatorios',

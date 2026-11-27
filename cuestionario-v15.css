@@ -165,6 +165,7 @@
 }
 
 .case-results { margin-block: 1.75rem; }
+.case-results-intro { margin-block: -.35rem 1rem; }
 .case-score-card {
   margin-block: 1rem 1.5rem;
   padding: clamp(1rem, 3vw, 1.5rem);
@@ -175,13 +176,58 @@
 .case-score-card p { margin-block: .25rem; }
 .case-score-value { color: var(--udl-d); font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 800; line-height: 1.1; }
 .case-score-note { font-size: .9rem; }
-.case-feedback-list { display: grid; gap: .85rem; padding-inline-start: 1.7rem; }
-.case-feedback-item { padding: 1rem; border: 1px solid #c8c8c8; border-inline-start: 5px solid #555; border-radius: .75rem; background: #fff; }
-.case-feedback-item.is-correct { border-inline-start-color: #25643b; }
-.case-feedback-item.is-incorrect { border-inline-start-color: #9b1c31; }
-.case-feedback-item h4 { margin: 0 0 .5rem; }
+.case-feedback-list { display: grid; gap: 1rem; padding-inline-start: 0; list-style: decimal outside; }
+.case-feedback-list-item::marker { color: transparent; font-size: 1em; }
+.case-feedback-item { padding: clamp(.85rem, 2vw, 1.25rem); border: 2px solid #555; border-radius: .85rem; background: #fff; }
+.case-feedback-item.is-correct { border-color: #006637; background: #eff8f1; }
+.case-feedback-item.is-incorrect { border-color: #a40026; background: #fff1f2; }
+.case-feedback-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(15rem, .85fr); gap: 1.25rem; align-items: start; }
+.case-feedback-copy { min-width: 0; }
+.case-feedback-figure { min-width: 0; margin: 0; }
+.case-feedback-figure picture, .case-feedback-figure img { display: block; width: 100%; }
+.case-feedback-figure img { height: auto; border: 1px solid #b8b8b8; border-radius: .55rem; }
+.case-feedback-figure figcaption { margin-block-start: .35rem; font-size: .82rem; color: #343434; }
+.case-feedback-item h4 { display: flex; align-items: baseline; gap: .55rem; margin: 0 0 .5rem; }
+.case-feedback-number { display: inline-grid; place-items: center; flex: 0 0 1.8rem; width: 1.8rem; height: 1.8rem; border: 1px solid currentColor; border-radius: 50%; font-size: .95rem; line-height: 1; }
+.case-feedback-number { color: #111; }
 .case-feedback-item p { margin: .35rem 0; }
 .case-feedback-outcome { font-weight: 750; }
+.case-feedback-outcome .study-option-icon { margin-inline-end: .35rem; vertical-align: -.08em; }
+
+.submission-progress {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-block: 1rem;
+  padding: 1rem 1.15rem;
+  border: 2px solid var(--udl);
+  border-radius: .8rem;
+  background: var(--udl-soft);
+  color: #24131d;
+  font-weight: 650;
+}
+.submission-progress[hidden] { display: none; }
+.submission-spinner {
+  flex: 0 0 1.35rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  border: 3px solid #c9a8bb;
+  border-top-color: var(--udl);
+  border-radius: 50%;
+  animation: submission-spin .8s linear infinite;
+}
+@keyframes submission-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .submission-spinner { animation: none; border-top-color: #c9a8bb; border-right-color: var(--udl); }
+}
+
+#study-wizard .wizard-action.is-review #study-back { order: 0; }
+#study-wizard .wizard-action.is-review #study-next { order: 1; }
+#study-wizard .wizard-action.is-review #study-review-toggle { order: 2; }
+
+@media (max-width: 760px) {
+  .case-feedback-layout { grid-template-columns: minmax(0, 1fr); }
+}
 
 /* a11y: needs manual verification — lectura de las opciones y las secciones desplegables con lector de pantalla. */
 /* a11y: needs manual verification — legibilidad y foco de los seis pasos en móvil. */

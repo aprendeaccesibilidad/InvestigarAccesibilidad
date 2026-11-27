@@ -1047,3 +1047,5 @@ html:has(.home :is(#estudios, #observatorios):target) {
   padding-block-start: .85rem;
   border-block-start: 1px solid var(--line);
 }
+
+.page-hero h1 .hero-digital { color: #111 !important; }
