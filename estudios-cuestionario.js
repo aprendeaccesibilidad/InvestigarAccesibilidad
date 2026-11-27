@@ -662,7 +662,7 @@
   text('results-title',final.results.title);
   text('results-copy',final.results.description);
   text('results-link',final.results.label);
-  $('results-link').href = practice ? 'index.html#observatorios' : 'observatorio-estudios.html';
+  $('results-link').href = 'index.html#observatorios';
   text('home-link',final.homeLabel);
   renderCourses($('study-completion'));
   view('study-completion');
