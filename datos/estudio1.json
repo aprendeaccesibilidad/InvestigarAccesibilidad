@@ -11,7 +11,11 @@
   "startInstructions": {
     "title": "Cómo responder",
     "intro": "Te preguntaremos por tu perfil, tu experiencia y cómo has aprendido sobre accesibilidad digital.",
-    "ruleLabels": ["Elige tus respuestas", "Preguntas opcionales", "Revisa y envía"],
+    "ruleLabels": [
+      "Elige tus respuestas",
+      "Preguntas opcionales",
+      "Revisa y envía"
+    ],
     "conditions": [
       "Marca una opción o varias cuando la pregunta lo permita.",
       "Puedes dejar en blanco las preguntas que indiquen «opcional».",
@@ -143,8 +147,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple",
-            "Marca todas las opciones que correspondan. Si eliges una opción de ausencia de actividad, experiencia o conocimiento, no la combines con otras incompatibles."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "trabajas, estudias o investigas"
@@ -186,7 +189,7 @@
             }
           ],
           "instructions": [
-            "Selección única"
+            "Selecciona una opción."
           ],
           "emphasis": [
             "sector"
@@ -237,9 +240,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple",
-            "Marca todas las opciones que correspondan.",
-            "La última opción es excluyente."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "tareas de accesibilidad digital"
@@ -273,7 +274,7 @@
             }
           ],
           "instructions": [
-            "Selección única"
+            "Selecciona una opción."
           ],
           "emphasis": [
             "papel"
@@ -321,9 +322,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple",
-            "Marca todas las opciones que correspondan.",
-            "Las dos últimas opciones son excluyentes."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "discapacidad o dificultad funcional"
@@ -342,7 +341,6 @@
             }
           ],
           "instructions": [
-            "Selección única mediante desplegable",
             "Selecciona un país de la lista."
           ],
           "optionsSource": "country_catalog",
@@ -390,7 +388,7 @@
             }
           ],
           "instructions": [
-            "Selección única · Obligatoria."
+            "Selecciona una opción."
           ],
           "emphasis": [
             "Cuánto tiempo",
@@ -429,7 +427,7 @@
             }
           ],
           "instructions": [
-            "Selección única · Obligatoria."
+            "Selecciona una opción."
           ],
           "emphasis": [
             "Cuánto tiempo",
@@ -464,8 +462,7 @@
             }
           ],
           "instructions": [
-            "Selección única",
-            "Usa las flechas ↑ y ↓ para cambiar de opción."
+            "Selecciona una opción."
           ],
           "emphasis": [
             "cuántas horas"
@@ -512,9 +509,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple",
-            "Marca todas las opciones que correspondan.",
-            "La última opción es excluyente."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "métodos o herramientas"
@@ -608,9 +603,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple · Obligatoria",
-            "Marca todas las opciones que correspondan a tu experiencia de aprendizaje.",
-            "La última opción es excluyente."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "Cómo has aprendido"
@@ -652,7 +645,7 @@
             }
           ],
           "instructions": [
-            "Selección única · Obligatoria. Elige la categoría que más ha contribuido a tu aprendizaje entre las que has seleccionado en P13."
+            "Elige la categoría que más ha contribuido a tu aprendizaje entre las que has seleccionado en P13."
           ],
           "dynamicOptions": {
             "sourceQuestion": "P13",
@@ -729,9 +722,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple",
-            "Marca todas las opciones que correspondan.",
-            "La última opción es excluyente."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "temas de accesibilidad digital"
@@ -766,8 +757,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple",
-            "Marca todas las opciones que correspondan. Si eliges una opción de ausencia de actividad, experiencia o conocimiento, no la combines con otras incompatibles."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "formatos",
@@ -824,9 +814,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple",
-            "Marca todas las opciones que correspondan.",
-            "Las dos últimas opciones son excluyentes."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "actividades prácticas"
@@ -879,9 +867,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple · Opcional.",
-            "Marca todas las opciones que correspondan, considerando todos los cursos realizados.",
-            "Las dos últimas opciones son excluyentes."
+            "Puedes seleccionar una o varias opciones."
           ],
           "visibility": {
             "question": "P16",
@@ -980,9 +966,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple",
-            "Marca todas las opciones que correspondan.",
-            "Las tres últimas opciones son excluyentes."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "certificaciones profesionales, titulaciones o certificados de formación"
@@ -1008,7 +992,7 @@
             }
           ],
           "instructions": [
-            "Selección única · Opcional. Mostrar únicamente a quienes hayan indicado alguna certificación profesional."
+            "Selecciona una opción."
           ],
           "visibility": {
             "question": "P19",
@@ -1072,9 +1056,7 @@
             }
           ],
           "instructions": [
-            "Selección múltiple",
-            "Marca todas las opciones que correspondan.",
-            "Las dos últimas opciones son excluyentes."
+            "Puedes seleccionar una o varias opciones."
           ],
           "emphasis": [
             "recursos consultas"
@@ -1113,11 +1095,12 @@
             }
           ],
           "instructions": [
-            "Escala ordinal de 1 a 5"
+            "Escala de 1 a 5."
           ],
           "emphasis": [
             "conocimientos sobre accesibilidad digital"
-          ]
+          ],
+          "mobileScaleHint": "Selecciona un valor de 1 (Muy limitado) a 5 (Muy avanzado)."
         }
       ],
       "shortTitle": "Recursos, conocimientos"
@@ -1168,11 +1151,12 @@
             }
           ],
           "instructions": [
-            "Escala ordinal de 1 a 5"
+            "Escala de 1 a 5."
           ],
           "emphasis": [
             "grado de satisfacción"
-          ]
+          ],
+          "mobileScaleHint": "Selecciona un valor de 1 (Muy insatisfecha/o) a 5 (Muy satisfecha/o)."
         },
         {
           "id": "P24",
@@ -1215,11 +1199,12 @@
             }
           ],
           "instructions": [
-            "Escala ordinal de 1 a 5"
+            "Escala de 1 a 5."
           ],
           "emphasis": [
             "disfrutas"
-          ]
+          ],
+          "mobileScaleHint": "Selecciona un valor de 1 (Nada) a 5 (Mucho)."
         }
       ],
       "shortTitle": "Satisfacción, motivación"
@@ -1229,7 +1214,7 @@
     "title": "¡Gracias por participar!",
     "description": "Tus respuestas se han registrado correctamente. Tu participación contribuye a conocer la trayectoria, la formación, la práctica profesional y los conocimientos percibidos en accesibilidad digital.",
     "invitationTitle": "¿Quieres poner a prueba tus conocimientos sobre las WCAG?",
-    "invitationText": "Participa en el estudio 2 evaluando casos prácticos de accesibilidad digital y contribuye a conocer cómo se comprenden y aplican las WCAG. La participación es voluntaria. Duración estimada: 15 minutos.",
+    "invitationText": "Participa en el estudio 2 evaluando casos prácticos de accesibilidad digital y contribuye a conocer cómo se comprenden y aplican las WCAG. La participación es voluntaria. Duración estimada: 25 minutos.",
     "invitationEmphasis": "estudio 2 evaluando casos prácticos de accesibilidad digital y contribuye a conocer cómo se comprenden y aplican las WCAG",
     "actions": [
       {
