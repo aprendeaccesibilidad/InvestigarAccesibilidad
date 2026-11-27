@@ -159,7 +159,7 @@
  }
 
  function persist() {
-  if (!started || id==='E2') return;
+  if (!started) return;
   if (!write(draftKey, {layout:2, step, furthest, answers, reused, timing, submissionId, contactDraft, studySent})) {
    text('study-status','El navegador no permite guardar el borrador. Mantén esta página abierta para conservar tus respuestas.');
   }
@@ -645,13 +645,16 @@
  function completion() {
   const practice = study?.id === 'E2';
   text('completion-title',final.title);
-  text('completion-copy',practice ? 'Has finalizado el Estudio 2. Las respuestas de los casos no se han guardado.' : final.description);
+  text('completion-copy',practice
+   ? endpoint ? 'Has finalizado el Estudio 2. Tus respuestas se han guardado correctamente.' : 'Has finalizado la vista previa del Estudio 2. Las respuestas no se enviaron.'
+   : final.description);
   const email = practice ? read(contactKey,'') : '';
   text('completion-email-value',email);
   $('completion-email').hidden = !email;
   text('results-title',final.results.title);
   text('results-copy',final.results.description);
   text('results-link',final.results.label);
+  $('results-link').href = practice ? 'index.html#observatorios' : 'observatorio-estudios.html';
   text('home-link',final.homeLabel);
   renderCourses($('study-completion'));
   view('study-completion');
@@ -781,9 +784,9 @@
    if (!validate(panel)) { showStep(i);validate(panel);return; }
    panel.hidden = true;
   }
-  if (id==='E2' || !endpoint) { completed();return; }
-  const metadata = participationMetadata();
+  if (!endpoint) { completed();return; }
   pauseActivity();
+  const metadata = participationMetadata();
   sending=true; $('study-next').disabled=true; $('study-answers').setAttribute('aria-busy','true'); text('submission-error','');
   text('step-announcement','Guardando tus respuestas…');
   try {
@@ -827,9 +830,8 @@
   commonPairs=study2.sections.flatMap(section=>section.questions)
    .filter(q=>q.reuseFrom).map(q=>[q.reuseFrom.questionId,q.id]);
   draftKey='investigar:estudios:borrador:'+id+':'+study.version;
-  const draft=id==='E1' ? read(draftKey,null) : null;
+  const draft=read(draftKey,null);
   if (id==='E2') {
-   remove(draftKey);
    if (read(contactKey,'')) {
     text('study-status','Se ha recuperado el correo electrónico introducido en el Estudio 1.');
    }
@@ -843,7 +845,7 @@
    answers=draft.answers; reused=draft.reused;
    submissionId = draft.submissionId || submissionId;
    contactDraft = id==='E1' ? draft.contactDraft || null : null;
-   studySent = id==='E1' && draft.studySent === true;
+   studySent = draft.studySent === true;
    const offset = id==='E2' && draft.layout!==2 ? 1 : 0;
    step = Math.max(0,(draft.step || 0)-offset);
    if (draft.timing) timing = draft.timing;
@@ -866,10 +868,11 @@
   text('study-notice',study.introNotice || 'La participación es voluntaria. Puedes retomar un borrador desde este navegador.');
   for(const paragraph of info.paragraphs) $('privacy-copy').append(el('p',paragraph));
   $('privacy-copy').append(el('p',id==='E2'
-   ? 'Las respuestas del Estudio 2 se mantienen abiertas durante esta sesión. Si recargas la página, tendrás que empezar de nuevo. Si ya facilitaste tu correo en el Estudio 1 desde este navegador, se mostrará en la pantalla final.'
+   ? 'Al completar el Estudio 2, tus respuestas se guardarán en la hoja del estudio. Si recargas la página antes de terminar, podrás retomarlas desde este navegador. Si facilitaste tu correo en el Estudio 1 desde este navegador, se mostrará en la pantalla final.'
    : 'El borrador se guarda en este navegador para que puedas retomarlo. Tras el envío, el navegador conserva el código de participación y las respuestas de selección comunes a ambos estudios. Si facilitas tu correo, se guarda con ese mismo código en la pestaña de contactos y en este navegador.'));
   const timingNotice = 'Para analizar la participación registramos la fecha y hora de inicio y fin, las duraciones, el tipo de dispositivo, la familia del navegador y el idioma del cuestionario.';
   if (id==='E1') $('privacy-copy').append(el('p',timingNotice));
+  else $('privacy-copy').append(el('p',timingNotice+' En el Estudio 2 también registramos el tiempo activo de cada caso.'));
   const contact=el('p',info.contactText);
   contact.append(el('a',info.contactLabel,{href:'mailto:'+info.contactEmail}),'.');
   $('privacy-copy').append(contact);
