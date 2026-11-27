@@ -251,15 +251,23 @@
   const scoredOptions = optionsFor(q).filter(option=>Number.isInteger(option.score)).sort((a,b)=>a.score-b.score);
   const labelForScale = option => option.label.replace(/^\d+\s*·\s*/,'').trim();
   const mobileScaleHint = compact && scoredOptions.length >= 2
-   ? q.mobileScaleHint || 'Selecciona un valor de 1 ('+labelForScale(scoredOptions[0])+') a 5 ('+labelForScale(scoredOptions.at(-1))+').'
-   : '';
+   ? [scoredOptions[0],scoredOptions.at(-1)] : [];
   if (compact) field.classList.add('has-compact-scale');
   const help = compact ? [q.options.length === 5
    ? 'Selecciona un valor de 1 a 5.'
    : 'Selecciona un valor de 1 a 5 o una de las opciones de abajo.'] : [...(q.instructions || [])];
   const instructions = el('p', help.join(' '), {id:key+'-help', class:'questionnaire-help'});
   field.append(title,error,instructions);
-  if (mobileScaleHint) field.append(el('p',mobileScaleHint,{class:'questionnaire-mobile-scale-help'}));
+  if (mobileScaleHint.length) {
+   const scaleHelp = el('p','',{class:'questionnaire-mobile-scale-help'});
+   scaleHelp.append('Selecciona un valor:',document.createElement('br'));
+   mobileScaleHint.forEach((option,index) => {
+    if (index) scaleHelp.append(document.createElement('br'));
+    const score = option.score;
+    scaleHelp.append(el('strong',String(score)), ' ', el('strong','('+labelForScale(option)+')'));
+   });
+   field.append(scaleHelp);
+  }
   const item = {q, field, panel, error, numberLabel, displayNumber:id === 'E2' ? '' : q.id,
    choices:[], others:new Map(), input:null, help:key+'-help'};
   controls.set(q.id,item);
