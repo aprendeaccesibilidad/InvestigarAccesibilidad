@@ -220,6 +220,11 @@
 #study-review dt { font-weight: 650; margin-block-start: .65rem; }
 #study-review dd { margin-inline-start: 0; overflow-wrap: anywhere; }
 #study-next { margin-inline-start: auto; }
+#study-wizard .wizard-action.is-review {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+#study-wizard .wizard-action.is-review #study-next { margin-inline-start: 0; }
 #invitation-next-study {
   margin-block-start: 1.5rem;
   padding: clamp(1rem, 4vw, 2rem);
@@ -283,6 +288,11 @@
     background: #fff;
   }
   #study-wizard .wizard-action button { min-height: 48px; padding-inline: .65rem; }
+  #study-wizard .wizard-action.is-review {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #study-wizard .wizard-action.is-review button { width: 100%; }
   #study-wizard .questionnaire-field :is(input[type="text"], select, textarea) {
     min-height: 44px;
   }

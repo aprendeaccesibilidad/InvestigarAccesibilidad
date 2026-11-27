@@ -424,9 +424,20 @@
   updateCaseMedia(groups[index]);
   heading('current-step',groups[index].dataset.title);
   text('step-announcement',stepLabel(index));
-  text('study-next',index===groups.length-1 ? (id==='E2' ? 'Finalizar cuestionario' : 'Enviar respuestas') : 'Continuar →');
+  const isReview=groups[index].dataset.review==='true';
+  text('study-next',isReview ? 'Finalizar cuestionario' : 'Continuar →');
   $('study-back').hidden=index===0 || studySent;
   $('study-next').hidden=groups[index].contains($('study-contact'));
+  $('study-review-toggle').hidden=!isReview;
+  const action=$('study-back').parentElement;
+  action.classList.toggle('is-review',isReview);
+  if (isReview) {
+   action.insertBefore($('study-next'),$('study-back'));
+   $('study-panels').before(action);
+  } else {
+   action.insertBefore($('study-back'),$('study-next'));
+   $('submission-error').after(action);
+  }
   $('study-steps').replaceChildren(...groups.map((panel,i)=>{
    const li=el('li','',{class:i===index?'current':i<index?'done':''});
    const button=el('button',(i+(id==='E2'?0:1))+'. '+panel.dataset.short,{type:'button',class:'step-link'});
@@ -548,13 +559,12 @@
   if (study.controlQuestions?.length) {
    const panel=buildPanel('Antes de enviar','Revisión final');
    for (const q of study.controlQuestions) panel.append(question(q,panel));
-   panel.append(el('p','Usa «Anterior» o el menú de pasos para revisar tus respuestas antes de finalizar.'));
-  } else {
-   const panel=buildPanel('Revisa tus respuestas','Envío');
-   panel.append(el('p','Usa «Anterior» o el menú de pasos para revisar tus respuestas. Pulsa «Enviar respuestas» cuando hayas terminado.'));
   }
+  const reviewPanel=buildPanel('Revisa tus respuestas','Envío');
+  reviewPanel.dataset.review='true';
+  reviewPanel.append(el('p','Revisa tus respuestas antes de finalizar el cuestionario.'));
   const review = el('div','',{id:'study-review',class:'review'});
-  const toggle = el('button','Mostrar toda la información',{
+  const toggle = el('button','Mostrar las respuestas',{
    id:'study-review-toggle',type:'button',class:'button outline','aria-controls':review.id
   });
   const status = el('p','',{class:'sr-only',role:'status'});
@@ -566,13 +576,15 @@
    status.textContent = expand ? 'Se han desplegado todas las categorías.' : 'Se han plegado todas las categorías.';
   });
   review.addEventListener('toggle',updateReviewToggle,true);
-  groups.at(-1).append(toggle,status,review);
+  reviewPanel.append(status,review);
+  $('study-wizard').querySelector('.wizard-action').append(toggle);
   refresh();
  }
 
  function updateReviewToggle() {
   const categories = [...$('study-review').querySelectorAll('details')];
-  text('study-review-toggle',categories.every(category=>category.open) ? 'Mostrar solo categorías' : 'Mostrar toda la información');
+  text('study-review-toggle',categories.length && categories.every(category=>category.open)
+   ? 'Ocultar las respuestas' : 'Mostrar las respuestas');
  }
 
  function renderReview() {
@@ -674,12 +686,13 @@
    $('repeat-completed').href = 'participa-estudios.html?repetir=1';
    $('repeat-completed').hidden = !read(commonKey('E1'),null);
   }
-  $('completion-title').focus();
+  requestAnimationFrame(() => $('completion-title').focus({preventScroll:false}));
  }
 
  function completed(alreadyRecorded = false) {
   remove(draftKey);
   started=false;
+  text('study-status','');
   if (id==='E2') {
    remove(commonKey('E2'));
    write('investigar:estudios:completado:E2:'+study.version,true);
@@ -893,7 +906,9 @@
   if (draft && confirmed && location.hash!=='#privacidad') {
    timing.startedAt ||= new Date().toISOString();
    started=true;interact();view('study-wizard');showStep(step);
-   text('study-status','Se han recuperado el borrador y el último paso guardado.');
+   text('study-status',id==='E2'
+    ? 'Se han recuperado tus respuestas guardadas en este navegador. Puedes continuar desde el último paso completado.'
+    : 'Se han recuperado el borrador y el último paso guardado.');
   } else {
    view('study-introduction');
    if (location.hash==='#privacidad') $('privacidad').open=true;
