@@ -720,15 +720,20 @@
    copy.append(el('p','Criterio WCAG relacionado: '+item.wcag+(criterion?' · '+criterion:'')),el('p','Explicación del caso: '+item.explanation));
    const desktop=caseItem?.images?.find(image=>image.view==='desktop');
    const mobile=caseItem?.images?.find(image=>image.view==='mobile');
-   const fallback=desktop||mobile;
-   if (fallback) {
+   const preferred=mobileLayout.matches?'mobile':'desktop';
+   const media=caseItem?.images?.find(image=>image.view===preferred)||desktop||mobile;
+   if (media) {
     const figure=el('figure','',{class:'case-feedback-figure'});
-    const picture=el('picture');
-    if (mobile) picture.append(el('source','',{media:'(max-width: 760px)',srcset:base+mobile.src}));
-    picture.append(el('img','',{
-     src:base+fallback.src,alt:fallback.alt||'',loading:'lazy',decoding:'async'
-    }));
-    figure.append(picture,el('figcaption','Vista del caso'));
+    if (media.video) {
+     const video=el('video','',{controls:'',playsinline:'',preload:'metadata',poster:base+media.src,'aria-label':'Vídeo del caso '+(index+1)+': '+item.title});
+     video.append(el('source','',{src:base+media.video,type:'video/mp4'}));
+     if (caseItem.captions) video.append(el('track','',{kind:'captions',srclang:'es',label:'Español',src:base+caseItem.captions}));
+     figure.append(video,el('figcaption',preferred==='mobile'?'Interacción en móvil':'Interacción en ordenador'));
+    } else {
+     figure.append(el('img','',{
+      src:base+media.src,alt:media.alt||'',loading:'lazy',decoding:'async'
+     }),el('figcaption',preferred==='mobile'?'Vista móvil del caso':'Vista de ordenador del caso'));
+    }
     layout.append(copy,figure);
    } else layout.append(copy);
    card.append(layout);
@@ -736,6 +741,10 @@
    return row;
   }));
  }
+
+ mobileLayout.addEventListener('change',()=>{
+  if (!$('case-results').hidden) renderCaseFeedback();
+ });
 
  function completion() {
   const practice = study?.id === 'E2';
@@ -747,6 +756,7 @@
   const email = practice ? '' : confirmedContactEmail();
   text('completion-email-value',email);
   $('completion-email').hidden = !email;
+  $('case-study-context').hidden = !practice;
   renderCaseFeedback();
   text('results-title',final.results.title);
   text('results-copy',final.results.description);

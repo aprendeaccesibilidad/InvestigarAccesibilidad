@@ -186,6 +186,7 @@
 .case-feedback-figure { min-width: 0; margin: 0; }
 .case-feedback-figure picture, .case-feedback-figure img { display: block; width: 100%; }
 .case-feedback-figure img { height: auto; border: 1px solid #b8b8b8; border-radius: .55rem; }
+.case-feedback-figure video { display: block; width: 100%; height: auto; border: 1px solid #b8b8b8; border-radius: .55rem; }
 .case-feedback-figure figcaption { margin-block-start: .35rem; font-size: .82rem; color: #343434; }
 .case-feedback-item h4 { display: flex; align-items: baseline; gap: .55rem; margin: 0 0 .5rem; }
 .case-feedback-number { display: inline-grid; place-items: center; flex: 0 0 1.8rem; width: 1.8rem; height: 1.8rem; border: 1px solid currentColor; border-radius: 50%; font-size: .95rem; line-height: 1; }
@@ -357,6 +358,9 @@
     flex-direction: column;
     align-items: stretch;
   }
+  #study-wizard .wizard-action.is-review #study-next { order: 0; }
+  #study-wizard .wizard-action.is-review #study-back { order: 1; }
+  #study-wizard .wizard-action.is-review #study-review-toggle { order: 2; }
   #study-wizard .wizard-action.is-review button { width: 100%; }
   #study-wizard .questionnaire-field :is(input[type="text"], select, textarea) {
     min-height: 44px;
@@ -415,9 +419,10 @@
   .questionnaire-field.has-compact-scale > .questionnaire-mobile-scale-help {
     display: block;
     margin: .25rem 0 .75rem;
-    font-weight: 650;
+    font-weight: 400;
     color: #33202c;
   }
+  .questionnaire-field.has-compact-scale > .questionnaire-mobile-scale-help strong { font-weight: 750; }
   .study-scale-caption {
     position: absolute;
     width: 1px;
