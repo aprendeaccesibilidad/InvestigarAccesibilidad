@@ -31,8 +31,26 @@
  const storedParticipant = read(idKey, '');
  const participant = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(storedParticipant) ? storedParticipant : crypto.randomUUID();
  const contactKey = 'investigar:estudios:correo:'+participant;
+ const latestSubmissionKey = studyId => 'investigar:estudios:ultimo-envio:'+studyId+':'+participant;
  let endpoint, study, final, countries, versions, draftKey, answers = {}, reused = {}, commonPairs = [], groups = [], step = 0, furthest = 0, started = false, sending = false;
  const controls = new Map();
+
+ function confirmedContactFrom(studyId) {
+  const saved=read(contactKey,null);
+  const latestSubmission=read(latestSubmissionKey(studyId),'');
+  if (!saved || typeof saved!=='object' || saved.consent!==true ||
+      saved.studyId!==studyId || typeof saved.email!=='string' || saved.submissionId!==latestSubmission ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(saved.email)) return '';
+  return saved.email;
+ }
+
+ function confirmedContactEmail() {
+  return confirmedContactFrom('E1') || confirmedContactFrom('E2');
+ }
+
+ function previousStudyContactEmail() {
+  return confirmedContactFrom(id==='E1'?'E2':'E1');
+ }
 
  async function load(name) {
   const result = await fetch(base + name, {cache:'no-store'});
@@ -549,13 +567,11 @@
    panel.append(evidence);
    for (const q of item.questions) panel.append(question(q,panel));
   }
-  if (id==='E1') {
-   const contactPanel = buildPanel(final.contact.title,'Correo opcional');
-   const contact = $('study-contact');
-   contactPanel.append(contact);
-   contact.hidden = false;
-   configureContact();
-  }
+  const contactPanel = buildPanel(final.contact.title,'Correo opcional');
+  const contact = $('study-contact');
+  contactPanel.append(contact);
+  contact.hidden = false;
+  configureContact();
   if (study.controlQuestions?.length) {
    const panel=buildPanel('Antes de enviar','Revisión final');
    for (const q of study.controlQuestions) panel.append(question(q,panel));
@@ -653,8 +669,9 @@
  }
 
  function configureContact() {
-  $('contact-email').value = contactDraft?.email || '';
-  $('contact-consent').checked = Boolean(contactDraft);
+  const previousEmail=previousStudyContactEmail();
+  $('contact-email').value = contactDraft?.email || previousEmail;
+  $('contact-consent').checked = Boolean(contactDraft || previousEmail);
   text('email-copy',final.contact.description);
   text('email-label',final.contact.emailLabel);
   text('contact-label',final.contact.consentLabel);
@@ -668,7 +685,7 @@
   text('completion-copy',practice
    ? endpoint ? 'Has finalizado el Estudio 2. Tus respuestas se han guardado correctamente.' : 'Has finalizado la vista previa del Estudio 2. Las respuestas no se enviaron.'
    : final.description);
-  const email = practice ? read(contactKey,'') : '';
+  const email = practice ? confirmedContactEmail() : '';
   text('completion-email-value',email);
   $('completion-email').hidden = !email;
   text('results-title',final.results.title);
@@ -815,11 +832,12 @@
     const result = await send({kind:'study',participant,submissionId,studyId:id,version:study.version,consent:true,answers,reused,metadata});
     if (result.submissionId !== submissionId) throw new Error('La aplicación de guardado debe actualizarse antes de confirmar este envío.');
     studySent = true;
+    write(latestSubmissionKey(id),submissionId);
     persist();
    }
    if (contactDraft) {
     await send({kind:'contact',participant,submissionId,studyId:id,email:contactDraft.email,consent:true});
-    write(contactKey,contactDraft.email);
+    write(contactKey,{email:contactDraft.email,submissionId,studyId:id,consent:true});
    }
    if (repeating) {
     const url = new URL(location.href);
@@ -852,11 +870,9 @@
    .filter(q=>q.reuseFrom).map(q=>[q.reuseFrom.questionId,q.id]);
   draftKey='investigar:estudios:borrador:'+id+':'+study.version;
   const draft=read(draftKey,null);
-  if (id==='E2') {
-   if (read(contactKey,'')) {
-    text('study-status','Se ha recuperado el correo electrónico introducido en el Estudio 1.');
-   }
-  }
+  const previousEmail=previousStudyContactEmail();
+  if (previousEmail)
+   text('study-status','Se ha recuperado el correo electrónico guardado en el Estudio '+(id==='E1'?'2':'1')+'.');
   const committed=read('investigar:estudios:completado:'+id+':'+study.version,false);
   if (endpoint && committed && !draft && !repeating && location.hash!=='#privacidad') {
    heading('study-title',study.title);text('study-description',study.description);completed(true);return;
@@ -865,7 +881,7 @@
    restoringDraft = true;
    answers=draft.answers; reused=draft.reused;
    submissionId = draft.submissionId || submissionId;
-   contactDraft = id==='E1' ? draft.contactDraft || null : null;
+   contactDraft = draft.contactDraft || null;
    studySent = draft.studySent === true;
    const offset = id==='E2' && draft.layout!==2 ? 1 : 0;
    step = Math.max(0,(draft.step || 0)-offset);
@@ -889,7 +905,7 @@
   text('study-notice',study.introNotice || 'La participación es voluntaria. Puedes retomar un borrador desde este navegador.');
   for(const paragraph of info.paragraphs) $('privacy-copy').append(el('p',paragraph));
   $('privacy-copy').append(el('p',id==='E2'
-   ? 'Al completar el Estudio 2, tus respuestas se guardarán en la hoja del estudio. Si recargas la página antes de terminar, podrás retomarlas desde este navegador. Si facilitaste tu correo en el Estudio 1 desde este navegador, se mostrará en la pantalla final.'
+   ? 'Al completar el Estudio 2, tus respuestas se guardarán en la hoja del estudio. Si recargas la página antes de terminar, podrás retomarlas desde este navegador. Si facilitaste y guardaste tu correo en el Estudio 1 desde este navegador, se mostrará en este cuestionario.'
    : 'El borrador se guarda en este navegador para que puedas retomarlo. Tras el envío, el navegador conserva el código de participación y las respuestas de selección comunes a ambos estudios. Si facilitas tu correo, se guarda con ese mismo código en la pestaña de contactos y en este navegador.'));
   const timingNotice = 'Para analizar la participación registramos la fecha y hora de inicio y fin, las duraciones, el tipo de dispositivo, la familia del navegador y el idioma del cuestionario.';
   if (id==='E1') $('privacy-copy').append(el('p',timingNotice));
@@ -906,9 +922,12 @@
   if (draft && confirmed && location.hash!=='#privacidad') {
    timing.startedAt ||= new Date().toISOString();
    started=true;interact();view('study-wizard');showStep(step);
-   text('study-status',id==='E2'
+   const recoveredDraft=id==='E2'
     ? 'Se han recuperado tus respuestas guardadas en este navegador. Puedes continuar desde el último paso completado.'
-    : 'Se han recuperado el borrador y el último paso guardado.');
+    : 'Se han recuperado el borrador y el último paso guardado.';
+   text('study-status',previousEmail
+    ? recoveredDraft+' También se ha recuperado el correo guardado en el Estudio '+(id==='E1'?'2':'1')+'.'
+    : recoveredDraft);
   } else {
    view('study-introduction');
    if (location.hash==='#privacidad') $('privacidad').open=true;
