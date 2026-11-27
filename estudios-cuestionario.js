@@ -259,7 +259,7 @@
   const field = el(q.type === 'text' || q.type === 'country' ? 'div' : 'fieldset', '', {class:'questionnaire-field'});
   const key = 'q-' + q.id;
   const title = field.tagName === 'FIELDSET' ? el('legend') : el('label', '', {for:key});
-  const numberLabel = el('strong', id === 'E2' ? '' : q.id+'.');
+  const numberLabel = el('strong', id === 'E2' ? '' : q.id.replace(/^P/,'')+'.');
   title.append(questionPrompt(q, numberLabel));
   const error = el('p', '', {id:key+'-error', role:'alert', class:'questionnaire-error'});
   const compact = q.presentation === 'compact-scale' ||
@@ -286,7 +286,7 @@
    });
    field.append(scaleHelp);
   }
-  const item = {q, field, panel, error, numberLabel, displayNumber:id === 'E2' ? '' : q.id,
+  const item = {q, field, panel, error, numberLabel, displayNumber:id === 'E2' ? '' : q.id.replace(/^P/,''),
    choices:[], others:new Map(), input:null, help:key+'-help'};
   controls.set(q.id,item);
   if (reused[q.id]) {
