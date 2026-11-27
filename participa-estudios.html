@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#830051"><meta name="description" content="Participa en los estudios sobre perfil, formación y experiencia en accesibilidad digital y sobre la evaluación de barreras mediante casos prácticos basados en las pautas WCAG."><title>Estudios y participación - Investigar Accesibilidad Digital</title><link rel="stylesheet" href="styles.css?v=portal-38"><link rel="stylesheet" href="cuestionario-v15.css?v=39"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#830051"><meta name="description" content="Participa en los estudios sobre perfil, formación y experiencia en accesibilidad digital y sobre la evaluación de barreras mediante casos prácticos basados en las pautas WCAG."><title>Estudios y participación - Investigar Accesibilidad Digital</title><link rel="stylesheet" href="styles.css?v=portal-38"><link rel="stylesheet" href="cuestionario-v15.css?v=40"></head>
 <body><a class="skip" href="#contenido">Saltar al contenido</a><div class="topline"></div>
 <header class="site-header"><div class="container header-row"><a class="brand" href="index.html" aria-label="Ir al inicio de Investigar Accesibilidad Digital"><span class="brand-identity"><span class="brand-copy"><strong>Investigar<br><span class="brand-accent">Accesibilidad</span><br><span class="brand-digital">Digital</span></strong></span></span></a><nav class="nav" aria-label="Navegación principal"><a href="index.html" data-site-item="inicio">Inicio</a><a href="index.html#estudios" data-site-item="estudios" aria-current="location">Estudios</a><a href="index.html#observatorios" data-site-item="observatorios">Observatorios</a><a href="index.html#proyecto" data-site-item="proyecto">Sobre el proyecto</a></nav></div></header>
 <nav class="container breadcrumbs" aria-label="Migas de navegación"><ol>
@@ -84,11 +84,22 @@
   <section class="card" id="study-completion" aria-labelledby="completion-title" hidden>
    <h2 id="completion-title" tabindex="-1"></h2>
    <p id="completion-copy"></p>
-   <p id="completion-email" hidden><strong>Correo facilitado en el Estudio 1</strong><br><span id="completion-email-value"></span></p>
+   <section id="case-results" class="case-results" aria-labelledby="case-results-title" aria-live="polite" aria-atomic="false" hidden>
+    <h3 id="case-results-title">Tu resultado en los seis casos</h3>
+    <div class="case-score-card">
+     <p><strong>Puntuación orientativa</strong></p>
+     <p id="case-score" class="case-score-value"></p>
+     <p id="case-score-count"></p>
+     <p class="case-score-note">Cada caso acertado aporta una sexta parte de los 10 puntos. La puntuación se redondea a un decimal.</p>
+    </div>
+    <ol id="case-results-list" class="case-feedback-list"></ol>
+   </section>
+   <p id="case-results-unavailable" class="notice" role="status" hidden>Las respuestas se han guardado, pero el servicio todavía no ha devuelto la corrección individual. El equipo debe actualizar la implementación de Apps Script para mostrarla.</p>
+   <p id="completion-email" hidden><strong>Correo electrónico guardado</strong><br><span id="completion-email-value"></span></p>
    <p><a id="repeat-completed" class="button outline" href="estudios.html" hidden>Volver a responder el cuestionario</a></p>
    <section id="study-courses" aria-labelledby="study-courses-title" hidden>
-    <h3 id="study-courses-title">Formación en accesibilidad digital de la Universitat de Lleida</h3>
-    <p>Te recomendamos cursos formativos de accesibilidad digital que pueden ser interesantes para ti.</p>
+    <h3 id="study-courses-title">Mejora tus competencias aprendiendo sobre accesibilidad digital</h3>
+    <p>Te proponemos estos cursos según tu perfil.</p>
     <ul id="study-course-list"></ul>
    </section>
    <section aria-labelledby="results-title">
@@ -125,4 +136,4 @@
  <a href="index.html#observatorios" data-mobile-item="observatorios"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 17v-6h4v6M10 17V5h4v12M15 17V9h4v8"/><path d="M5 11h4M10 5h4M15 9h4"/></svg></span><span>Observatorios</span></a>
  <a href="index.html#proyecto" data-mobile-item="proyecto"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6.5C9.5 5 6.5 5 3 6v13c3.5-1 6.5-1 9 .5 2.5-1.5 5.5-1.5 9-.5V6c-3.5-1-6.5-1-9 .5Z"/><path d="M12 6.5v13"/></svg></span><span>Sobre el proyecto</span></a>
 
- </nav><script src="texto-portal.js" defer></script><script src="estudios-cuestionario.js?v=60" defer></script></body></html>
+ </nav><script src="texto-portal.js" defer></script><script src="estudios-cuestionario.js?v=61" defer></script></body></html>

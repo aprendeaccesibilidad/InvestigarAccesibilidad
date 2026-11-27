@@ -9,6 +9,7 @@
  let restoringDraft = false;
  let contactDraft = null;
  let studySent = false;
+ let caseFeedback = null;
  const stepLabel = index => 'Paso '+(index+(id==='E2'?0:1))+' de '+(groups.length-(id==='E2'?1:0));
  const mobileLayout = matchMedia('(max-width: 760px)');
  const mobileNavigation = matchMedia('(max-width: 1024px)');
@@ -50,6 +51,10 @@
 
  function previousStudyContactEmail() {
   return confirmedContactFrom(id==='E1'?'E2':'E1');
+ }
+
+ function caseFeedbackKey() {
+  return 'investigar:estudios:resultado-E2:'+participant+':'+(versions?.E2 || '1.5');
  }
 
  async function load(name) {
@@ -178,7 +183,7 @@
 
  function persist() {
   if (!started) return;
-  if (!write(draftKey, {layout:2, step, furthest, answers, reused, timing, submissionId, contactDraft, studySent})) {
+  if (!write(draftKey, {layout:2, step, furthest, answers, reused, timing, submissionId, contactDraft, studySent, caseFeedback})) {
    text('study-status','El navegador no permite guardar el borrador. Mantén esta página abierta para conservar tus respuestas.');
   }
  }
@@ -650,8 +655,8 @@
  function renderCourses(destination) {
   const section = $('study-courses');
   destination.append(section);
-  const areas = (id === 'E1' && answers.P03) || read(commonKey('E1'),{}).P03 || [];
-  section.hidden = id !== 'E1' && areas.length === 0;
+  const areas = answers.P03 || read(commonKey('E1'),{}).P03 || [];
+  section.hidden = !areas.length;
   if (section.hidden) return;
   const recommended = areas.map(area=>coursesByArea[area]).filter(key=>key && key !== 'specialist');
   const modules = [...new Set([...recommended,'specialist'])];
@@ -679,8 +684,31 @@
   text('contact-skip',final.contact.skipLabel);
  }
 
+ function renderCaseFeedback() {
+  const section=$('case-results');
+  const notice=$('case-results-unavailable');
+  const cases=Array.isArray(caseFeedback?.cases) ? caseFeedback.cases : [];
+  const available=study?.id==='E2' && cases.length===6 && Number.isFinite(caseFeedback.score);
+  section.hidden=!available;
+  notice.hidden=study?.id!=='E2' || available || !endpoint;
+  if (!available) return;
+  text('case-score',caseFeedback.score.toLocaleString('es-ES')+' / 10');
+  text('case-score-count',caseFeedback.correctCount+' de '+caseFeedback.total+' respuestas correctas');
+  $('case-results-list').replaceChildren(...cases.map(item=>{
+   const row=el('li','',{class:'case-feedback-item '+(item.isCorrect?'is-correct':'is-incorrect')});
+   row.append(el('h4',item.title));
+   row.append(el('p',item.isCorrect?'Respuesta correcta':'Respuesta incorrecta',{class:'case-feedback-outcome'}));
+   row.append(el('p','Tu respuesta: '+item.selectedLabel));
+   if (!item.isCorrect) row.append(el('p','Respuesta esperada: '+item.correctLabel));
+   row.append(el('p','Criterio WCAG: '+item.wcag));
+   row.append(el('p','Explicación: '+item.explanation));
+   return row;
+  }));
+ }
+
  function completion() {
   const practice = study?.id === 'E2';
+  if (practice && !caseFeedback && !repeating) caseFeedback=read(caseFeedbackKey(),null);
   text('completion-title',final.title);
   text('completion-copy',practice
    ? endpoint ? 'Has finalizado el Estudio 2. Tus respuestas se han guardado correctamente.' : 'Has finalizado la vista previa del Estudio 2. Las respuestas no se enviaron.'
@@ -688,6 +716,7 @@
   const email = practice ? confirmedContactEmail() : '';
   text('completion-email-value',email);
   $('completion-email').hidden = !email;
+  renderCaseFeedback();
   text('results-title',final.results.title);
   text('results-copy',final.results.description);
   text('results-link',final.results.label);
@@ -832,6 +861,10 @@
     const result = await send({kind:'study',participant,submissionId,studyId:id,version:study.version,consent:true,answers,reused,metadata});
     if (result.submissionId !== submissionId) throw new Error('La aplicación de guardado debe actualizarse antes de confirmar este envío.');
     studySent = true;
+    if (id==='E2' && result.caseFeedback?.cases?.length===6) {
+     caseFeedback=result.caseFeedback;
+     write(caseFeedbackKey(),caseFeedback);
+    }
     write(latestSubmissionKey(id),submissionId);
     persist();
    }
@@ -883,6 +916,7 @@
    submissionId = draft.submissionId || submissionId;
    contactDraft = draft.contactDraft || null;
    studySent = draft.studySent === true;
+   caseFeedback = id==='E2' ? draft.caseFeedback || read(caseFeedbackKey(),null) : null;
    const offset = id==='E2' && draft.layout!==2 ? 1 : 0;
    step = Math.max(0,(draft.step || 0)-offset);
    if (draft.timing) timing = draft.timing;

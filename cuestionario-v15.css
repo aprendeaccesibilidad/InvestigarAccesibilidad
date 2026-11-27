@@ -164,6 +164,25 @@
   padding-inline-start: 1.25rem;
 }
 
+.case-results { margin-block: 1.75rem; }
+.case-score-card {
+  margin-block: 1rem 1.5rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 2px solid var(--udl);
+  border-radius: 1rem;
+  background: var(--udl-soft);
+}
+.case-score-card p { margin-block: .25rem; }
+.case-score-value { color: var(--udl-d); font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 800; line-height: 1.1; }
+.case-score-note { font-size: .9rem; }
+.case-feedback-list { display: grid; gap: .85rem; padding-inline-start: 1.7rem; }
+.case-feedback-item { padding: 1rem; border: 1px solid #c8c8c8; border-inline-start: 5px solid #555; border-radius: .75rem; background: #fff; }
+.case-feedback-item.is-correct { border-inline-start-color: #25643b; }
+.case-feedback-item.is-incorrect { border-inline-start-color: #9b1c31; }
+.case-feedback-item h4 { margin: 0 0 .5rem; }
+.case-feedback-item p { margin: .35rem 0; }
+.case-feedback-outcome { font-weight: 750; }
+
 /* a11y: needs manual verification — lectura de las opciones y las secciones desplegables con lector de pantalla. */
 /* a11y: needs manual verification — legibilidad y foco de los seis pasos en móvil. */
 @media (max-width: 820px) {
